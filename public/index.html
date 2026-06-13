@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maison Aura · Diseño web, Marketing y SEO · Tu presencia digital, con personalidad</title>
+<meta name="description" content="Agencia de diseño web, marketing digital y SEO. Creamos webs a medida, posicionamos tu negocio en Google y atraemos clientes con estrategia. Trabajo remoto en toda España." />
+<meta property="og:title" content="Maison Aura · Diseño web · Marketing · SEO" />
+<meta property="og:description" content="Webs que convierten, estrategia que posiciona. Sin plantillas, sin atajos, con resultados." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://maisonaura.es" />
+<meta name="theme-color" content="#C9A96E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;700;800&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Maison Aura",
+  "description": "Agencia de diseño web, marketing digital y SEO. Creamos webs a medida, posicionamos en Google y atraemos clientes con estrategia.",
+  "url": "https://maisonaura.es",
+  "email": "hola@maisonaura.es",
+  "areaServed": "ES",
+  "sameAs": ["https://instagram.com/maisonaura.studio"],
+  "priceRange": "€€"
+}
+</script>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="Maison Aura Studio — Diseño web, volver al inicio">
+      <!--
+        Logo stacked: Maison / Aura (bold) / Studio
+        Gradiente diagonal violet→pink→coral, tipografía Poppins redondeada.
+        Badge inferior: SEO · WEB DESIGN | ESTD. 2026 · NEDERLAND · SPAIN
+      -->
+      <svg class="logo-svg" viewBox="0 0 210 82" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <defs>
+          <!-- Gradiente diagonal que cubre todo el bloque de texto (userSpaceOnUse) -->
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="210" y2="82" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#8B5CF6"/>
+            <stop offset="50%"  stop-color="#EC4899"/>
+            <stop offset="100%" stop-color="#F97316"/>
+          </linearGradient>
+          <!-- Gradiente para la pastilla izquierda -->
+          <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#9B6BF7"/>
+            <stop offset="100%" stop-color="#F97316"/>
+          </linearGradient>
+        </defs>
+
+        <!-- MAISON — peso regular, body size -->
+        <text x="1" y="19"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="18" font-weight="300"
+          fill="url(#logoGrad)"
+          letter-spacing="0.5">Maison</text>
+
+        <!-- AURA — peso extra-bold, talla grande (protagonista) -->
+        <text x="1" y="50"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="32" font-weight="800"
+          fill="url(#logoGrad)"
+          letter-spacing="-0.5">Aura</text>
+
+        <!-- STUDIO — peso regular, igual que Maison -->
+        <text x="1" y="69"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="18" font-weight="300"
+          fill="url(#logoGrad)"
+          letter-spacing="0.5">Studio</text>
+
+        <!-- BADGE: pastilla izquierda con gradiente -->
+        <rect x="1" y="73" width="68" height="9" rx="1.5" fill="url(#badgeGrad)"/>
+        <text x="4" y="79.5"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="4" font-weight="600" fill="#ffffff" letter-spacing="0.3">SEO · WEB DESIGN · DIGIT.</text>
+
+        <!-- BADGE: pastilla derecha con borde -->
+        <rect x="70" y="73" width="68" height="9" rx="1.5" fill="none" stroke="rgba(139,92,246,.5)" stroke-width="0.6"/>
+        <text x="73" y="78"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="3.5" font-weight="700" fill="#8B5CF6" letter-spacing="0.2">ESTD. 2026</text>
+        <text x="73" y="81.5"
+          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
+          font-size="3" font-weight="400" fill="rgba(139,92,246,.7)" letter-spacing="0.1">NEDERLAND · BORN IN SPAIN</text>
+      </svg>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="#sesion">Empezar proyecto</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Diseño web · Marketing · SEO · España</p>
+      <h1>Más visibilidad.<br>Más clientes.<br><em>Más negocio.</em></h1>
+      <p class="hero-lead">Diseñamos tu web, posicionamos tu marca en Google y creamos la estrategia de marketing para dar juntos el siguiente paso a la era digital.</p>
+      <div class="proof">
+        <span class="proof-stars" aria-hidden="true">★★★★★</span>
+        <span class="proof-text"><b>4,9 / 5</b> · 24 clientes satisfechos · <b>«la mejor inversión para mi negocio»</b></span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#sesion">Sesión gratuita</a>
+        <a class="btn btn-ghost btn-lg" href="#portfolio">Ver trabajos</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="hero-canvas shimmer">
+        <div class="hero-mockup" aria-hidden="true">
+          <div class="mockup-browser">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-url">maisonaura.es</div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-hero-block">
+                <div class="mockup-h wide"></div>
+                <div class="mockup-h narrow"></div>
+                <div class="mockup-p"></div>
+                <div class="mockup-p" style="width:75%"></div>
+                <div class="mockup-btn-row">
+                  <div class="mockup-btn solid"></div>
+                  <div class="mockup-btn outline"></div>
+                </div>
+              </div>
+              <div class="mockup-cards">
+                <div class="mockup-card">
+                  <div class="mockup-card-img"></div>
+                  <div class="mockup-card-t"></div>
+                  <div class="mockup-card-s"></div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-img" style="background:#C9A96E22"></div>
+                  <div class="mockup-card-t"></div>
+                  <div class="mockup-card-s"></div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-img" style="background:#1C191722"></div>
+                  <div class="mockup-card-t"></div>
+                  <div class="mockup-card-s"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-chip">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>«Las ventas de mi tienda online subieron un 340% en tres meses.»</p>
+        <span>— Laura P., cliente de Maison Aura</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TRUST STRIP ========================== -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item"><b id="trustProjects">47</b><span>proyectos completados</span></div>
+      <div class="trust-item"><b id="trustClients">38</b><span>clientes satisfechos</span></div>
+      <div class="trust-item"><b>+340%</b><span>tráfico medio en 6 meses</span></div>
+      <div class="trust-item"><b>4,9 ★</b><span>valoración media de proyectos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== SERVICIOS =========================== -->
+<section class="section" id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Carta de servicios</p>
+      <h2 class="display">Diseño, marketing y SEO:<br>los tres pilares de tu <em>presencia digital.</em></h2>
+      <p>No hace falta contratar tres agencias distintas. En Maison Aura lo hacemos todo, de forma coordinada, para que cada euro invertido trabaje por ti.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid">
+      <!-- respaldo estático; el JS los reemplaza desde /api/site -->
+      <article class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Diseño web a medida</h3>
+        <p>Tu web diseñada desde cero con identidad propia. Sin plantillas, sin atajos. Diseño que convierte.</p>
+        <div class="service-price">desde 1.200€</div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">◈</div>
+        <h3>Tienda online (e-commerce)</h3>
+        <p>Vende en internet con una tienda rápida, atractiva y fácil de gestionar. Integración con pasarelas de pago y envíos.</p>
+        <div class="service-price">desde 1.800€</div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">◇</div>
+        <h3>Branding & identidad visual</h3>
+        <p>Logo, paleta, tipografía y guía de estilo. Que te reconozcan antes de que hablen.</p>
+        <div class="service-price">desde 650€</div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">◉</div>
+        <h3>Marketing digital</h3>
+        <p>Estrategia de contenidos, redes sociales y campañas de pago. Más alcance, más clientes, más ventas.</p>
+        <div class="service-price">desde 400€/mes</div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">↗</div>
+        <h3>SEO & posicionamiento</h3>
+        <p>Que te encuentren en Google antes que a tu competencia. Auditoría, optimización técnica y contenidos.</p>
+        <div class="service-price">desde 350€/mes</div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">⟳</div>
+        <h3>Mantenimiento & soporte</h3>
+        <p>Actualizaciones, copias de seguridad, soporte técnico y mejoras continuas para que tu web rinda al máximo.</p>
+        <div class="service-price">desde 90€/mes</div>
+      </article>
+    </div>
+    <p class="services-note">¿No sabes por dónde empezar? La sesión de diagnóstico gratuita es para eso. Te orientamos sin compromiso. <a href="#sesion" style="color:var(--gold-deep);text-decoration:underline">Reserva aquí →</a></p>
+  </div>
+</section>
+
+<!-- ============================ PROCESO (LA FIRMA) ================ -->
+<section class="section proceso" id="proceso">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Nuestro proceso</p>
+      <h2 class="display">Un proceso claro, de la estrategia<br>al <em>resultado.</em></h2>
+      <p>No empezamos a diseñar el día uno. Primero escuchamos, analizamos y trazamos la estrategia de diseño, marketing y SEO que tu negocio necesita.</p>
+      <ol class="proceso-steps">
+        <li class="proceso-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <b>Sesión de diagnóstico</b>
+            <span>30 minutos para entender tu negocio, tus clientes y lo que necesitas conseguir.</span>
+          </div>
+        </li>
+        <li class="proceso-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <b>Estrategia & propuesta</b>
+            <span>Propuesta detallada con estructura, funcionalidades, plazos y presupuesto cerrado.</span>
+          </div>
+        </li>
+        <li class="proceso-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <b>Diseño & revisiones</b>
+            <span>Diseñamos con tu feedback en cada ronda. Sin sorpresas, sin letra pequeña.</span>
+          </div>
+        </li>
+        <li class="proceso-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <b>Desarrollo & lanzamiento</b>
+            <span>Codificamos, probamos y lanzamos. Tu web en el mundo, lista para convertir.</span>
+          </div>
+        </li>
+        <li class="proceso-step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <b>Soporte post-lanzamiento</b>
+            <span>No desaparecemos. Seguimiento el primer mes y opciones de mantenimiento continuo.</span>
+          </div>
+        </li>
+      </ol>
+      <a class="btn btn-gold" href="#sesion">Empieza con el diagnóstico gratuito</a>
+    </div>
+    <div class="proceso-figure shimmer reveal">
+      <div class="proceso-mockup-wrap" aria-hidden="true">
+        <div class="proceso-screen">
+          <div class="proceso-screen-bar">
+            <div class="proceso-screen-dot" style="background:#FF6059"></div>
+            <div class="proceso-screen-dot" style="background:#FEBC2E;margin:0 4px"></div>
+            <div class="proceso-screen-dot" style="background:#28C840"></div>
+          </div>
+          <div class="proceso-screen-content">
+            <div class="psc-header">
+              <div class="psc-logo"></div>
+              <div class="psc-nav">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="psc-hero">
+              <div class="psc-tag"></div>
+              <div class="psc-h1"></div>
+              <div class="psc-h2"></div>
+              <div class="psc-sub"></div>
+              <div class="psc-sub short"></div>
+              <div class="psc-btns">
+                <div class="psc-btn solid"></div>
+                <div class="psc-btn ghost"></div>
+              </div>
+            </div>
+            <div class="psc-grid">
+              <div class="psc-card"><div class="psc-card-top"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
+              <div class="psc-card"><div class="psc-card-top" style="background:#C9A96E33"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
+              <div class="psc-card"><div class="psc-card-top" style="background:#1C191722"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proceso-chip">
+        <b>Entrega puntual</b>
+        Proyectos en plazo, siempre.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PORTFOLIO ========================== -->
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="display">Proyectos reales, resultados reales.</h2>
+      <p>Cada web que entregamos está pensada para el negocio que la usará, no para el portfolio de la agencia.</p>
+    </div>
+    <div class="portfolio-grid reveal" id="portfolioGrid">
+
+      <!-- ① Sworfare Plus Dashboard -->
+      <a class="portfolio-item" href="https://www.dutchtaxhelper.com/dashboard" target="_blank" rel="noopener" aria-label="Ver Sworfare Plus Dashboard">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0D0D1A 0%,#1A0D2E 50%,#0D0A1E 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 70% 20%,rgba(139,92,246,.35) 0%,transparent 65%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#1A0D2E,#2D1B69,#4C1D95);padding:8px;display:flex;flex-direction:column;gap:5px">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="height:5px;width:36px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:3px"></div>
+                  <div style="display:flex;gap:3px">
+                    <div style="width:13px;height:13px;background:rgba(139,92,246,.3);border:1px solid rgba(139,92,246,.5);border-radius:3px"></div>
+                    <div style="width:13px;height:13px;background:rgba(236,72,153,.3);border:1px solid rgba(236,72,153,.5);border-radius:3px"></div>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px">
+                  <div style="background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4);border-radius:4px;padding:5px">
+                    <div style="height:3px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:2px;margin-bottom:3px"></div>
+                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
+                  </div>
+                  <div style="background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.4);border-radius:4px;padding:5px">
+                    <div style="height:3px;background:linear-gradient(90deg,#EC4899,#F97316);border-radius:2px;margin-bottom:3px"></div>
+                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
+                  </div>
+                  <div style="background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.4);border-radius:4px;padding:5px">
+                    <div style="height:3px;background:linear-gradient(90deg,#F97316,#FBBF24);border-radius:2px;margin-bottom:3px"></div>
+                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
+                  </div>
+                </div>
+                <div style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);border-radius:3px;height:14px"></div>
+              </div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(139,92,246,.12);border-right:1px solid rgba(139,92,246,.2)"></div>
+                <div class="pm-col" style="background:rgba(236,72,153,.08)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Software · Dashboard</div>
+          <div class="portfolio-title">Sworfare Plus Dashboard
+            <span class="portfolio-link-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ② Manicúrate Badajoz -->
+      <a class="portfolio-item" href="https://manicuratebadajoz.es" target="_blank" rel="noopener" aria-label="Ver web de Manicúrate Badajoz">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#1A0D22 0%,#2D1040 50%,#180D2A 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 30% 80%,rgba(236,72,153,.4) 0%,transparent 60%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#6D28D9,#BE185D,#9D174D)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(236,72,153,.15);border-right:1px solid rgba(236,72,153,.2)"></div>
+                <div class="pm-col" style="background:rgba(139,92,246,.12)"></div>
+                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Web + Reservas · Salón</div>
+          <div class="portfolio-title">Manicúrate Badajoz
+            <span class="portfolio-link-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ③ Boutique Valenté -->
+      <div class="portfolio-item">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#120820 0%,#1E0E38 50%,#0E0618 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 80% 30%,rgba(249,115,22,.3) 0%,transparent 60%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#7C2D8C,#BE185D)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(249,115,22,.15);border-right:1px solid rgba(249,115,22,.2)"></div>
+                <div class="pm-col" style="background:rgba(139,92,246,.1)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">E-commerce · Moda</div>
+          <div class="portfolio-title">Boutique Valenté</div>
+        </div>
+      </div>
+
+      <!-- ④ Studio Nórdico -->
+      <div class="portfolio-item">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0A0A18 0%,#14102A 50%,#0A0A18 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 10%,rgba(139,92,246,.45) 0%,transparent 55%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#4C1D95,#6D28D9,#8B5CF6)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(139,92,246,.2)"></div>
+                <div class="pm-col" style="background:rgba(109,40,217,.15)"></div>
+                <div class="pm-col" style="background:rgba(139,92,246,.1)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Web corporativa · Interiorismo</div>
+          <div class="portfolio-title">Studio Nórdico</div>
+        </div>
+      </div>
+
+      <!-- ⑤ Terra Orgánica -->
+      <div class="portfolio-item">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0E0A1E 0%,#1C0D30 50%,#0E0A1E 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 20% 60%,rgba(139,92,246,.3) 0%,rgba(249,115,22,.15) 50%,transparent 70%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#7C2D8C,#EC4899,#F97316)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(249,115,22,.15);border-right:1px solid rgba(249,115,22,.15)"></div>
+                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Tienda online · Alimentación</div>
+          <div class="portfolio-title">Terra Orgánica</div>
+        </div>
+      </div>
+
+      <!-- ⑥ Alma Spa & Yoga -->
+      <div class="portfolio-item">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#10061E 0%,#1E0A35 50%,#100618 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 60% 70%,rgba(236,72,153,.38) 0%,transparent 60%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#1E0A35,#6D28D9,#EC4899)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(236,72,153,.18)"></div>
+                <div class="pm-col" style="background:rgba(139,92,246,.15)"></div>
+                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Web + Branding · Bienestar</div>
+          <div class="portfolio-title">Alma Spa & Yoga</div>
+        </div>
+      </div>
+
+      <!-- ⑦ Nexus Analytics -->
+      <div class="portfolio-item">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#080816 0%,#10082A 50%,#080816 100%)">
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 50%,rgba(139,92,246,.25) 0%,rgba(249,115,22,.15) 60%,transparent 80%)"></div>
+          <div class="pm-browser">
+            <div class="pm-bar">
+              <div class="pm-dot" style="background:#FF6059"></div>
+              <div class="pm-dot" style="background:#FEBC2E"></div>
+              <div class="pm-dot" style="background:#28C840"></div>
+            </div>
+            <div class="pm-body">
+              <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#8B5CF6,#F97316)"></div>
+              <div class="pm-row">
+                <div class="pm-col" style="background:rgba(139,92,246,.18);border-right:1px solid rgba(139,92,246,.2)"></div>
+                <div class="pm-col" style="background:rgba(249,115,22,.12)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">App web · Tecnología</div>
+          <div class="portfolio-title">Nexus Analytics</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="testimonios-cta" style="text-align:center;margin-top:40px">
+      <a class="btn btn-ghost" href="#sesion">¿Quieres un proyecto así? Cuéntanos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TESTIMONIOS ========================== -->
+<section class="section testimonios" id="testimonios">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">4,9 ★ · 24 proyectos valorados</p>
+      <h2 class="display">Nuestros clientes lo explican mejor que nosotras.</h2>
+    </div>
+    <div class="testimonios-grid">
+      <article class="testimonio-card reveal">
+        <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
+        <blockquote>Desde que lancé la nueva web, las consultas han multiplicado por cuatro. Maison Aura entendió mi negocio desde el primer minuto y lo tradujo en algo que realmente funciona.</blockquote>
+        <div class="testimonio-meta">
+          <div class="testimonio-avatar">L</div>
+          <div>
+            <div class="testimonio-name">Laura Palomares</div>
+            <div class="testimonio-biz">Boutique Valenté · Madrid</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonio-card reveal">
+        <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
+        <blockquote>El proceso fue súper claro de principio a fin. Me explicaron cada decisión de diseño y el resultado es exactamente lo que tenía en mente, pero mejor. Totalmente recomendable.</blockquote>
+        <div class="testimonio-meta">
+          <div class="testimonio-avatar">M</div>
+          <div>
+            <div class="testimonio-name">Marta Íñiguez</div>
+            <div class="testimonio-biz">Studio Nórdico · Barcelona</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonio-card reveal">
+        <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
+        <blockquote>Llevo años intentando posicionarme en Google. En cuatro meses con Maison Aura estoy en primera página para mis palabras clave principales. La inversión se pagó sola.</blockquote>
+        <div class="testimonio-meta">
+          <div class="testimonio-avatar">C</div>
+          <div>
+            <div class="testimonio-name">Carlos Ventura</div>
+            <div class="testimonio-biz">Terra Orgánica · Valencia</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= BANNER CTA ========================== -->
+<section class="cta-banner" aria-label="Empieza tu proyecto">
+  <div class="cta-banner-bg" aria-hidden="true"></div>
+  <div class="wrap cta-banner-content reveal">
+    <p class="eyebrow">Trabajemos juntos</p>
+    <h2 class="display">Diseño, marketing y SEO.<br>Todo lo que necesitas, <em>en un equipo.</em></h2>
+    <p>La sesión de diagnóstico es gratuita, dura 30 minutos y te irás con un plan claro: qué mejorar, por dónde empezar y cuánto cuesta. Sin compromiso.</p>
+    <div class="cta-banner-actions">
+      <a class="btn btn-gold btn-lg" href="#sesion">Reservar sesión gratuita</a>
+      <a class="btn btn-outline-white btn-lg" href="#contacto">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar un mensaje
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== CONTACTO ============================ -->
+<section class="section contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <p class="eyebrow">Cuéntanos</p>
+      <h2 class="display">¿Tienes un proyecto<br>en mente? <em>Escríbenos.</em></h2>
+      <p>Pregúntanos antes de comprometerte con nada. Diseño, precio, plazos, dudas técnicas… te respondemos sin compromiso y normalmente el mismo día.</p>
+
+      <ul class="info-list">
+        <li>
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><b>Email</b><span><a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></span></div>
+        </li>
+        <li>
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div><b>Instagram</b><span><a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener">@maisonaura.studio</a></span></div>
+        </li>
+        <li>
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <div>
+            <b>Horario de atención</b>
+            <div style="margin-top:8px">
+              <div class="hours-row"><span>Lunes a viernes</span><span>9:00 – 18:00</span></div>
+              <div class="hours-row"><span>Sábado</span><span class="closed">Cerrado</span></div>
+              <div class="hours-row"><span>Domingo</span><span class="closed">Cerrado</span></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="social-row" style="margin-top:32px">
+        <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hola@maisonaura.es" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-body reveal">
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="ct-name">Tu nombre</label>
+            <input id="ct-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required />
+          </div>
+          <div class="field">
+            <label for="ct-contact">Email o teléfono</label>
+            <input id="ct-contact" name="contact" type="text" autocomplete="email" placeholder="Para responderte" required />
+          </div>
+          <div class="field">
+            <label for="ct-message">Tu mensaje</label>
+            <textarea id="ct-message" name="message" placeholder="Cuéntanos sobre tu proyecto, tu negocio o la duda que tengas…" required></textarea>
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <button class="btn btn-primary form-submit" type="submit" id="ctSubmit">Enviar mensaje</button>
+          <p class="form-alt">Respondemos en menos de 24h, normalmente el mismo día.</p>
+          <div class="form-msg" id="ctMsg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SESIÓN DIAGNÓSTICO ==================== -->
+<section class="section sesion" id="sesion">
+  <div class="wrap sesion-grid">
+    <div class="sesion-aside reveal">
+      <p class="eyebrow">Sesión gratuita · 30 min</p>
+      <h2 class="display">Elige día y hora.<br>Hablamos <em>sin compromiso.</em></h2>
+      <p>Una videollamada de media hora para entender tu proyecto, resolver tus dudas y ver si somos el equipo que necesitas. Gratis, siempre.</p>
+      <ul class="sesion-perks">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Análisis rápido de tu situación digital actual
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Orientación sobre qué servicio te conviene más
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Estimación de presupuesto y plazos sin letra pequeña
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Sin compromiso de contratación — solo claridad
+        </li>
+      </ul>
+    </div>
+
+    <div class="sesion-form reveal">
+      <div class="form-card">
+        <form id="sesionForm" novalidate>
+          <div class="field">
+            <label for="sk-name">Tu nombre</label>
+            <input id="sk-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required />
+          </div>
+          <div class="field">
+            <label for="sk-email">Email</label>
+            <input id="sk-email" name="email" type="email" autocomplete="email" placeholder="hola@tuempresa.com" required />
+          </div>
+          <div class="field">
+            <label for="sk-service">¿En qué puedo ayudarte?</label>
+            <select id="sk-service" name="service" required>
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="web-medida">Diseño web a medida</option>
+              <option value="ecommerce">Tienda online (e-commerce)</option>
+              <option value="branding">Branding & identidad visual</option>
+              <option value="marketing">Marketing digital</option>
+              <option value="seo">SEO & posicionamiento</option>
+              <option value="mantenimiento">Mantenimiento & soporte</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="sk-date">Día</label>
+              <input id="sk-date" name="date" type="date" required />
+            </div>
+            <div class="field">
+              <label for="sk-time">Hora</label>
+              <select id="sk-time" name="time" required>
+                <option value="" disabled selected>Elige el día primero</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="sk-notes">Cuéntanos algo sobre tu proyecto (opcional)</label>
+            <textarea id="sk-notes" name="notes" placeholder="Tipo de negocio, qué necesitas, si ya tienes web…"></textarea>
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <button class="btn btn-primary form-submit btn-lg" type="submit" id="skSubmit">Reservar sesión gratuita</button>
+          <p class="form-alt">O escríbenos a <a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></p>
+          <div class="form-msg" id="sesionMsg" role="status" aria-live="polite"></div>
+        </form>
+        <div class="form-confirm" id="sesionConfirm">
+          <h3>¡Sesión reservada! ✦</h3>
+          <p id="confirmText">Te enviamos la confirmación por email. Puedes escribirnos si necesitas cambiar algo:</p>
+          <a class="btn btn-primary btn-lg" href="mailto:hola@maisonaura.es">Confirmar por email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Maison Aura Studio</div>
+        <p>Diseño web, marketing digital y SEO para marcas que quieren crecer en internet. Trabajo remoto en toda España.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:hola@maisonaura.es" aria-label="Email">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="#servicios">Diseño web a medida</a></li>
+          <li><a href="#servicios">Tienda online</a></li>
+          <li><a href="#servicios">Branding & identidad</a></li>
+          <li><a href="#servicios">Marketing digital</a></li>
+          <li><a href="#servicios">SEO & posicionamiento</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></li>
+          <li>Trabajo remoto · España</li>
+          <li><a href="#sesion">Sesión de diagnóstico gratuita</a></li>
+          <li><a href="#portfolio">Ver portfolio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="/admin" style="color:inherit;opacity:.3;font-size:.78rem;text-decoration:none;margin-right:10px" title="Acceso panel">⚙</a>© <span id="year"></span> Maison Aura Studio · Estd. 2026 · Located in Nederland · Born in Spain</span>
+      <span>Hecho con intención, entregado con cuidado.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-bar" id="cookieBar" role="alertdialog" aria-label="Aviso de privacidad" hidden>
+  <p>Esta web carga Google Fonts, que puede registrar tu visita según su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>. Al continuar navegando aceptas su uso.</p>
+  <button class="btn btn-gold" id="cookieAccept">Entendido</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

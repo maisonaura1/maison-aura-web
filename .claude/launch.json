@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "maison-aura-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 3003,
+      "autoPort": true,
+      "cwd": "/Users/maisonaura/Desktop/maison-aura-web",
+      "env": { "PORT": "3003" }
+    }
+  ]
+}

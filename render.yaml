@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: maison-aura-web
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ADMIN_TOKEN
+        generateValue: true
+    autoDeploy: true
