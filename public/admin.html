@@ -3,245 +3,637 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Panel · Maison Aura</title>
+<title>Panel · Maison Aura Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;700;900&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <style>
+/* ============================================================
+   MAISON AURA STUDIO · Panel Admin
+   Paleta: crema #F5F1EB + tinta negra #0D0B09
+   Acento: gradiente violeta→pink→coral (solo elementos clave)
+   ============================================================ */
 :root {
-  --ivory:        #FAF7F2;
-  --ivory-2:      #F0EAE0;
-  --charcoal:     #1C1917;
-  --charcoal-s:   #6B5E54;
-  --gold:         #C9A96E;
-  --gold-deep:    #8A6D3B;
-  --gold-tint:    #F0E3C8;
-  --line:         #E4DDD3;
-  --white:        #ffffff;
-  --ok:           #2E7D44;
-  --ok-bg:        #E8F5EC;
-  --warn-bg:      #FFF8E8;
-  --err-bg:       #FBE3DD;
-  --err:          #9A4030;
-  --shadow-sm:    0 2px 10px rgba(28,25,23,.06);
-  --shadow-md:    0 8px 28px rgba(28,25,23,.14);
-  --r:            10px;
+  /* Fondos */
+  --cream:     #F5F1EB;
+  --cream-2:   #EDE8DE;
+  --cream-3:   #E2DCD2;
+  --white:     #FDFCFA;
+
+  /* Tintas */
+  --ink:       #0D0B09;
+  --ink-soft:  #5C5650;
+  --ink-mute:  #9A948E;
+
+  /* Gradiente firma */
+  --brand:     linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F97316 100%);
+  --violet:    #8B5CF6;
+
+  /* Separadores y sombras */
+  --line:      #D4CEC6;
+  --line-2:    #C8C2B8;
+  --shadow-sm: 0 2px 10px rgba(13,11,9,.06);
+  --shadow-md: 0 8px 28px rgba(13,11,9,.14);
+  --r:         10px;
+
+  /* Estados */
+  --ok:        #166534; --ok-bg:   #dcfce7;
+  --warn:      #854d0e; --warn-bg: #fef9c3;
+  --err:       #991b1b; --err-bg:  #fee2e2;
+  --blue:      #1e40af; --blue-bg: #dbeafe;
 }
+
 * { box-sizing: border-box; }
 body {
   margin: 0; font-family: "DM Sans", system-ui, sans-serif;
-  background: var(--ivory); color: var(--charcoal);
-  font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  background: var(--cream); color: var(--ink);
+  font-size: 15px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
 
-/* ── Login ── */
+/* ═══════════════════════════════ LOGIN ═══════════════════════════ */
 #loginScreen {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  background: var(--charcoal);
+  background: var(--ink); position: relative;
 }
+/* patrón sutil de fondo */
+#loginScreen::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(139,92,246,.07) 0%, transparent 55%),
+              radial-gradient(ellipse at 70% 70%, rgba(249,115,22,.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
 .login-box {
-  background: var(--white); border-radius: 18px; padding: 44px 40px;
-  width: 100%; max-width: 380px; box-shadow: var(--shadow-md);
-  text-align: center;
+  background: var(--white); border-radius: 20px; padding: 48px 44px 40px;
+  width: 100%; max-width: 390px; box-shadow: 0 24px 64px rgba(0,0,0,.3);
+  text-align: center; position: relative; z-index: 1;
 }
-.login-logo { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; color: var(--gold); margin-bottom: 6px; }
-.login-sub { font-size: .82rem; color: var(--charcoal-s); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 32px; }
-.login-box input {
-  width: 100%; padding: 13px 16px; border: 1px solid var(--line);
+
+/* Logo en login */
+.login-logo-svg { display: block; margin: 0 auto 20px; }
+
+.login-sub {
+  font-size: .74rem; color: var(--ink-mute); letter-spacing: .16em;
+  text-transform: uppercase; margin-bottom: 32px;
+}
+
+/* Campo de token + ojo */
+.token-wrap { position: relative; margin-bottom: 12px; }
+.token-wrap input {
+  width: 100%; padding: 13px 44px 13px 16px; border: 1.5px solid var(--line);
   border-radius: var(--r); font-size: 1rem; font-family: inherit;
-  background: var(--ivory); margin-bottom: 14px;
+  background: var(--cream); color: var(--ink);
   transition: border-color .2s, box-shadow .2s;
 }
-.login-box input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,169,110,.15); }
-.login-box button {
-  width: 100%; padding: 14px; background: var(--charcoal); color: var(--white);
-  border: none; border-radius: 999px; font-size: 1rem; font-weight: 600;
-  cursor: pointer; transition: background .2s;
+.token-wrap input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(13,11,9,.07); }
+.token-eye {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: var(--ink-mute);
+  display: flex; align-items: center; padding: 4px; transition: color .2s;
 }
-.login-box button:hover { background: var(--gold-deep); }
-.login-err { margin-top: 12px; color: var(--err); font-size: .88rem; min-height: 20px; }
+.token-eye:hover { color: var(--ink); }
 
-/* ── Layout ── */
+.login-btn {
+  width: 100%; padding: 14px; background: var(--ink); color: var(--cream);
+  border: none; border-radius: 999px; font-size: 1rem; font-weight: 700;
+  font-family: inherit; cursor: pointer; transition: background .2s, transform .2s;
+  letter-spacing: .02em; margin-top: 4px;
+}
+.login-btn:hover { background: #1a1614; transform: translateY(-1px); }
+.login-err { margin-top: 12px; color: var(--err); font-size: .87rem; min-height: 20px; }
+
+.login-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 22px; font-size: .83rem; color: var(--ink-mute);
+  transition: color .2s;
+}
+.login-back:hover { color: var(--ink); }
+
+/* ═══════════════════════════════ APP LAYOUT ══════════════════════ */
 #app { display: none; min-height: 100vh; }
+
+/* ── Sidebar ── */
 .sidebar {
-  position: fixed; left: 0; top: 0; bottom: 0; width: 220px;
-  background: var(--charcoal); padding: 0; display: flex; flex-direction: column;
-  z-index: 10;
+  position: fixed; left: 0; top: 0; bottom: 0; width: 230px;
+  background: var(--ink); padding: 0; display: flex; flex-direction: column; z-index: 20;
 }
 .sidebar-logo {
-  padding: 24px 20px 18px; font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem; color: var(--gold); border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 22px 20px 18px; border-bottom: 1px solid rgba(245,241,235,.08);
+  display: flex; flex-direction: column; gap: 2px;
 }
-.sidebar-logo small { display: block; font-family: "DM Sans", sans-serif; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 2px; }
-.sidebar-nav { padding: 16px 0; flex: 1; }
+.sidebar-logo-text {
+  font-family: "Poppins", sans-serif; font-weight: 900; font-size: 1.3rem;
+  color: var(--cream); letter-spacing: -.02em; line-height: 1;
+}
+.sidebar-logo-text span {
+  background: var(--brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.sidebar-logo small {
+  font-family: "DM Sans", sans-serif; font-size: .62rem; letter-spacing: .18em;
+  text-transform: uppercase; color: rgba(245,241,235,.3); margin-top: 4px;
+}
+
+.sidebar-nav { padding: 12px 0; flex: 1; overflow-y: auto; }
+.nav-section-label {
+  padding: 14px 20px 6px; font-size: .64rem; letter-spacing: .18em;
+  text-transform: uppercase; color: rgba(245,241,235,.2); font-weight: 700;
+}
 .nav-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 11px 20px; color: rgba(255,255,255,.5); font-size: .9rem;
-  cursor: pointer; transition: color .2s, background .2s; border: none;
-  background: none; width: 100%; text-align: left; font-family: inherit;
+  padding: 10px 20px; color: rgba(245,241,235,.5); font-size: .88rem; font-weight: 500;
+  cursor: pointer; transition: color .2s, background .2s;
+  border: none; background: none; width: 100%; text-align: left; font-family: inherit;
+  border-left: 2px solid transparent;
 }
-.nav-item:hover { color: var(--white); background: rgba(255,255,255,.05); }
-.nav-item.active { color: var(--gold); background: rgba(201,169,110,.1); }
-.nav-item svg { flex: none; opacity: .7; }
-.nav-item.active svg { opacity: 1; }
-.sidebar-bottom { padding: 18px 20px; border-top: 1px solid rgba(255,255,255,.08); }
-.sidebar-bottom a { font-size: .8rem; color: rgba(255,255,255,.3); display: block; margin-bottom: 8px; transition: color .2s; }
-.sidebar-bottom a:hover { color: var(--white); }
+.nav-item:hover { color: var(--cream); background: rgba(245,241,235,.05); }
+.nav-item.active {
+  color: var(--cream); background: rgba(245,241,235,.08);
+  border-left-color: var(--violet);
+}
+.nav-item svg { flex: none; width: 15px; height: 15px; }
+.nav-badge {
+  margin-left: auto; background: var(--violet); color: #fff;
+  border-radius: 999px; padding: 1px 7px; font-size: .68rem; font-weight: 700;
+}
 
-.main { margin-left: 220px; padding: 32px; min-height: 100vh; }
-.page { display: none; }
+.sidebar-bottom {
+  padding: 16px 20px; border-top: 1px solid rgba(245,241,235,.08);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.sidebar-back {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .82rem; color: rgba(245,241,235,.4); transition: color .2s;
+  cursor: pointer; background: none; border: none; font-family: inherit; padding: 0;
+}
+.sidebar-back:hover { color: var(--cream); }
+.sidebar-version { font-size: .68rem; color: rgba(245,241,235,.18); letter-spacing: .06em; }
+
+/* ── Main ── */
+.main { margin-left: 230px; min-height: 100vh; background: var(--cream); }
+.page { display: none; padding: 32px; }
 .page.active { display: block; }
 
-/* ── Header ── */
-.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
-.page-header h1 { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 500; margin: 0; }
-.page-header p { margin: 2px 0 0; font-size: .88rem; color: var(--charcoal-s); }
+/* ── Page header ── */
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 28px; gap: 16px; }
+.page-header-text h1 {
+  font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 500;
+  margin: 0; color: var(--ink);
+}
+.page-header-text p { margin: 4px 0 0; font-size: .88rem; color: var(--ink-soft); }
+.page-header-actions { display: flex; gap: 10px; flex-shrink: 0; margin-top: 4px; }
 
-/* ── Cards de stats ── */
-.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+/* ── Botones admin ── */
+.btn-sm {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--line-2);
+  background: var(--white); color: var(--ink-soft); font-size: .82rem; font-weight: 600;
+  font-family: inherit; cursor: pointer; transition: .2s; letter-spacing: .02em;
+}
+.btn-sm:hover { border-color: var(--ink); color: var(--ink); }
+.btn-sm.primary { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.btn-sm.primary:hover { background: #1a1614; }
+
+/* ── Stat cards ── */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
 .stat-card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--r);
-  padding: 20px 22px; box-shadow: var(--shadow-sm);
+  padding: 18px 20px; box-shadow: var(--shadow-sm);
 }
-.stat-card b { display: block; font-family: "Cormorant Garamond", serif; font-size: 2rem; color: var(--gold-deep); font-weight: 500; }
-.stat-card span { font-size: .82rem; color: var(--charcoal-s); }
+.stat-card b {
+  display: block; font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 500;
+  background: var(--brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1; margin-bottom: 4px;
+}
+.stat-card span { font-size: .8rem; color: var(--ink-soft); }
+
+/* ── Card contenedor ── */
+.card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--r); box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.card + .card { margin-top: 20px; }
+.card-head {
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.card-head h2 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 1.15rem; font-weight: 500; }
+
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 5px 13px; border-radius: 999px; border: 1.5px solid var(--line);
+  background: none; font-size: .78rem; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: .2s; color: var(--ink-soft); letter-spacing: .02em;
+}
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
 
 /* ── Tabla ── */
-.card {
-  background: var(--white); border: 1px solid var(--line); border-radius: var(--r);
-  box-shadow: var(--shadow-sm); overflow: hidden;
-}
-.card-head {
-  padding: 16px 20px; border-bottom: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: space-between;
-}
-.card-head h2 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; }
-.filter-row { display: flex; gap: 8px; }
-.filter-btn {
-  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line);
-  background: none; font-size: .8rem; cursor: pointer; font-family: inherit;
-  transition: .2s; color: var(--charcoal-s);
-}
-.filter-btn.active, .filter-btn:hover { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
 table { width: 100%; border-collapse: collapse; }
-th { padding: 11px 16px; text-align: left; font-size: .74rem; font-weight: 600;
-     letter-spacing: .08em; text-transform: uppercase; color: var(--charcoal-s);
-     background: var(--ivory); border-bottom: 1px solid var(--line); }
-td { padding: 13px 16px; border-bottom: 1px solid var(--line); font-size: .9rem; vertical-align: middle; }
+th {
+  padding: 10px 16px; text-align: left; font-size: .7rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute);
+  background: var(--cream); border-bottom: 1px solid var(--line);
+}
+td { padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: .88rem; vertical-align: middle; }
 tr:last-child td { border-bottom: 0; }
-tr:hover td { background: var(--ivory); }
+tr:hover td { background: var(--cream); }
 
+/* ── Badges estado ── */
 .badge {
   display: inline-block; padding: 3px 10px; border-radius: 999px;
-  font-size: .74rem; font-weight: 600; letter-spacing: .04em; text-transform: capitalize;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: capitalize;
 }
-.badge-pendiente  { background: var(--warn-bg); color: #7A6010; }
-.badge-confirmada { background: var(--ok-bg); color: var(--ok); }
-.badge-completada { background: #E8F0FB; color: #1A4E8A; }
-.badge-cancelada  { background: var(--err-bg); color: var(--err); }
-.badge-nuevo      { background: var(--warn-bg); color: #7A6010; }
-.badge-leído      { background: var(--ivory-2); color: var(--charcoal-s); }
-.badge-respondido { background: var(--ok-bg); color: var(--ok); }
+.badge-pendiente  { background: var(--warn-bg); color: var(--warn); }
+.badge-confirmada { background: var(--ok-bg);   color: var(--ok); }
+.badge-completada { background: var(--blue-bg); color: var(--blue); }
+.badge-cancelada  { background: var(--err-bg);  color: var(--err); }
+.badge-nuevo      { background: var(--warn-bg); color: var(--warn); }
+.badge-leído      { background: var(--cream-2); color: var(--ink-soft); }
+.badge-respondido { background: var(--ok-bg);   color: var(--ok); }
 
 .status-select {
-  padding: 5px 10px; border: 1px solid var(--line); border-radius: 6px;
+  padding: 5px 10px; border: 1.5px solid var(--line); border-radius: 6px;
   font-size: .82rem; background: var(--white); cursor: pointer; font-family: inherit;
+  color: var(--ink);
 }
-.status-select:focus { outline: none; border-color: var(--gold); }
+.status-select:focus { outline: none; border-color: var(--ink); }
 
-.empty-state { padding: 48px 20px; text-align: center; color: var(--charcoal-s); }
+.empty-state { padding: 48px 20px; text-align: center; color: var(--ink-soft); }
+.empty-state svg { opacity: .2; margin: 0 auto 14px; display: block; }
 .empty-state p { margin: 0; font-size: .95rem; }
+.loading { padding: 32px 20px; text-align: center; color: var(--ink-mute); font-size: .9rem; }
 
-.loading { padding: 32px 20px; text-align: center; color: var(--charcoal-s); font-size: .9rem; }
-
-/* ── Mensajes ── */
-.msg-body { max-width: 420px; white-space: pre-wrap; line-height: 1.55; }
-.msg-contact { font-weight: 600; font-size: .88rem; }
+.msg-body { max-width: 380px; white-space: pre-wrap; line-height: 1.55; font-size: .87rem; color: var(--ink-soft); }
+.msg-contact { font-weight: 600; font-size: .87rem; }
 
 /* ── Toast ── */
 #toast {
   position: fixed; bottom: 24px; right: 24px; z-index: 999;
-  background: var(--charcoal); color: var(--white);
-  padding: 12px 20px; border-radius: var(--r); font-size: .88rem;
-  box-shadow: var(--shadow-md);
+  background: var(--ink); color: var(--cream);
+  padding: 11px 20px; border-radius: var(--r); font-size: .88rem; font-weight: 500;
+  box-shadow: var(--shadow-md); border-left: 3px solid var(--violet);
   transform: translateY(80px); opacity: 0;
   transition: transform .3s, opacity .3s;
 }
 #toast.show { transform: none; opacity: 1; }
-#toast.gold { background: var(--gold-deep); }
+#toast.ok { border-left-color: #16a34a; }
 
-/* ── Fotos ── */
-.photos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 12px; padding: 20px; }
-.photo-thumb { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; background: var(--ivory-2); }
+/* ── Portfolio / Fotos ── */
+.photos-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px; padding: 20px;
+}
+.photo-thumb { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; background: var(--cream-2); }
 .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .photo-del {
   position: absolute; top: 6px; right: 6px;
-  background: rgba(28,25,23,.7); color: #fff; border: none;
+  background: rgba(13,11,9,.7); color: var(--cream); border: none;
   border-radius: 50%; width: 26px; height: 26px; cursor: pointer;
-  display: grid; place-items: center; font-size: 14px;
+  display: grid; place-items: center; font-size: 13px;
   opacity: 0; transition: opacity .2s;
 }
 .photo-thumb:hover .photo-del { opacity: 1; }
+
 .upload-area {
-  border: 2px dashed var(--gold-line, #E0CCA0); border-radius: 10px;
-  padding: 28px; text-align: center; cursor: pointer; margin: 20px;
-  color: var(--charcoal-s); transition: border-color .2s, background .2s;
+  border: 2px dashed var(--line-2); border-radius: 10px;
+  padding: 32px; text-align: center; cursor: pointer; margin: 20px;
+  color: var(--ink-soft); transition: border-color .2s, background .2s;
 }
-.upload-area:hover, .upload-area.drag { border-color: var(--gold); background: var(--gold-tint); }
+.upload-area:hover, .upload-area.drag {
+  border-color: var(--ink); background: var(--cream);
+}
 .upload-area input { display: none; }
+
+/* ═══════════════════ PIPELINE / ESTRATEGIA ═══════════════════════ */
+.pipeline-intro {
+  background: var(--ink); border-radius: var(--r); padding: 22px 24px;
+  margin-bottom: 24px; display: flex; align-items: center; gap: 20px;
+  position: relative; overflow: hidden;
+}
+.pipeline-intro::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--brand);
+}
+.pipeline-intro-text h2 {
+  font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 500;
+  color: var(--cream); margin: 0 0 4px;
+}
+.pipeline-intro-text p { font-size: .85rem; color: rgba(245,241,235,.5); margin: 0; }
+.pipeline-intro-stats { margin-left: auto; display: flex; gap: 24px; flex-shrink: 0; }
+.pipe-stat { text-align: center; }
+.pipe-stat b {
+  display: block; font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 500;
+  background: var(--brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
+}
+.pipe-stat span { font-size: .72rem; color: rgba(245,241,235,.4); text-transform: uppercase; letter-spacing: .08em; }
+
+/* Columnas Kanban */
+.pipeline-board {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start;
+}
+.pipeline-col {
+  background: var(--cream-2); border: 1px solid var(--line);
+  border-radius: 12px; overflow: hidden; min-height: 300px;
+}
+.pipeline-col-head {
+  padding: 14px 16px 12px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 10px; position: relative;
+}
+.pipeline-col-head::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.col-01 .pipeline-col-head::before { background: #8B5CF6; }
+.col-02 .pipeline-col-head::before { background: #A855F7; }
+.col-03 .pipeline-col-head::before { background: #EC4899; }
+.col-04 .pipeline-col-head::before { background: #F97316; }
+.col-05 .pipeline-col-head::before { background: #16a34a; }
+
+.pipeline-col-num {
+  font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-weight: 500;
+  color: var(--ink-mute);
+}
+.pipeline-col-title { font-size: .84rem; font-weight: 700; color: var(--ink); flex: 1; }
+.pipeline-col-count {
+  font-size: .72rem; font-weight: 700; color: var(--ink-soft);
+  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.pipeline-cards { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Tarjeta de proyecto en pipeline */
+.pipe-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+  padding: 14px 14px 12px; cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+}
+.pipe-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.pipe-card-service {
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+}
+.pipe-card-dot { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+.pipe-card-name { font-size: .9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.pipe-card-date { font-size: .75rem; color: var(--ink-mute); }
+.pipe-card-status { margin-top: 10px; display: flex; align-items: center; justify-content: space-between; }
+.pipe-card-move {
+  font-size: .7rem; font-weight: 600; color: var(--ink-soft);
+  background: var(--cream); border: 1px solid var(--line); border-radius: 999px;
+  padding: 3px 10px; cursor: pointer; transition: .2s;
+  font-family: inherit;
+}
+.pipe-card-move:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+/* Descripción de cada paso */
+.pipeline-step-desc {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 20px 24px; margin-bottom: 20px;
+}
+.pipeline-step-desc h3 { margin: 0 0 4px; font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-weight: 500; }
+.pipeline-step-desc p { margin: 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* Añadir proyecto manual */
+.add-project-form {
+  background: var(--cream-2); border: 1px dashed var(--line-2); border-radius: 8px;
+  padding: 14px; margin: 10px;
+}
+.add-project-form input, .add-project-form select {
+  width: 100%; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 6px;
+  font-family: inherit; font-size: .85rem; background: var(--white); color: var(--ink);
+  margin-bottom: 8px;
+}
+.add-project-form input:focus, .add-project-form select:focus {
+  outline: none; border-color: var(--ink);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .pipeline-board { grid-template-columns: 1fr 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .sidebar { width: 200px; }
+  .main { margin-left: 200px; }
+  .pipeline-board { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<!-- Login -->
+<!-- ══════════════════════════════ LOGIN ══════════════════════════════ -->
 <div id="loginScreen">
   <div class="login-box">
-    <div class="login-logo">Maison Aura</div>
+    <!-- Logo SVG fiel al logo negro del estudio -->
+    <svg class="login-logo-svg" viewBox="0 0 200 96" width="180" height="86" xmlns="http://www.w3.org/2000/svg" aria-label="Maison Aura Studio">
+      <text x="1" y="20" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="17" font-weight="300" fill="#0D0B09" letter-spacing="0.4">Maison</text>
+      <text x="0" y="58" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="42" font-weight="900" fill="#0D0B09" letter-spacing="-1.5">Aura</text>
+      <text x="1" y="78" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="21" font-weight="700" fill="#0D0B09" letter-spacing="0.1">Studio</text>
+      <rect x="1" y="82" width="118" height="11" rx="1" fill="#0D0B09"/>
+      <text x="5" y="90" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="4.5" font-weight="700" fill="#F5F1EB" letter-spacing="0.9">SEO · WEB DESIGN · DIGITALISATION</text>
+    </svg>
+
     <div class="login-sub">Panel de administración</div>
-    <input type="password" id="tokenInput" placeholder="Token de acceso" autocomplete="current-password" />
-    <button id="loginBtn">Entrar</button>
-    <div class="login-err" id="loginErr"></div>
+
+    <div class="token-wrap">
+      <input type="password" id="tokenInput" placeholder="Token de acceso" autocomplete="current-password" />
+      <button class="token-eye" id="eyeBtn" type="button" aria-label="Mostrar contraseña">
+        <!-- icono ojo abierto -->
+        <svg id="eyeOpen" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <!-- icono ojo tachado -->
+        <svg id="eyeClosed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+          <line x1="1" y1="1" x2="23" y2="23"/>
+        </svg>
+      </button>
+    </div>
+
+    <button class="login-btn" id="loginBtn">Entrar</button>
+    <div class="login-err" id="loginErr" role="alert"></div>
+
+    <a class="login-back" href="/">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver a la página de inicio
+    </a>
   </div>
 </div>
 
-<!-- App -->
+<!-- ══════════════════════════════ APP ════════════════════════════════ -->
 <div id="app">
   <nav class="sidebar">
     <div class="sidebar-logo">
-      Maison Aura
-      <small>Panel admin</small>
+      <div class="sidebar-logo-text">Maison <span>Aura</span></div>
+      <small>Panel Admin · 2026</small>
     </div>
+
     <div class="sidebar-nav">
-      <button class="nav-item active" data-page="sessions">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div class="nav-section-label">Gestión</div>
+      <button class="nav-item active" data-page="pipeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Pipeline estrategia
+        <span class="nav-badge" id="badgePipeline">0</span>
+      </button>
+      <button class="nav-item" data-page="sessions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Sesiones
+        <span class="nav-badge" id="badgeSessions">0</span>
       </button>
       <button class="nav-item" data-page="messages">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         Mensajes
+        <span class="nav-badge" id="badgeMessages" style="display:none">0</span>
       </button>
+      <div class="nav-section-label">Contenido</div>
       <button class="nav-item" data-page="photos">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
         Portfolio
       </button>
     </div>
+
     <div class="sidebar-bottom">
-      <a href="/" target="_blank">← Ver web</a>
+      <button class="sidebar-back" onclick="window.open('/','_blank')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Ver página de inicio
+      </button>
+      <div class="sidebar-version">Maison Aura Studio v2.0</div>
     </div>
   </nav>
 
   <main class="main">
 
-    <!-- Sesiones -->
-    <div class="page active" id="page-sessions">
+    <!-- ════════════ PIPELINE / ESTRATEGIA ════════════ -->
+    <div class="page active" id="page-pipeline">
       <div class="page-header">
-        <div>
+        <div class="page-header-text">
+          <h1>Pipeline de estrategia</h1>
+          <p>Sigue el avance de cada proyecto en las 5 fases del proceso</p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn-sm" onclick="showAddProject()">+ Añadir proyecto</button>
+          <button class="btn-sm" onclick="loadPipeline()">↺ Actualizar</button>
+        </div>
+      </div>
+
+      <!-- Resumen rápido -->
+      <div class="pipeline-intro">
+        <div class="pipeline-intro-text">
+          <h2>Estado del estudio</h2>
+          <p>Proyectos activos a <span id="pipelineDate"></span></p>
+        </div>
+        <div class="pipeline-intro-stats">
+          <div class="pipe-stat"><b id="pipeTotal">0</b><span>proyectos</span></div>
+          <div class="pipe-stat"><b id="pipeActivos">0</b><span>activos</span></div>
+          <div class="pipe-stat"><b id="pipeLanzados">0</b><span>lanzados</span></div>
+        </div>
+      </div>
+
+      <!-- Tablero Kanban con las 5 fases -->
+      <div class="pipeline-board" id="pipelineBoard">
+        <!-- Columna 01 — Escuchar -->
+        <div class="pipeline-col col-01" id="col-escuchar">
+          <div class="pipeline-col-head">
+            <span class="pipeline-col-num">01</span>
+            <span class="pipeline-col-title">Escuchar</span>
+            <span class="pipeline-col-count" id="cnt-escuchar">0</span>
+          </div>
+          <div class="pipeline-cards" id="cards-escuchar">
+            <div class="loading" style="font-size:.82rem;padding:20px 12px">Cargando…</div>
+          </div>
+        </div>
+        <!-- Columna 02 — Estrategia -->
+        <div class="pipeline-col col-02" id="col-estrategia">
+          <div class="pipeline-col-head">
+            <span class="pipeline-col-num">02</span>
+            <span class="pipeline-col-title">Estrategia</span>
+            <span class="pipeline-col-count" id="cnt-estrategia">0</span>
+          </div>
+          <div class="pipeline-cards" id="cards-estrategia"></div>
+        </div>
+        <!-- Columna 03 — Diseñar -->
+        <div class="pipeline-col col-03" id="col-disenar">
+          <div class="pipeline-col-head">
+            <span class="pipeline-col-num">03</span>
+            <span class="pipeline-col-title">Diseñar</span>
+            <span class="pipeline-col-count" id="cnt-disenar">0</span>
+          </div>
+          <div class="pipeline-cards" id="cards-disenar"></div>
+        </div>
+        <!-- Columna 04 — Desarrollar -->
+        <div class="pipeline-col col-04" id="col-desarrollar">
+          <div class="pipeline-col-head">
+            <span class="pipeline-col-num">04</span>
+            <span class="pipeline-col-title">Desarrollar</span>
+            <span class="pipeline-col-count" id="cnt-desarrollar">0</span>
+          </div>
+          <div class="pipeline-cards" id="cards-desarrollar"></div>
+        </div>
+        <!-- Columna 05 — Lanzar & Crecer -->
+        <div class="pipeline-col col-05" id="col-lanzar">
+          <div class="pipeline-col-head">
+            <span class="pipeline-col-num">05</span>
+            <span class="pipeline-col-title">Lanzar & Crecer</span>
+            <span class="pipeline-col-count" id="cnt-lanzar">0</span>
+          </div>
+          <div class="pipeline-cards" id="cards-lanzar"></div>
+        </div>
+      </div>
+
+      <!-- Formulario añadir proyecto (oculto por defecto) -->
+      <div id="addProjectPanel" style="display:none; margin-top:20px;">
+        <div class="card">
+          <div class="card-head"><h2>Añadir proyecto manualmente</h2></div>
+          <div style="padding:20px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:end;">
+            <div>
+              <label style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:6px">Cliente / Proyecto</label>
+              <input type="text" id="npName" placeholder="Nombre del cliente o proyecto" style="width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--white);color:var(--ink)" />
+            </div>
+            <div>
+              <label style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:6px">Servicio</label>
+              <select id="npService" style="width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--white);color:var(--ink)">
+                <option value="web-medida">Diseño web a medida</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="branding">Branding</option>
+                <option value="marketing">Marketing digital</option>
+                <option value="seo">SEO</option>
+                <option value="mantenimiento">Mantenimiento</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:6px">Fase inicial</label>
+              <select id="npPhase" style="width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--white);color:var(--ink)">
+                <option value="escuchar">01 · Escuchar</option>
+                <option value="estrategia">02 · Estrategia</option>
+                <option value="disenar">03 · Diseñar</option>
+                <option value="desarrollar">04 · Desarrollar</option>
+                <option value="lanzar">05 · Lanzar & Crecer</option>
+              </select>
+            </div>
+            <div style="grid-column:1/-1;display:flex;gap:10px;justify-content:flex-end">
+              <button class="btn-sm" onclick="document.getElementById('addProjectPanel').style.display='none'">Cancelar</button>
+              <button class="btn-sm primary" onclick="addProject()">Crear proyecto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════ SESIONES ════════════ -->
+    <div class="page" id="page-sessions">
+      <div class="page-header">
+        <div class="page-header-text">
           <h1>Sesiones de diagnóstico</h1>
           <p>Solicitudes de sesión gratuita recibidas</p>
         </div>
-        <button class="filter-btn" onclick="loadSessions()">↺ Actualizar</button>
+        <div class="page-header-actions">
+          <button class="btn-sm" onclick="loadSessions()">↺ Actualizar</button>
+        </div>
       </div>
       <div class="stats-row" id="sessionsStats">
         <div class="stat-card"><b id="sPendientes">–</b><span>Pendientes</span></div>
@@ -264,38 +656,38 @@ tr:hover td { background: var(--ivory); }
       </div>
     </div>
 
-    <!-- Mensajes -->
+    <!-- ════════════ MENSAJES ════════════ -->
     <div class="page" id="page-messages">
       <div class="page-header">
-        <div>
+        <div class="page-header-text">
           <h1>Mensajes de contacto</h1>
           <p>Formulario de contacto y solicitudes de presupuesto</p>
         </div>
-        <button class="filter-btn" onclick="loadMessages()">↺ Actualizar</button>
+        <div class="page-header-actions">
+          <button class="btn-sm" onclick="loadMessages()">↺ Actualizar</button>
+        </div>
       </div>
       <div class="card">
-        <div class="card-head">
-          <h2>Todos los mensajes</h2>
-        </div>
+        <div class="card-head"><h2>Todos los mensajes</h2></div>
         <div id="messagesTable"><div class="loading">Cargando mensajes…</div></div>
       </div>
     </div>
 
-    <!-- Portfolio / Fotos -->
+    <!-- ════════════ PORTFOLIO ════════════ -->
     <div class="page" id="page-photos">
       <div class="page-header">
-        <div>
+        <div class="page-header-text">
           <h1>Portfolio</h1>
-          <p>Imágenes del portfolio en la web</p>
+          <p>Imágenes visibles en la sección de proyectos</p>
         </div>
       </div>
       <div class="card">
         <div class="card-head"><h2>Subir imagen</h2></div>
         <div class="upload-area" id="uploadArea">
           <input type="file" id="photoFile" accept="image/jpeg,image/png,image/webp" />
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          <p style="margin:0;font-size:.9rem">Haz clic o arrastra una imagen aquí</p>
-          <p style="margin:4px 0 0;font-size:.78rem;color:var(--charcoal-s)">JPG, PNG o WebP · máx. 8 MB</p>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 12px;opacity:.4"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p style="margin:0;font-size:.9rem;font-weight:600">Haz clic o arrastra aquí</p>
+          <p style="margin:5px 0 0;font-size:.78rem;color:var(--ink-mute)">JPG, PNG o WebP · máx. 8 MB</p>
         </div>
         <div class="photos-grid" id="photosGrid">
           <div class="loading">Cargando portfolio…</div>
@@ -306,45 +698,56 @@ tr:hover td { background: var(--ivory); }
   </main>
 </div>
 
-<div id="toast"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
 'use strict';
-
 let TOKEN = '';
 
-/* ── Login ── */
+/* ═══════════════════ LOGIN ═══════════════════ */
 const loginScreen = document.getElementById('loginScreen');
 const app         = document.getElementById('app');
 const tokenInput  = document.getElementById('tokenInput');
 const loginBtn    = document.getElementById('loginBtn');
 const loginErr    = document.getElementById('loginErr');
 
+/* Mostrar / ocultar contraseña */
+document.getElementById('eyeBtn').addEventListener('click', () => {
+  const isPass = tokenInput.type === 'password';
+  tokenInput.type = isPass ? 'text' : 'password';
+  document.getElementById('eyeOpen').style.display   = isPass ? 'none' : '';
+  document.getElementById('eyeClosed').style.display = isPass ? '' : 'none';
+  document.getElementById('eyeBtn').setAttribute('aria-label', isPass ? 'Ocultar contraseña' : 'Mostrar contraseña');
+});
+
 tokenInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') loginBtn.click(); });
 
 loginBtn.addEventListener('click', async () => {
   const t = tokenInput.value.trim();
-  if (!t) { loginErr.textContent = 'Introduce el token.'; return; }
+  if (!t) { loginErr.textContent = 'Introduce el token de acceso.'; return; }
   loginBtn.textContent = 'Verificando…';
+  loginErr.textContent = '';
   try {
     const res = await fetch('/api/admin/sessions', { headers: { 'x-admin-token': t } });
     if (res.ok) {
       TOKEN = t;
       loginScreen.style.display = 'none';
-      app.style.display = 'block';
+      app.style.display = 'flex';
+      loadPipeline();
       loadSessions();
+      document.getElementById('pipelineDate').textContent = new Date().toLocaleDateString('es-ES', { day:'numeric', month:'long', year:'numeric' });
     } else {
-      loginErr.textContent = 'Token incorrecto.';
+      loginErr.textContent = 'Token incorrecto. Verifica e inténtalo de nuevo.';
     }
-  } catch { loginErr.textContent = 'Error de conexión.'; }
+  } catch { loginErr.textContent = 'Error de conexión. ¿Está el servidor activo?'; }
   loginBtn.textContent = 'Entrar';
 });
 
-/* ── Navegación ── */
+/* ═══════════════════ NAVEGACIÓN ═══════════════════ */
 document.querySelectorAll('.nav-item[data-page]').forEach((btn) => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.nav-item').forEach((b) => b.classList.remove('active'));
-    document.querySelectorAll('.page').forEach((p) => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('page-' + btn.dataset.page).classList.add('active');
     if (btn.dataset.page === 'messages') loadMessages();
@@ -352,24 +755,160 @@ document.querySelectorAll('.nav-item[data-page]').forEach((btn) => {
   });
 });
 
-/* ── Utils ── */
+/* ═══════════════════ UTILS ═══════════════════ */
 function esc(s) {
-  return String(s ?? '').replace(/[&<>"']/g, (c) =>
+  return String(s ?? '').replace(/[&<>"']/g, c =>
     ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 }
 function fmtDate(str) {
   if (!str) return '—';
   const d = new Date(str + (str.length === 10 ? 'T00:00:00' : ''));
-  return d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' });
+  return d.toLocaleDateString('es-ES', { day:'2-digit', month:'short', year:'numeric' });
 }
-function toast(msg, gold = false) {
+function toast(msg, ok = false) {
   const t = document.getElementById('toast');
   t.textContent = msg;
-  t.className = 'show' + (gold ? ' gold' : '');
-  setTimeout(() => t.className = '', 2800);
+  t.className = 'show' + (ok ? ' ok' : '');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.className = '', 2800);
+}
+function svcLabel(id) {
+  const map = {
+    'web-medida':'Diseño web a medida','ecommerce':'E-commerce','branding':'Branding',
+    'marketing':'Marketing digital','seo':'SEO','mantenimiento':'Mantenimiento & soporte'
+  };
+  return map[id] || id || '—';
+}
+const PHASE_ORDER = ['escuchar','estrategia','disenar','desarrollar','lanzar'];
+const PHASE_LABEL = { escuchar:'Escuchar', estrategia:'Estrategia', disenar:'Diseñar', desarrollar:'Desarrollar', lanzar:'Lanzar & Crecer' };
+const PHASE_COLOR = { escuchar:'#8B5CF6', estrategia:'#A855F7', disenar:'#EC4899', desarrollar:'#F97316', lanzar:'#16a34a' };
+
+/* ═══════════════════ PIPELINE / ESTRATEGIA ═══════════════════ */
+// Proyectos del pipeline se almacenan en localStorage para persistencia local
+// (si quisiéramos backend habría que añadir un endpoint)
+function getPipeline() {
+  try { return JSON.parse(localStorage.getItem('ma_pipeline') || '[]'); } catch { return []; }
+}
+function savePipeline(data) {
+  localStorage.setItem('ma_pipeline', JSON.stringify(data));
 }
 
-/* ── Sesiones ── */
+function loadPipeline() {
+  const projects = getPipeline();
+
+  // Actualizar contadores del sidebar
+  document.getElementById('badgePipeline').textContent = projects.length;
+
+  // Actualizar stats del header
+  const activos  = projects.filter(p => p.phase !== 'lanzar').length;
+  const lanzados = projects.filter(p => p.phase === 'lanzar').length;
+  document.getElementById('pipeTotal').textContent   = projects.length;
+  document.getElementById('pipeActivos').textContent  = activos;
+  document.getElementById('pipeLanzados').textContent = lanzados;
+
+  // Limpiar columnas
+  PHASE_ORDER.forEach(phase => {
+    document.getElementById('cards-' + phase).innerHTML = '';
+    document.getElementById('cnt-' + phase).textContent = '0';
+  });
+
+  if (!projects.length) {
+    document.getElementById('cards-escuchar').innerHTML = `
+      <div style="padding:16px 12px;text-align:center;color:var(--ink-mute);font-size:.82rem;line-height:1.6">
+        Sin proyectos todavía.<br>Pulsa <b>+ Añadir</b> para crear el primero.
+      </div>`;
+    return;
+  }
+
+  // Distribuir en columnas
+  const byPhase = {};
+  PHASE_ORDER.forEach(ph => byPhase[ph] = []);
+  projects.forEach(p => { if (byPhase[p.phase]) byPhase[p.phase].push(p); });
+
+  PHASE_ORDER.forEach(phase => {
+    const colCards = document.getElementById('cards-' + phase);
+    const cnt = byPhase[phase].length;
+    document.getElementById('cnt-' + phase).textContent = cnt;
+
+    if (!cnt) {
+      colCards.innerHTML = `<div style="padding:12px;text-align:center;font-size:.78rem;color:var(--ink-mute);opacity:.6">Sin proyectos</div>`;
+      return;
+    }
+
+    colCards.innerHTML = byPhase[phase].map(p => {
+      const phIdx = PHASE_ORDER.indexOf(p.phase);
+      const canPrev = phIdx > 0;
+      const canNext = phIdx < PHASE_ORDER.length - 1;
+      return `
+        <div class="pipe-card" data-id="${esc(p.id)}">
+          <div class="pipe-card-service">
+            <span class="pipe-card-dot" style="background:${PHASE_COLOR[p.phase]}"></span>
+            ${esc(svcLabel(p.service))}
+          </div>
+          <div class="pipe-card-name">${esc(p.name)}</div>
+          <div class="pipe-card-date">${fmtDate(p.createdAt)}</div>
+          <div class="pipe-card-status">
+            <div style="display:flex;gap:5px">
+              ${canPrev ? `<button class="pipe-card-move" data-id="${esc(p.id)}" data-dir="-1" title="Fase anterior">← Atrás</button>` : ''}
+              ${canNext ? `<button class="pipe-card-move" data-id="${esc(p.id)}" data-dir="1" title="Siguiente fase">Avanzar →</button>` : '<span style="font-size:.7rem;color:var(--ok);font-weight:700">✓ Completado</span>'}
+            </div>
+            <button class="pipe-card-move" data-id="${esc(p.id)}" data-dir="del" style="color:var(--err);border-color:var(--err-bg)" title="Eliminar">✕</button>
+          </div>
+        </div>`;
+    }).join('');
+  });
+}
+
+// Delegar clics en el tablero
+document.getElementById('pipelineBoard').addEventListener('click', e => {
+  const btn = e.target.closest('[data-dir]');
+  if (!btn) return;
+  const id  = btn.dataset.id;
+  const dir = btn.dataset.dir;
+  let projects = getPipeline();
+
+  if (dir === 'del') {
+    if (!confirm('¿Eliminar este proyecto del pipeline?')) return;
+    projects = projects.filter(p => p.id !== id);
+    savePipeline(projects);
+    toast('Proyecto eliminado.');
+    loadPipeline();
+    return;
+  }
+
+  const p = projects.find(x => x.id === id);
+  if (!p) return;
+  const idx = PHASE_ORDER.indexOf(p.phase);
+  const newIdx = idx + parseInt(dir, 10);
+  if (newIdx < 0 || newIdx >= PHASE_ORDER.length) return;
+  p.phase = PHASE_ORDER[newIdx];
+  savePipeline(projects);
+  toast(`Proyecto movido a "${PHASE_LABEL[p.phase]}" ✓`, true);
+  loadPipeline();
+});
+
+function showAddProject() {
+  const panel = document.getElementById('addProjectPanel');
+  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+  if (panel.style.display !== 'none') document.getElementById('npName').focus();
+}
+
+function addProject() {
+  const name    = document.getElementById('npName').value.trim();
+  const service = document.getElementById('npService').value;
+  const phase   = document.getElementById('npPhase').value;
+  if (!name) { toast('Introduce el nombre del cliente o proyecto.'); return; }
+
+  const projects = getPipeline();
+  projects.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2,6), name, service, phase, createdAt: new Date().toISOString() });
+  savePipeline(projects);
+  toast(`Proyecto "${name}" añadido ✓`, true);
+  document.getElementById('npName').value = '';
+  document.getElementById('addProjectPanel').style.display = 'none';
+  loadPipeline();
+}
+
+/* ═══════════════════ SESIONES ═══════════════════ */
 let allSessions = [];
 let sessionFilter = '';
 
@@ -378,11 +917,18 @@ async function loadSessions() {
     const res = await fetch('/api/admin/sessions', { headers: { 'x-admin-token': TOKEN } });
     allSessions = await res.json();
     renderSessions();
-    updateStats();
-  } catch { document.getElementById('sessionsTable').innerHTML = '<div class="empty-state"><p>Error al cargar sesiones.</p></div>'; }
+    updateSessionStats();
+    // Badge sidebar
+    const pending = allSessions.filter(s => s.status === 'pendiente').length;
+    const badge = document.getElementById('badgeSessions');
+    badge.textContent = pending;
+    badge.style.display = pending ? '' : 'none';
+  } catch {
+    document.getElementById('sessionsTable').innerHTML = '<div class="empty-state"><p>Error al cargar sesiones.</p></div>';
+  }
 }
 
-function updateStats() {
+function updateSessionStats() {
   document.getElementById('sPendientes').textContent  = allSessions.filter(s=>s.status==='pendiente').length;
   document.getElementById('sConfirmadas').textContent = allSessions.filter(s=>s.status==='confirmada').length;
   document.getElementById('sCompletadas').textContent = allSessions.filter(s=>s.status==='completada').length;
@@ -390,17 +936,20 @@ function updateStats() {
 }
 
 function renderSessions() {
-  const filtered = sessionFilter ? allSessions.filter(s => s.status === sessionFilter) : allSessions;
+  const filtered = sessionFilter ? allSessions.filter(s=>s.status===sessionFilter) : allSessions;
   const el = document.getElementById('sessionsTable');
-  if (!filtered.length) { el.innerHTML = '<div class="empty-state"><p>No hay sesiones con este filtro.</p></div>'; return; }
+  if (!filtered.length) {
+    el.innerHTML = '<div class="empty-state"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg><p>No hay sesiones con este filtro.</p></div>';
+    return;
+  }
   el.innerHTML = `<table>
     <thead><tr>
       <th>Nombre</th><th>Email</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th><th>Notas</th>
     </tr></thead>
     <tbody>
     ${filtered.map(s => `<tr>
-      <td>${esc(s.name)}</td>
-      <td><a href="mailto:${esc(s.email)}">${esc(s.email)}</a></td>
+      <td style="font-weight:600">${esc(s.name)}</td>
+      <td><a href="mailto:${esc(s.email)}" style="color:var(--violet)">${esc(s.email)}</a></td>
       <td style="max-width:160px;white-space:normal">${esc(svcLabel(s.service))}</td>
       <td>${fmtDate(s.date)}</td>
       <td>${esc(s.time)}</td>
@@ -410,17 +959,9 @@ function renderSessions() {
             `<option value="${st}"${s.status===st?' selected':''}>${st}</option>`).join('')}
         </select>
       </td>
-      <td style="max-width:180px;white-space:normal;font-size:.83rem;color:var(--charcoal-s)">${esc(s.notes||'—')}</td>
+      <td style="max-width:200px;white-space:normal;font-size:.82rem;color:var(--ink-soft)">${esc(s.notes||'—')}</td>
     </tr>`).join('')}
     </tbody></table>`;
-}
-
-function svcLabel(id) {
-  const map = {
-    'web-medida':'Diseño web a medida','ecommerce':'E-commerce','branding':'Branding',
-    'marketing':'Marketing digital','seo':'SEO','mantenimiento':'Mantenimiento & soporte'
-  };
-  return map[id] || id;
 }
 
 document.getElementById('sessionFilters').addEventListener('click', (e) => {
@@ -432,7 +973,7 @@ document.getElementById('sessionFilters').addEventListener('click', (e) => {
   renderSessions();
 });
 
-/* ── Mensajes ── */
+/* ═══════════════════ MENSAJES ═══════════════════ */
 let allMessages = [];
 
 async function loadMessages() {
@@ -440,33 +981,39 @@ async function loadMessages() {
     const res = await fetch('/api/admin/messages', { headers: { 'x-admin-token': TOKEN } });
     allMessages = await res.json();
     renderMessages();
-  } catch { document.getElementById('messagesTable').innerHTML = '<div class="empty-state"><p>Error al cargar mensajes.</p></div>'; }
+    // Badge sidebar
+    const nuevos = allMessages.filter(m => m.status === 'nuevo').length;
+    const badge = document.getElementById('badgeMessages');
+    badge.textContent = nuevos;
+    badge.style.display = nuevos ? '' : 'none';
+  } catch {
+    document.getElementById('messagesTable').innerHTML = '<div class="empty-state"><p>Error al cargar mensajes.</p></div>';
+  }
 }
 
 function renderMessages() {
   const el = document.getElementById('messagesTable');
-  if (!allMessages.length) { el.innerHTML = '<div class="empty-state"><p>No hay mensajes todavía.</p></div>'; return; }
+  if (!allMessages.length) {
+    el.innerHTML = '<div class="empty-state"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><p>No hay mensajes todavía.</p></div>';
+    return;
+  }
   el.innerHTML = `<table>
-    <thead><tr>
-      <th>Nombre</th><th>Contacto</th><th>Mensaje</th><th>Fecha</th><th>Estado</th>
-    </tr></thead>
+    <thead><tr><th>Nombre</th><th>Contacto</th><th>Mensaje</th><th>Fecha</th><th>Estado</th></tr></thead>
     <tbody>
     ${allMessages.map(m => `<tr>
-      <td>${esc(m.name)}</td>
-      <td class="msg-contact">${esc(m.contact)}</td>
+      <td style="font-weight:600">${esc(m.name)}</td>
+      <td class="msg-contact" style="color:var(--violet)">${esc(m.contact)}</td>
       <td class="msg-body">${esc(m.message)}</td>
       <td>${fmtDate(m.createdAt)}</td>
-      <td>
-        <select class="status-select" data-id="${esc(m.id)}" data-type="message">
-          ${['nuevo','leído','respondido'].map(st =>
-            `<option value="${st}"${m.status===st?' selected':''}>${st}</option>`).join('')}
-        </select>
-      </td>
+      <td><select class="status-select" data-id="${esc(m.id)}" data-type="message">
+        ${['nuevo','leído','respondido'].map(st =>
+          `<option value="${st}"${m.status===st?' selected':''}>${st}</option>`).join('')}
+      </select></td>
     </tr>`).join('')}
     </tbody></table>`;
 }
 
-/* ── Cambio de estado (delegado) ── */
+/* ═══════════════════ CAMBIO DE ESTADO (delegado) ═══════════════ */
 document.addEventListener('change', async (e) => {
   const sel = e.target.closest('.status-select');
   if (!sel) return;
@@ -475,24 +1022,28 @@ document.addEventListener('change', async (e) => {
   const endpoint = type === 'session' ? `/api/admin/sessions/${id}` : `/api/admin/messages/${id}`;
   try {
     const res = await fetch(endpoint, {
-      method: 'PATCH', headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
       body: JSON.stringify({ status })
     });
     if (res.ok) {
       toast('Estado actualizado ✓', true);
-      if (type === 'session') { const s = allSessions.find(x=>x.id===id); if(s) s.status=status; updateStats(); }
+      if (type === 'session') { const s = allSessions.find(x=>x.id===id); if(s) s.status=status; updateSessionStats(); }
       else { const m = allMessages.find(x=>x.id===id); if(m) m.status=status; }
-    } else toast('Error al actualizar.');
+    } else toast('Error al actualizar el estado.');
   } catch { toast('Error de conexión.'); }
 });
 
-/* ── Fotos ── */
+/* ═══════════════════ FOTOS ═══════════════════ */
 async function loadPhotos() {
   try {
     const res = await fetch('/api/admin/photos', { headers: { 'x-admin-token': TOKEN } });
     const photos = await res.json();
     const grid = document.getElementById('photosGrid');
-    if (!photos.length) { grid.innerHTML = '<div class="empty-state" style="padding:20px"><p>No hay imágenes. Sube la primera.</p></div>'; return; }
+    if (!photos.length) {
+      grid.innerHTML = '<div class="empty-state" style="padding:20px"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><p>Sin imágenes. Sube la primera arriba.</p></div>';
+      return;
+    }
     grid.innerHTML = photos.map(p => `
       <div class="photo-thumb">
         <img src="${esc(p.url)}" alt="${esc(p.name)}" loading="lazy" />
@@ -509,15 +1060,14 @@ document.getElementById('photosGrid').addEventListener('click', async (e) => {
     method: 'DELETE', headers: { 'x-admin-token': TOKEN }
   });
   if (res.ok) { toast('Imagen eliminada.'); loadPhotos(); }
-  else toast('No se pudo eliminar.');
+  else toast('No se pudo eliminar la imagen.');
 });
 
 const uploadArea = document.getElementById('uploadArea');
 const photoFile  = document.getElementById('photoFile');
-
 uploadArea.addEventListener('click', () => photoFile.click());
-uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('drag'); });
-uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag'));
+uploadArea.addEventListener('dragover',  (e) => { e.preventDefault(); uploadArea.classList.add('drag'); });
+uploadArea.addEventListener('dragleave', ()  => uploadArea.classList.remove('drag'));
 uploadArea.addEventListener('drop', (e) => {
   e.preventDefault(); uploadArea.classList.remove('drag');
   const file = e.dataTransfer.files[0];
@@ -526,7 +1076,7 @@ uploadArea.addEventListener('drop', (e) => {
 photoFile.addEventListener('change', () => { if (photoFile.files[0]) uploadPhoto(photoFile.files[0]); });
 
 async function uploadPhoto(file) {
-  if (!file.type.startsWith('image/')) { toast('Solo se admiten imágenes.'); return; }
+  if (!file.type.startsWith('image/')) { toast('Solo se admiten archivos de imagen.'); return; }
   const reader = new FileReader();
   reader.onload = async () => {
     try {
@@ -536,9 +1086,9 @@ async function uploadPhoto(file) {
         body: JSON.stringify({ name: file.name, data: reader.result, type: file.type })
       });
       const data = await res.json();
-      if (res.ok && data.ok) { toast('Imagen subida ✓', true); loadPhotos(); }
+      if (res.ok && data.ok) { toast('Imagen subida correctamente ✓', true); loadPhotos(); }
       else toast(data.error || 'Error al subir la imagen.');
-    } catch { toast('Error de conexión.'); }
+    } catch { toast('Error de conexión al subir.'); }
   };
   reader.readAsDataURL(file);
 }
