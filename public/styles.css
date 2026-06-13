@@ -360,27 +360,29 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 /* ========================== trust strip =========================== */
 .trust {
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  background: var(--white);
+  background: var(--white) !important;
 }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .trust-item {
-  padding: 28px 22px; text-align: center;
+  padding: 32px 28px; text-align: center;
   border-right: 1px solid var(--line);
 }
 .trust-item:last-child { border-right: 0; }
 .trust-item b {
-  display: block; font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 500;
+  display: block; font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 500; line-height: 1; margin-bottom: 8px;
   background: var(--brand-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.trust-item span { font-size: .85rem; color: var(--ink-soft); }
+.trust-item span { font-size: .9rem; color: var(--ink-soft); font-weight: 500; }
 
 /* ========================== secciones generales =================== */
 .section { padding: clamp(68px, 9vw, 116px) 0; background: var(--cream); }
 .section-head { max-width: 640px; margin: 0 0 54px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head p { color: var(--ink-soft); margin: 18px 0 0; font-size: 1.08rem; }
-section:nth-of-type(even) { background: var(--white); }
+/* Alternancia suave — no afecta a secciones con fondo propio */
+section:nth-of-type(even):not(.cta-banner):not(.proceso):not(.trust) { background: var(--white); }
 
 /* ====================== POR QUÉ NOSOTROS ======================= */
 .por-que { background: var(--cream-2) !important; }
@@ -614,43 +616,68 @@ section:nth-of-type(even) { background: var(--white); }
 .testimonios-cta { text-align: center; margin-top: 40px; }
 
 /* ========================== banner CTA =========================== */
+/* !important necesario: section:nth-of-type(even) tiene más especificidad que .cta-banner */
 .cta-banner {
   position: relative; overflow: hidden;
-  background: var(--ink);
+  background: var(--ink) !important;
 }
 .cta-banner-bg { display: none; }
-.cta-banner::after {
-  content: ""; position: absolute; inset: 0; z-index: 0;
-  background: radial-gradient(ellipse at 80% 50%, rgba(139,92,246,.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 50%, rgba(249,115,22,.06) 0%, transparent 60%);
+.cta-banner::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 85% 50%, rgba(139,92,246,.1) 0%, transparent 55%),
+              radial-gradient(ellipse at 15% 50%, rgba(249,115,22,.07) 0%, transparent 55%);
 }
 .cta-banner-inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
   padding: clamp(60px, 8vw, 100px) 0; position: relative; z-index: 1;
 }
-.cta-banner-content .eyebrow { color: rgba(245,241,235,.4); background: none; -webkit-text-fill-color: initial; }
-.cta-banner-content h2 { color: var(--cream); }
+.cta-banner-content .eyebrow {
+  font-size: .73rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 700;
+  color: rgba(245,241,235,.35); margin: 0 0 18px;
+  background: none; -webkit-text-fill-color: rgba(245,241,235,.35);
+}
+.cta-banner-content h2 { color: var(--cream) !important; }
 .cta-banner-content .display em {
   background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.cta-banner-content p { color: rgba(245,241,235,.6); font-size: 1.08rem; margin: 0 0 34px; max-width: 42ch; line-height: 1.65; }
+.cta-banner-content p {
+  color: rgba(245,241,235,.55); font-size: 1.05rem; margin: 0 0 34px; max-width: 42ch; line-height: 1.7;
+}
 .cta-banner-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.cta-banner .btn-gold { background: var(--cream); color: var(--ink); }
+.cta-banner .btn-gold { background: var(--cream); color: var(--ink); border: none; }
 .cta-banner .btn-gold:hover { background: var(--white); transform: translateY(-2px); }
 
-.cta-banner-visual { position: relative; display: flex; justify-content: center; }
-.cta-orb { width: 280px; height: 280px; border-radius: 50%; background: var(--brand-gradient); opacity: .08; filter: blur(60px); position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-.cta-stats { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; width: 100%; }
+/* Visual derecho: cards de stats */
+.cta-banner-visual { position: relative; display: flex; align-items: center; justify-content: flex-end; }
+.cta-orb {
+  width: 300px; height: 300px; border-radius: 50%;
+  background: var(--brand-gradient); opacity: .06; filter: blur(70px);
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.cta-stats {
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; z-index: 1; width: 100%;
+}
 .cta-stat {
-  background: rgba(245,241,235,.04); border: 1px solid rgba(245,241,235,.1);
-  border-radius: var(--r-md); padding: 20px 24px; display: flex; align-items: center; gap: 16px;
+  background: rgba(245,241,235,.05); border: 1px solid rgba(245,241,235,.1);
+  border-radius: 14px; padding: 22px 28px;
+  display: flex; align-items: center; gap: 20px;
+  transition: background .2s;
 }
+.cta-stat:hover { background: rgba(245,241,235,.08); }
+.cta-stat-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex: none;
+  background: rgba(245,241,235,.07); border: 1px solid rgba(245,241,235,.12);
+  display: grid; place-items: center; font-size: 1.2rem;
+}
+.cta-stat-body { display: flex; flex-direction: column; gap: 3px; }
 .cta-stat b {
-  font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 500;
-  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  line-height: 1; min-width: 70px;
+  font-family: "Cormorant Garamond", serif; font-size: 2.2rem; font-weight: 500;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
 }
-.cta-stat span { font-size: .9rem; color: rgba(245,241,235,.5); }
+.cta-stat span { font-size: .88rem; color: rgba(245,241,235,.45); font-weight: 500; }
 
 /* ========================== contacto ============================= */
 .contact { background: var(--cream) !important; border-top: 1px solid var(--line); }
@@ -787,8 +814,10 @@ section:nth-of-type(even) { background: var(--white); }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .testimonios-grid { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: 1fr 1fr; }
+  .trust-item { padding: 24px 16px; }
   .trust-item:nth-child(2) { border-right: 0; }
   .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+  .trust-item b { font-size: clamp(1.8rem, 6vw, 2.4rem); }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .sesion-grid { grid-template-columns: 1fr; gap: 44px; }
   .cta-banner-inner { grid-template-columns: 1fr; }
