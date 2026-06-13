@@ -31,6 +31,46 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+/* ── Contadores animados ─────────────────────────────────────────── */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const duration = 1800;
+  const start = performance.now();
+  const step = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: .5 });
+document.querySelectorAll('.counter').forEach((el) => counterObserver.observe(el));
+
+/* ── Filtros de portfolio ────────────────────────────────────────── */
+const pfBtns = document.querySelectorAll('.pf-btn');
+const pfItems = document.querySelectorAll('.portfolio-item[data-cat]');
+pfBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    pfBtns.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    const filter = btn.dataset.filter;
+    pfItems.forEach((item) => {
+      const show = filter === 'all' || item.dataset.cat === filter;
+      item.classList.toggle('hidden', !show);
+    });
+  });
+});
+
 /* ── Cookie bar ──────────────────────────────────────────────────── */
 const cookieBar = document.getElementById('cookieBar');
 const cookieAccept = document.getElementById('cookieAccept');

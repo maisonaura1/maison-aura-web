@@ -796,3 +796,262 @@ section:nth-of-type(even) { background: var(--night-2); }
   .cookie-bar { flex-direction: column; align-items: flex-start; }
   .proceso-chip { right: 8px; }
 }
+
+/* ========================== TICKER MARQUEE ======================= */
+.ticker {
+  background: var(--night-3);
+  border-bottom: 1px solid rgba(139,92,246,.2);
+  overflow: hidden; height: 36px;
+  display: flex; align-items: center;
+}
+.ticker-track {
+  display: flex; align-items: center; gap: 28px;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+  font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--light-mute);
+}
+.ticker-track span { color: var(--light-soft); }
+.ticker-dot {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  font-size: .6rem !important;
+}
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ========================== HERO UPGRADES ======================== */
+.hero-orb {
+  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+  filter: blur(80px);
+}
+.hero-orb--1 { width: 600px; height: 600px; background: rgba(139,92,246,.15); top: -200px; right: -100px; animation: orb-float 14s ease-in-out infinite; }
+.hero-orb--2 { width: 400px; height: 400px; background: rgba(236,72,153,.1); bottom: -100px; left: -80px; animation: orb-float 18s ease-in-out infinite reverse; }
+.hero-orb--3 { width: 300px; height: 300px; background: rgba(249,115,22,.08); top: 30%; left: 40%; animation: orb-float 22s ease-in-out infinite 4s; }
+@keyframes orb-float { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-20px) scale(1.05); } 66% { transform: translate(-20px,15px) scale(.95); } }
+@media (prefers-reduced-motion: reduce) { .hero-orb { animation: none; } }
+
+.hero-copy, .hero-figure { position: relative; z-index: 1; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px;
+  background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.3);
+  font-size: .78rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--light-soft); margin-bottom: 22px;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot { 0%,100% { box-shadow: 0 0 8px #22c55e; } 50% { box-shadow: 0 0 16px #22c55e, 0 0 24px rgba(34,197,94,.4); } }
+
+.hero-gradient-text {
+  display: block;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  font-style: italic;
+  background-size: 200% auto;
+  animation: gradient-shift 4s ease infinite;
+}
+@keyframes gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) { .hero-gradient-text { animation: none; } }
+
+/* Chips del hero */
+.hero-chip {
+  position: absolute; z-index: 5;
+  background: rgba(13,10,30,.92); backdrop-filter: blur(16px);
+  border: 1px solid rgba(139,92,246,.3); border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.04) inset;
+  animation: chip-float 6s ease-in-out infinite;
+}
+.hero-chip--top { right: -20px; top: 24px; display: flex; align-items: center; gap: 10px; }
+.hero-chip--top .hero-chip-icon { font-size: 1.4rem; }
+.hero-chip--top b { display: block; font-size: 1.1rem; color: var(--light); line-height: 1; }
+.hero-chip--top span { font-size: .72rem; color: var(--light-mute); }
+.hero-chip--bottom { left: -20px; bottom: 32px; max-width: 220px; }
+.stars-sm { font-size: .75rem; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-chip--bottom p { margin: 4px 0 2px; font-size: .82rem; color: var(--light); line-height: 1.4; font-style: italic; }
+.chip-author { font-size: .72rem; color: var(--violet); font-weight: 600; }
+@keyframes chip-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .hero-chip { animation: none; } }
+
+/* ======================= POR QUÉ NOSOTROS ======================= */
+.por-que { background: var(--night-2); }
+.porq-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.porq-card {
+  background: var(--night-3);
+  border: 1px solid rgba(139,92,246,.18);
+  border-radius: var(--r-md); padding: 28px 24px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  position: relative; overflow: hidden;
+}
+.porq-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--brand-gradient); opacity: 0; transition: opacity .3s;
+}
+.porq-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px -16px rgba(109,40,217,.4); }
+.porq-card:hover::before { opacity: 1; }
+.porq-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.25);
+  display: grid; place-items: center; color: var(--violet); margin-bottom: 18px;
+}
+.porq-card h3 { font-size: 1.1rem; margin: 0 0 10px; color: var(--light); }
+.porq-card p { font-size: .92rem; color: var(--light-soft); margin: 0; line-height: 1.65; }
+
+/* ==================== SERVICES CTA ============================== */
+.services-cta {
+  text-align: center; margin-top: 48px;
+  padding: 32px; background: var(--night-2);
+  border: 1px solid rgba(139,92,246,.2); border-radius: var(--r-lg);
+}
+.services-cta p { color: var(--light-soft); margin: 0 0 20px; font-size: 1.05rem; }
+
+/* ==================== PROCESO TIMELINE ========================== */
+.proceso { background: var(--night-3); }
+.proceso-timeline {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: start; gap: 0; margin: 0 0 48px;
+}
+.proceso-step-h {
+  background: var(--night-4); border: 1px solid rgba(139,92,246,.2); border-radius: var(--r-md);
+  padding: 24px 20px; text-align: center; position: relative;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.proceso-step-h:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -12px rgba(109,40,217,.4); }
+.psh-num {
+  font-family: "Cormorant Garamond", serif; font-size: 2.2rem; font-weight: 500;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  line-height: 1; margin-bottom: 12px;
+}
+.psh-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.25);
+  display: grid; place-items: center; color: var(--violet); margin: 0 auto 14px;
+}
+.proceso-step-h h3 { font-size: 1rem; margin: 0 0 8px; color: var(--light); }
+.proceso-step-h p { font-size: .82rem; color: var(--light-soft); margin: 0; line-height: 1.5; }
+.psh-connector {
+  display: flex; align-items: center; justify-content: center; padding: 0 4px;
+  margin-top: 60px;
+}
+.psh-connector::after {
+  content: "→"; font-size: 1.2rem;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.proceso-cta { text-align: center; }
+
+/* ==================== PORTFOLIO FILTERS ========================= */
+.portfolio-filters {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.pf-btn {
+  background: rgba(139,92,246,.08); border: 1px solid rgba(139,92,246,.2);
+  color: var(--light-soft); border-radius: 999px;
+  padding: 8px 20px; font-size: .82rem; font-weight: 600;
+  font-family: "DM Sans", system-ui, sans-serif;
+  cursor: pointer; transition: all .25s var(--ease);
+  letter-spacing: .04em;
+}
+.pf-btn:hover { background: rgba(139,92,246,.18); color: var(--light); border-color: var(--violet); }
+.pf-btn.active {
+  background: var(--brand-gradient); color: #fff; border-color: transparent;
+  box-shadow: 0 4px 16px rgba(139,92,246,.35);
+}
+.portfolio-item.hidden { display: none; }
+.portfolio-footer {
+  text-align: center; margin-top: 48px;
+  display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;
+}
+.portfolio-footer p { color: var(--light-soft); margin: 0; font-size: 1.05rem; }
+
+/* ================== TESTIMONIO FEATURED ========================= */
+.testimonio-featured {
+  background: linear-gradient(135deg, rgba(45,27,105,.4), rgba(13,10,30,.8));
+  border: 1px solid rgba(139,92,246,.25); border-radius: var(--r-lg);
+  padding: 48px; margin-bottom: 36px; position: relative; overflow: hidden;
+}
+.testimonio-featured::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--brand-gradient);
+}
+.tf-quote {
+  font-family: "Cormorant Garamond", serif; font-size: 8rem; line-height: .8;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: -20px; opacity: .6;
+}
+.tf-text {
+  font-family: "Cormorant Garamond", serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-style: italic; color: var(--light); line-height: 1.5; margin: 0 0 28px;
+}
+.tf-meta { display: flex; align-items: center; gap: 16px; }
+.tf-avatar {
+  width: 52px; height: 52px; border-radius: 50%; flex: none;
+  background: rgba(139,92,246,.2); border: 2px solid rgba(139,92,246,.4);
+  color: var(--violet); display: grid; place-items: center;
+  font-family: "Cormorant Garamond", serif; font-size: 1.4rem; font-weight: 600;
+}
+.tf-name { font-weight: 700; font-size: 1rem; color: var(--light); }
+.tf-biz { font-size: .82rem; color: var(--light-soft); margin-top: 2px; }
+.tf-stars {
+  margin-left: auto; font-size: 1rem; letter-spacing: 2px;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ================== CTA BANNER UPGRADED ========================= */
+.cta-banner-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+.cta-banner-visual { position: relative; display: flex; justify-content: center; }
+.cta-orb {
+  width: 280px; height: 280px; border-radius: 50%;
+  background: var(--brand-gradient); opacity: .15; filter: blur(60px);
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.cta-stats {
+  display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; width: 100%;
+}
+.cta-stat {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(139,92,246,.25);
+  border-radius: var(--r-md); padding: 20px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.cta-stat b {
+  font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 500;
+  background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  line-height: 1; min-width: 70px;
+}
+.cta-stat span { font-size: .9rem; color: var(--light-soft); }
+
+/* ======================== FOOTER UPGRADE ======================== */
+.footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; }
+
+/* ==================== RESPONSIVE EXTRAS ========================= */
+@media (max-width: 960px) {
+  .porq-grid { grid-template-columns: 1fr 1fr; }
+  .proceso-timeline { grid-template-columns: 1fr; gap: 16px; }
+  .psh-connector { display: none; }
+  .cta-banner-inner { grid-template-columns: 1fr; }
+  .cta-banner-visual { display: none; }
+  .tf-stars { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+@media (max-width: 580px) {
+  .porq-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .testimonio-featured { padding: 28px 24px; }
+  .tf-quote { font-size: 5rem; }
+  .hero-chip { display: none; }
+  .hero-badge { font-size: .7rem; }
+}

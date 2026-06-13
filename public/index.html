@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Maison Aura · Diseño web, Marketing y SEO · Tu presencia digital, con personalidad</title>
-<meta name="description" content="Agencia de diseño web, marketing digital y SEO. Creamos webs a medida, posicionamos tu negocio en Google y atraemos clientes con estrategia. Trabajo remoto en toda España." />
-<meta property="og:title" content="Maison Aura · Diseño web · Marketing · SEO" />
-<meta property="og:description" content="Webs que convierten, estrategia que posiciona. Sin plantillas, sin atajos, con resultados." />
+<title>Maison Aura Studio · Diseño web, Marketing y SEO · Tu presencia digital con personalidad</title>
+<meta name="description" content="Agencia de diseño web, marketing digital y SEO en Europa. Creamos webs a medida que convierten, posicionamos en Google y construimos marcas que se recuerdan." />
+<meta property="og:title" content="Maison Aura Studio · Diseño web · Marketing · SEO" />
+<meta property="og:description" content="Tu web. Tu marca. Tus clientes. Sin plantillas, sin atajos, con resultados." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://maisonaura.es" />
-<meta name="theme-color" content="#C9A96E" />
+<meta property="og:url" content="https://maison-aura-web.onrender.com" />
+<meta name="theme-color" content="#8B5CF6" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;700;800&family=Sacramento&display=swap" rel="stylesheet" />
@@ -19,11 +19,11 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Maison Aura",
+  "name": "Maison Aura Studio",
   "description": "Agencia de diseño web, marketing digital y SEO. Creamos webs a medida, posicionamos en Google y atraemos clientes con estrategia.",
-  "url": "https://maisonaura.es",
+  "url": "https://maison-aura-web.onrender.com",
   "email": "hola@maisonaura.es",
-  "areaServed": "ES",
+  "areaServed": ["ES","NL"],
   "sameAs": ["https://instagram.com/maisonaura.studio"],
   "priceRange": "€€"
 }
@@ -31,65 +31,48 @@
 </head>
 <body>
 
+<!-- ======================== TICKER MARQUEE ======================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Diseño Web</span><span class="ticker-dot">✦</span>
+    <span>Marketing Digital</span><span class="ticker-dot">✦</span>
+    <span>SEO & Posicionamiento</span><span class="ticker-dot">✦</span>
+    <span>Branding & Identidad</span><span class="ticker-dot">✦</span>
+    <span>E-commerce</span><span class="ticker-dot">✦</span>
+    <span>Estrategia Digital</span><span class="ticker-dot">✦</span>
+    <span>Diseño Web</span><span class="ticker-dot">✦</span>
+    <span>Marketing Digital</span><span class="ticker-dot">✦</span>
+    <span>SEO & Posicionamiento</span><span class="ticker-dot">✦</span>
+    <span>Branding & Identidad</span><span class="ticker-dot">✦</span>
+    <span>E-commerce</span><span class="ticker-dot">✦</span>
+    <span>Estrategia Digital</span><span class="ticker-dot">✦</span>
+  </div>
+</div>
+
 <!-- ============================ HEADER ============================ -->
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a class="logo" href="#top" aria-label="Maison Aura Studio — Diseño web, volver al inicio">
-      <!--
-        Logo stacked: Maison / Aura (bold) / Studio
-        Gradiente diagonal violet→pink→coral, tipografía Poppins redondeada.
-        Badge inferior: SEO · WEB DESIGN | ESTD. 2026 · NEDERLAND · SPAIN
-      -->
+    <a class="logo" href="#top" aria-label="Maison Aura Studio — volver al inicio">
       <svg class="logo-svg" viewBox="0 0 210 82" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
         <defs>
-          <!-- Gradiente diagonal que cubre todo el bloque de texto (userSpaceOnUse) -->
           <linearGradient id="logoGrad" x1="0" y1="0" x2="210" y2="82" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stop-color="#8B5CF6"/>
             <stop offset="50%"  stop-color="#EC4899"/>
             <stop offset="100%" stop-color="#F97316"/>
           </linearGradient>
-          <!-- Gradiente para la pastilla izquierda -->
           <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%"   stop-color="#9B6BF7"/>
             <stop offset="100%" stop-color="#F97316"/>
           </linearGradient>
         </defs>
-
-        <!-- MAISON — peso regular, body size -->
-        <text x="1" y="19"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="18" font-weight="300"
-          fill="url(#logoGrad)"
-          letter-spacing="0.5">Maison</text>
-
-        <!-- AURA — peso extra-bold, talla grande (protagonista) -->
-        <text x="1" y="50"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="32" font-weight="800"
-          fill="url(#logoGrad)"
-          letter-spacing="-0.5">Aura</text>
-
-        <!-- STUDIO — peso regular, igual que Maison -->
-        <text x="1" y="69"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="18" font-weight="300"
-          fill="url(#logoGrad)"
-          letter-spacing="0.5">Studio</text>
-
-        <!-- BADGE: pastilla izquierda con gradiente -->
+        <text x="1" y="19" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="18" font-weight="300" fill="url(#logoGrad)" letter-spacing="0.5">Maison</text>
+        <text x="1" y="50" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="32" font-weight="800" fill="url(#logoGrad)" letter-spacing="-0.5">Aura</text>
+        <text x="1" y="69" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="18" font-weight="300" fill="url(#logoGrad)" letter-spacing="0.5">Studio</text>
         <rect x="1" y="73" width="68" height="9" rx="1.5" fill="url(#badgeGrad)"/>
-        <text x="4" y="79.5"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="4" font-weight="600" fill="#ffffff" letter-spacing="0.3">SEO · WEB DESIGN · DIGIT.</text>
-
-        <!-- BADGE: pastilla derecha con borde -->
+        <text x="4" y="79.5" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="4" font-weight="600" fill="#ffffff" letter-spacing="0.3">SEO · WEB DESIGN · DIGIT.</text>
         <rect x="70" y="73" width="68" height="9" rx="1.5" fill="none" stroke="rgba(139,92,246,.5)" stroke-width="0.6"/>
-        <text x="73" y="78"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="3.5" font-weight="700" fill="#8B5CF6" letter-spacing="0.2">ESTD. 2026</text>
-        <text x="73" y="81.5"
-          font-family="'Poppins', 'DM Sans', system-ui, sans-serif"
-          font-size="3" font-weight="400" fill="rgba(139,92,246,.7)" letter-spacing="0.1">NEDERLAND · BORN IN SPAIN</text>
+        <text x="73" y="78" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="3.5" font-weight="700" fill="#8B5CF6" letter-spacing="0.2">ESTD. 2026</text>
+        <text x="73" y="81.5" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="3" font-weight="400" fill="rgba(139,92,246,.7)" letter-spacing="0.1">NEDERLAND · BORN IN SPAIN</text>
       </svg>
     </a>
     <nav class="nav" id="nav">
@@ -110,21 +93,37 @@
 
 <!-- ============================= HERO ============================= -->
 <section class="hero">
+  <!-- Orbes animados de fondo -->
+  <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
+
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Diseño web · Marketing · SEO · España</p>
-      <h1>Más visibilidad.<br>Más clientes.<br><em>Más negocio.</em></h1>
-      <p class="hero-lead">Diseñamos tu web, posicionamos tu marca en Google y creamos la estrategia de marketing para dar juntos el siguiente paso a la era digital.</p>
-      <div class="proof">
-        <span class="proof-stars" aria-hidden="true">★★★★★</span>
-        <span class="proof-text"><b>4,9 / 5</b> · 24 clientes satisfechos · <b>«la mejor inversión para mi negocio»</b></span>
+      <div class="hero-badge reveal">
+        <span class="hero-badge-dot"></span>
+        Disponibles para nuevos proyectos · Junio 2026
       </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="#sesion">Sesión gratuita</a>
-        <a class="btn btn-ghost btn-lg" href="#portfolio">Ver trabajos</a>
+      <h1 class="reveal">
+        Tu negocio merece<br>
+        una presencia digital<br>
+        <em class="hero-gradient-text">que lo demuestre.</em>
+      </h1>
+      <p class="hero-lead reveal">Diseñamos webs que convierten, posicionamos tu marca en Google y creamos la estrategia de marketing para que tus clientes lleguen solos. Todo. En un equipo.</p>
+      <div class="proof reveal">
+        <span class="proof-stars" aria-hidden="true">★★★★★</span>
+        <span class="proof-text"><b>4,9 / 5</b> · 38 clientes · <b>+340% tráfico medio</b></span>
+      </div>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary btn-lg" href="#sesion">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sesión gratuita
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#portfolio">Ver proyectos →</a>
       </div>
     </div>
-    <div class="hero-figure">
+
+    <div class="hero-figure reveal">
       <div class="hero-canvas shimmer">
         <div class="hero-mockup" aria-hidden="true">
           <div class="mockup-browser">
@@ -146,30 +145,23 @@
                 </div>
               </div>
               <div class="mockup-cards">
-                <div class="mockup-card">
-                  <div class="mockup-card-img"></div>
-                  <div class="mockup-card-t"></div>
-                  <div class="mockup-card-s"></div>
-                </div>
-                <div class="mockup-card">
-                  <div class="mockup-card-img" style="background:#C9A96E22"></div>
-                  <div class="mockup-card-t"></div>
-                  <div class="mockup-card-s"></div>
-                </div>
-                <div class="mockup-card">
-                  <div class="mockup-card-img" style="background:#1C191722"></div>
-                  <div class="mockup-card-t"></div>
-                  <div class="mockup-card-s"></div>
-                </div>
+                <div class="mockup-card"><div class="mockup-card-img"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
+                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(236,72,153,.2)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
+                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(249,115,22,.15)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="review-chip">
-        <span class="stars" aria-hidden="true">★★★★★</span>
-        <p>«Las ventas de mi tienda online subieron un 340% en tres meses.»</p>
-        <span>— Laura P., cliente de Maison Aura</span>
+      <!-- Chips flotantes -->
+      <div class="hero-chip hero-chip--top">
+        <div class="hero-chip-icon">📈</div>
+        <div><b>+340%</b><span>tráfico orgánico</span></div>
+      </div>
+      <div class="hero-chip hero-chip--bottom">
+        <span class="stars-sm">★★★★★</span>
+        <p>«La mejor inversión para mi negocio»</p>
+        <span class="chip-author">— Laura P.</span>
       </div>
     </div>
   </div>
@@ -179,10 +171,76 @@
 <section class="trust">
   <div class="wrap">
     <div class="trust-grid">
-      <div class="trust-item"><b id="trustProjects">47</b><span>proyectos completados</span></div>
-      <div class="trust-item"><b id="trustClients">38</b><span>clientes satisfechos</span></div>
-      <div class="trust-item"><b>+340%</b><span>tráfico medio en 6 meses</span></div>
-      <div class="trust-item"><b>4,9 ★</b><span>valoración media de proyectos</span></div>
+      <div class="trust-item">
+        <b><span class="counter" data-target="47">0</span>+</b>
+        <span>proyectos completados</span>
+      </div>
+      <div class="trust-item">
+        <b><span class="counter" data-target="38">0</span></b>
+        <span>clientes satisfechos</span>
+      </div>
+      <div class="trust-item">
+        <b>+340%</b>
+        <span>tráfico medio en 6 meses</span>
+      </div>
+      <div class="trust-item">
+        <b>4,9 ★</b>
+        <span>valoración media</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== POR QUÉ NOSOTROS ======================= -->
+<section class="section por-que" id="nosotros">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Por qué elegirnos</p>
+      <h2 class="display">No somos una agencia más.<br><em>Somos tu equipo digital.</em></h2>
+    </div>
+    <div class="porq-grid reveal">
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Todo bajo un mismo techo</h3>
+        <p>Web, SEO y marketing coordinados desde el primer día. Sin intermediarios, sin pérdida de coherencia entre canales.</p>
+      </div>
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Resultados en semanas, no en años</h3>
+        <p>Procesos ágiles y entregas parciales para que veas avances reales desde la primera semana. Sin esperas infinitas.</p>
+      </div>
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Perspectiva europea, raíces españolas</h3>
+        <p>Trabajamos desde Nederland con clientes en toda España y Europa. Visión internacional, sensibilidad local.</p>
+      </div>
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Precio cerrado, sin sorpresas</h3>
+        <p>Presupuesto detallado antes de empezar. Sin costes ocultos, sin extras de última hora. Lo que acordamos, lo que pagas.</p>
+      </div>
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Diseño orientado a conversión</h3>
+        <p>Cada elemento tiene un propósito: que el visitante se convierta en cliente. Bonito y funcional no son opuestos.</p>
+      </div>
+      <div class="porq-card">
+        <div class="porq-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Soporte real, persona real</h3>
+        <p>Tienes acceso directo a quien hace el trabajo. Sin cuentas de soporte impersonales ni bots. Respuesta en menos de 24h.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -192,136 +250,122 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Carta de servicios</p>
-      <h2 class="display">Diseño, marketing y SEO:<br>los tres pilares de tu <em>presencia digital.</em></h2>
-      <p>No hace falta contratar tres agencias distintas. En Maison Aura lo hacemos todo, de forma coordinada, para que cada euro invertido trabaje por ti.</p>
+      <h2 class="display">Todo lo que tu negocio necesita<br>para <em>crecer en internet.</em></h2>
+      <p>Una sola agencia para diseño, marketing y SEO. Todo coordinado, todo coherente, todo orientado a que tus clientes te encuentren y te elijan.</p>
     </div>
     <div class="services-grid" id="servicesGrid">
-      <!-- respaldo estático; el JS los reemplaza desde /api/site -->
       <article class="service-card reveal">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
         <h3>Diseño web a medida</h3>
-        <p>Tu web diseñada desde cero con identidad propia. Sin plantillas, sin atajos. Diseño que convierte.</p>
+        <p>Tu web diseñada desde cero con identidad propia. Sin plantillas, sin atajos. Rápida, accesible y pensada para convertir visitantes en clientes.</p>
         <div class="service-price">desde 1.200€</div>
       </article>
       <article class="service-card reveal">
-        <div class="service-icon">◈</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
         <h3>Tienda online (e-commerce)</h3>
-        <p>Vende en internet con una tienda rápida, atractiva y fácil de gestionar. Integración con pasarelas de pago y envíos.</p>
+        <p>Vende en internet con una tienda rápida, atractiva y fácil de gestionar. Integración con pasarelas de pago, envíos y gestión de inventario.</p>
         <div class="service-price">desde 1.800€</div>
       </article>
       <article class="service-card reveal">
-        <div class="service-icon">◇</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
         <h3>Branding & identidad visual</h3>
-        <p>Logo, paleta, tipografía y guía de estilo. Que te reconozcan antes de que hablen.</p>
+        <p>Logo, paleta, tipografía y guía de estilo completa. La base sobre la que se construye todo lo demás. Que te reconozcan antes de que hablen.</p>
         <div class="service-price">desde 650€</div>
       </article>
       <article class="service-card reveal">
-        <div class="service-icon">◉</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
         <h3>Marketing digital</h3>
-        <p>Estrategia de contenidos, redes sociales y campañas de pago. Más alcance, más clientes, más ventas.</p>
+        <p>Estrategia de contenidos, redes sociales y campañas de pago. Presencia constante donde están tus clientes, con mensajes que funcionan.</p>
         <div class="service-price">desde 400€/mes</div>
       </article>
       <article class="service-card reveal">
-        <div class="service-icon">↗</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
         <h3>SEO & posicionamiento</h3>
-        <p>Que te encuentren en Google antes que a tu competencia. Auditoría, optimización técnica y contenidos.</p>
+        <p>Que te encuentren en Google antes que a tu competencia. Auditoría técnica, optimización on-page, link building y contenidos posicionados.</p>
         <div class="service-price">desde 350€/mes</div>
       </article>
       <article class="service-card reveal">
-        <div class="service-icon">⟳</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
         <h3>Mantenimiento & soporte</h3>
-        <p>Actualizaciones, copias de seguridad, soporte técnico y mejoras continuas para que tu web rinda al máximo.</p>
+        <p>Actualizaciones, copias de seguridad, soporte técnico y mejoras continuas. Tu web siempre al día, tú siempre tranquilo.</p>
         <div class="service-price">desde 90€/mes</div>
       </article>
     </div>
-    <p class="services-note">¿No sabes por dónde empezar? La sesión de diagnóstico gratuita es para eso. Te orientamos sin compromiso. <a href="#sesion" style="color:var(--gold-deep);text-decoration:underline">Reserva aquí →</a></p>
+    <div class="services-cta reveal">
+      <p>¿No sabes por dónde empezar? La sesión de diagnóstico gratuita es exactamente para eso.</p>
+      <a class="btn btn-primary" href="#sesion">Reserva tu sesión gratuita →</a>
+    </div>
   </div>
 </section>
 
-<!-- ============================ PROCESO (LA FIRMA) ================ -->
+<!-- ============================ PROCESO ========================== -->
 <section class="section proceso" id="proceso">
   <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow">Nuestro proceso</p>
-      <h2 class="display">Un proceso claro, de la estrategia<br>al <em>resultado.</em></h2>
-      <p>No empezamos a diseñar el día uno. Primero escuchamos, analizamos y trazamos la estrategia de diseño, marketing y SEO que tu negocio necesita.</p>
-      <ol class="proceso-steps">
-        <li class="proceso-step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <b>Sesión de diagnóstico</b>
-            <span>30 minutos para entender tu negocio, tus clientes y lo que necesitas conseguir.</span>
-          </div>
-        </li>
-        <li class="proceso-step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <b>Estrategia & propuesta</b>
-            <span>Propuesta detallada con estructura, funcionalidades, plazos y presupuesto cerrado.</span>
-          </div>
-        </li>
-        <li class="proceso-step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <b>Diseño & revisiones</b>
-            <span>Diseñamos con tu feedback en cada ronda. Sin sorpresas, sin letra pequeña.</span>
-          </div>
-        </li>
-        <li class="proceso-step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <b>Desarrollo & lanzamiento</b>
-            <span>Codificamos, probamos y lanzamos. Tu web en el mundo, lista para convertir.</span>
-          </div>
-        </li>
-        <li class="proceso-step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <b>Soporte post-lanzamiento</b>
-            <span>No desaparecemos. Seguimiento el primer mes y opciones de mantenimiento continuo.</span>
-          </div>
-        </li>
-      </ol>
-      <a class="btn btn-gold" href="#sesion">Empieza con el diagnóstico gratuito</a>
+    <div class="section-head center reveal">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 class="display">Un proceso claro, de la idea<br>al <em>resultado.</em></h2>
+      <p>No empezamos a diseñar el día uno. Primero escuchamos, analizamos y trazamos la estrategia. Después ejecutamos con precisión.</p>
     </div>
-    <div class="proceso-figure shimmer reveal">
-      <div class="proceso-mockup-wrap" aria-hidden="true">
-        <div class="proceso-screen">
-          <div class="proceso-screen-bar">
-            <div class="proceso-screen-dot" style="background:#FF6059"></div>
-            <div class="proceso-screen-dot" style="background:#FEBC2E;margin:0 4px"></div>
-            <div class="proceso-screen-dot" style="background:#28C840"></div>
-          </div>
-          <div class="proceso-screen-content">
-            <div class="psc-header">
-              <div class="psc-logo"></div>
-              <div class="psc-nav">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-            <div class="psc-hero">
-              <div class="psc-tag"></div>
-              <div class="psc-h1"></div>
-              <div class="psc-h2"></div>
-              <div class="psc-sub"></div>
-              <div class="psc-sub short"></div>
-              <div class="psc-btns">
-                <div class="psc-btn solid"></div>
-                <div class="psc-btn ghost"></div>
-              </div>
-            </div>
-            <div class="psc-grid">
-              <div class="psc-card"><div class="psc-card-top"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
-              <div class="psc-card"><div class="psc-card-top" style="background:#C9A96E33"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
-              <div class="psc-card"><div class="psc-card-top" style="background:#1C191722"></div><div class="psc-card-t"></div><div class="psc-card-p"></div></div>
-            </div>
-          </div>
+    <div class="proceso-timeline reveal">
+      <div class="proceso-step-h">
+        <div class="psh-num">01</div>
+        <div class="psh-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
+        <h3>Escuchar</h3>
+        <p>Sesión de diagnóstico gratuita. Entendemos tu negocio, tus clientes y tus objetivos reales.</p>
       </div>
-      <div class="proceso-chip">
-        <b>Entrega puntual</b>
-        Proyectos en plazo, siempre.
+      <div class="psh-connector" aria-hidden="true"></div>
+      <div class="proceso-step-h">
+        <div class="psh-num">02</div>
+        <div class="psh-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+        <h3>Estrategia</h3>
+        <p>Propuesta detallada: estructura, funcionalidades, cronograma y presupuesto cerrado sin letra pequeña.</p>
       </div>
+      <div class="psh-connector" aria-hidden="true"></div>
+      <div class="proceso-step-h">
+        <div class="psh-num">03</div>
+        <div class="psh-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+        <h3>Diseñar</h3>
+        <p>Diseñamos con tu feedback en cada ronda. Revisiones ilimitadas hasta que sientas que es tuyo.</p>
+      </div>
+      <div class="psh-connector" aria-hidden="true"></div>
+      <div class="proceso-step-h">
+        <div class="psh-num">04</div>
+        <div class="psh-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Desarrollar</h3>
+        <p>Codificamos, optimizamos y probamos en todos los dispositivos. Velocidad, accesibilidad y SEO desde el código.</p>
+      </div>
+      <div class="psh-connector" aria-hidden="true"></div>
+      <div class="proceso-step-h">
+        <div class="psh-num">05</div>
+        <div class="psh-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Lanzar & crecer</h3>
+        <p>Publicamos, medimos y seguimos. El lanzamiento es el principio, no el final.</p>
+      </div>
+    </div>
+    <div class="proceso-cta reveal">
+      <a class="btn btn-gold btn-lg" href="#sesion">Empieza con el diagnóstico gratuito</a>
     </div>
   </div>
 </section>
@@ -331,223 +375,132 @@
   <div class="wrap">
     <div class="section-head center reveal">
       <p class="eyebrow">Portfolio</p>
-      <h2 class="display">Proyectos reales, resultados reales.</h2>
-      <p>Cada web que entregamos está pensada para el negocio que la usará, no para el portfolio de la agencia.</p>
+      <h2 class="display">Proyectos reales.<br><em>Resultados reales.</em></h2>
+      <p>Cada web que entregamos está pensada para el negocio que la usará. No para el portfolio de la agencia.</p>
     </div>
+
+    <!-- Filtros -->
+    <div class="portfolio-filters reveal" role="tablist" aria-label="Filtrar proyectos">
+      <button class="pf-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+      <button class="pf-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+      <button class="pf-btn" data-filter="ecommerce" role="tab" aria-selected="false">E-commerce</button>
+      <button class="pf-btn" data-filter="software" role="tab" aria-selected="false">Software</button>
+      <button class="pf-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+    </div>
+
     <div class="portfolio-grid reveal" id="portfolioGrid">
 
-      <!-- ① Sworfare Plus Dashboard -->
-      <a class="portfolio-item" href="https://www.dutchtaxhelper.com/dashboard" target="_blank" rel="noopener" aria-label="Ver Sworfare Plus Dashboard">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0D0D1A 0%,#1A0D2E 50%,#0D0A1E 100%)">
+      <a class="portfolio-item" href="https://www.dutchtaxhelper.com/dashboard" target="_blank" rel="noopener" data-cat="software" aria-label="Ver Sworfare Plus Dashboard">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0D0D1A,#1A0D2E,#0D0A1E)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 70% 20%,rgba(139,92,246,.35) 0%,transparent 65%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#1A0D2E,#2D1B69,#4C1D95);padding:8px;display:flex;flex-direction:column;gap:5px">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div style="height:5px;width:36px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:3px"></div>
-                  <div style="display:flex;gap:3px">
-                    <div style="width:13px;height:13px;background:rgba(139,92,246,.3);border:1px solid rgba(139,92,246,.5);border-radius:3px"></div>
-                    <div style="width:13px;height:13px;background:rgba(236,72,153,.3);border:1px solid rgba(236,72,153,.5);border-radius:3px"></div>
-                  </div>
-                </div>
-                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px">
-                  <div style="background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4);border-radius:4px;padding:5px">
-                    <div style="height:3px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:2px;margin-bottom:3px"></div>
-                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
-                  </div>
-                  <div style="background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.4);border-radius:4px;padding:5px">
-                    <div style="height:3px;background:linear-gradient(90deg,#EC4899,#F97316);border-radius:2px;margin-bottom:3px"></div>
-                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
-                  </div>
-                  <div style="background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.4);border-radius:4px;padding:5px">
-                    <div style="height:3px;background:linear-gradient(90deg,#F97316,#FBBF24);border-radius:2px;margin-bottom:3px"></div>
-                    <div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div>
-                  </div>
-                </div>
-                <div style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);border-radius:3px;height:14px"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><div style="height:5px;width:36px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:3px"></div><div style="display:flex;gap:3px"><div style="width:13px;height:13px;background:rgba(139,92,246,.3);border:1px solid rgba(139,92,246,.5);border-radius:3px"></div><div style="width:13px;height:13px;background:rgba(236,72,153,.3);border:1px solid rgba(236,72,153,.5);border-radius:3px"></div></div></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px"><div style="background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#EC4899,#F97316);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#F97316,#FBBF24);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div></div>
               </div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(139,92,246,.12);border-right:1px solid rgba(139,92,246,.2)"></div>
-                <div class="pm-col" style="background:rgba(236,72,153,.08)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.12)"></div><div class="pm-col" style="background:rgba(236,72,153,.08)"></div></div>
             </div>
           </div>
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Software · Dashboard</div>
-          <div class="portfolio-title">Sworfare Plus Dashboard
-            <span class="portfolio-link-icon" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </div>
+          <div class="portfolio-title">Sworfare Plus Dashboard <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
         </div>
       </a>
 
-      <!-- ② Manicúrate Badajoz -->
-      <a class="portfolio-item" href="https://manicuratebadajoz.es" target="_blank" rel="noopener" aria-label="Ver web de Manicúrate Badajoz">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#1A0D22 0%,#2D1040 50%,#180D2A 100%)">
+      <a class="portfolio-item" href="https://manicuratebadajoz.es" target="_blank" rel="noopener" data-cat="web" aria-label="Ver Manicúrate Badajoz">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#1A0D22,#2D1040,#180D2A)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 30% 80%,rgba(236,72,153,.4) 0%,transparent 60%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#6D28D9,#BE185D,#9D174D)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(236,72,153,.15);border-right:1px solid rgba(236,72,153,.2)"></div>
-                <div class="pm-col" style="background:rgba(139,92,246,.12)"></div>
-                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(236,72,153,.15)"></div><div class="pm-col" style="background:rgba(139,92,246,.12)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
             </div>
           </div>
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Web + Reservas · Salón</div>
-          <div class="portfolio-title">Manicúrate Badajoz
-            <span class="portfolio-link-icon" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </div>
+          <div class="portfolio-title">Manicúrate Badajoz <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
         </div>
       </a>
 
-      <!-- ③ Boutique Valenté -->
-      <div class="portfolio-item">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#120820 0%,#1E0E38 50%,#0E0618 100%)">
+      <div class="portfolio-item" data-cat="ecommerce">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#120820,#1E0E38,#0E0618)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 80% 30%,rgba(249,115,22,.3) 0%,transparent 60%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#7C2D8C,#BE185D)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(249,115,22,.15);border-right:1px solid rgba(249,115,22,.2)"></div>
-                <div class="pm-col" style="background:rgba(139,92,246,.1)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(249,115,22,.15)"></div><div class="pm-col" style="background:rgba(139,92,246,.1)"></div></div>
             </div>
           </div>
         </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-tag">E-commerce · Moda</div>
-          <div class="portfolio-title">Boutique Valenté</div>
-        </div>
+        <div class="portfolio-overlay"><div class="portfolio-tag">E-commerce · Moda</div><div class="portfolio-title">Boutique Valenté</div></div>
       </div>
 
-      <!-- ④ Studio Nórdico -->
-      <div class="portfolio-item">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0A0A18 0%,#14102A 50%,#0A0A18 100%)">
+      <div class="portfolio-item" data-cat="web">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0A0A18,#14102A,#0A0A18)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 10%,rgba(139,92,246,.45) 0%,transparent 55%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#4C1D95,#6D28D9,#8B5CF6)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(139,92,246,.2)"></div>
-                <div class="pm-col" style="background:rgba(109,40,217,.15)"></div>
-                <div class="pm-col" style="background:rgba(139,92,246,.1)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.2)"></div><div class="pm-col" style="background:rgba(109,40,217,.15)"></div><div class="pm-col" style="background:rgba(139,92,246,.1)"></div></div>
             </div>
           </div>
         </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-tag">Web corporativa · Interiorismo</div>
-          <div class="portfolio-title">Studio Nórdico</div>
-        </div>
+        <div class="portfolio-overlay"><div class="portfolio-tag">Web corporativa · Interiorismo</div><div class="portfolio-title">Studio Nórdico</div></div>
       </div>
 
-      <!-- ⑤ Terra Orgánica -->
-      <div class="portfolio-item">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0E0A1E 0%,#1C0D30 50%,#0E0A1E 100%)">
+      <div class="portfolio-item" data-cat="ecommerce">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#0E0A1E,#1C0D30,#0E0A1E)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 20% 60%,rgba(139,92,246,.3) 0%,rgba(249,115,22,.15) 50%,transparent 70%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#7C2D8C,#EC4899,#F97316)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(249,115,22,.15);border-right:1px solid rgba(249,115,22,.15)"></div>
-                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(249,115,22,.15)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
             </div>
           </div>
         </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-tag">Tienda online · Alimentación</div>
-          <div class="portfolio-title">Terra Orgánica</div>
-        </div>
+        <div class="portfolio-overlay"><div class="portfolio-tag">Tienda online · Alimentación</div><div class="portfolio-title">Terra Orgánica</div></div>
       </div>
 
-      <!-- ⑥ Alma Spa & Yoga -->
-      <div class="portfolio-item">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#10061E 0%,#1E0A35 50%,#100618 100%)">
+      <div class="portfolio-item" data-cat="branding">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#10061E,#1E0A35,#100618)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 60% 70%,rgba(236,72,153,.38) 0%,transparent 60%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#1E0A35,#6D28D9,#EC4899)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(236,72,153,.18)"></div>
-                <div class="pm-col" style="background:rgba(139,92,246,.15)"></div>
-                <div class="pm-col" style="background:rgba(236,72,153,.1)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(236,72,153,.18)"></div><div class="pm-col" style="background:rgba(139,92,246,.15)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
             </div>
           </div>
         </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-tag">Web + Branding · Bienestar</div>
-          <div class="portfolio-title">Alma Spa & Yoga</div>
-        </div>
+        <div class="portfolio-overlay"><div class="portfolio-tag">Web + Branding · Bienestar</div><div class="portfolio-title">Alma Spa & Yoga</div></div>
       </div>
 
-      <!-- ⑦ Nexus Analytics -->
-      <div class="portfolio-item">
-        <div class="portfolio-mock" style="background:linear-gradient(145deg,#080816 0%,#10082A 50%,#080816 100%)">
+      <div class="portfolio-item" data-cat="software">
+        <div class="portfolio-mock" style="background:linear-gradient(145deg,#080816,#10082A,#080816)">
           <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 50%,rgba(139,92,246,.25) 0%,rgba(249,115,22,.15) 60%,transparent 80%)"></div>
           <div class="pm-browser">
-            <div class="pm-bar">
-              <div class="pm-dot" style="background:#FF6059"></div>
-              <div class="pm-dot" style="background:#FEBC2E"></div>
-              <div class="pm-dot" style="background:#28C840"></div>
-            </div>
+            <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#8B5CF6,#F97316)"></div>
-              <div class="pm-row">
-                <div class="pm-col" style="background:rgba(139,92,246,.18);border-right:1px solid rgba(139,92,246,.2)"></div>
-                <div class="pm-col" style="background:rgba(249,115,22,.12)"></div>
-              </div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.18)"></div><div class="pm-col" style="background:rgba(249,115,22,.12)"></div></div>
             </div>
           </div>
         </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-tag">App web · Tecnología</div>
-          <div class="portfolio-title">Nexus Analytics</div>
-        </div>
+        <div class="portfolio-overlay"><div class="portfolio-tag">App web · Tecnología</div><div class="portfolio-title">Nexus Analytics</div></div>
       </div>
 
     </div>
-    <div class="testimonios-cta" style="text-align:center;margin-top:40px">
-      <a class="btn btn-ghost" href="#sesion">¿Quieres un proyecto así? Cuéntanos →</a>
+    <div class="portfolio-footer reveal">
+      <p>¿Quieres un proyecto así?</p>
+      <a class="btn btn-primary" href="#sesion">Cuéntanos tu idea →</a>
     </div>
   </div>
 </section>
@@ -556,30 +509,32 @@
 <section class="section testimonios" id="testimonios">
   <div class="wrap">
     <div class="section-head center reveal">
-      <p class="eyebrow">4,9 ★ · 24 proyectos valorados</p>
-      <h2 class="display">Nuestros clientes lo explican mejor que nosotras.</h2>
+      <p class="eyebrow">4,9 ★ · 38 clientes valorados</p>
+      <h2 class="display">Nuestros clientes lo explican<br><em>mejor que nosotros.</em></h2>
     </div>
+
+    <!-- Cita destacada -->
+    <div class="testimonio-featured reveal">
+      <div class="tf-quote">"</div>
+      <blockquote class="tf-text">Desde que lancé la nueva web, las consultas han multiplicado por cuatro. Maison Aura entendió mi negocio desde el primer minuto y lo tradujo en algo que realmente funciona — y convierte.</blockquote>
+      <div class="tf-meta">
+        <div class="tf-avatar">L</div>
+        <div>
+          <div class="tf-name">Laura Palomares</div>
+          <div class="tf-biz">Boutique Valenté · Madrid</div>
+        </div>
+        <div class="tf-stars" aria-label="5 estrellas">★★★★★</div>
+      </div>
+    </div>
+
+    <!-- Grid de testimonios secundarios -->
     <div class="testimonios-grid">
       <article class="testimonio-card reveal">
         <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
-        <blockquote>Desde que lancé la nueva web, las consultas han multiplicado por cuatro. Maison Aura entendió mi negocio desde el primer minuto y lo tradujo en algo que realmente funciona.</blockquote>
-        <div class="testimonio-meta">
-          <div class="testimonio-avatar">L</div>
-          <div>
-            <div class="testimonio-name">Laura Palomares</div>
-            <div class="testimonio-biz">Boutique Valenté · Madrid</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonio-card reveal">
-        <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
-        <blockquote>El proceso fue súper claro de principio a fin. Me explicaron cada decisión de diseño y el resultado es exactamente lo que tenía en mente, pero mejor. Totalmente recomendable.</blockquote>
+        <blockquote>El proceso fue súper claro de principio a fin. Me explicaron cada decisión de diseño y el resultado es exactamente lo que tenía en mente, pero mejor.</blockquote>
         <div class="testimonio-meta">
           <div class="testimonio-avatar">M</div>
-          <div>
-            <div class="testimonio-name">Marta Íñiguez</div>
-            <div class="testimonio-biz">Studio Nórdico · Barcelona</div>
-          </div>
+          <div><div class="testimonio-name">Marta Íñiguez</div><div class="testimonio-biz">Studio Nórdico · Barcelona</div></div>
         </div>
       </article>
       <article class="testimonio-card reveal">
@@ -587,10 +542,15 @@
         <blockquote>Llevo años intentando posicionarme en Google. En cuatro meses con Maison Aura estoy en primera página para mis palabras clave principales. La inversión se pagó sola.</blockquote>
         <div class="testimonio-meta">
           <div class="testimonio-avatar">C</div>
-          <div>
-            <div class="testimonio-name">Carlos Ventura</div>
-            <div class="testimonio-biz">Terra Orgánica · Valencia</div>
-          </div>
+          <div><div class="testimonio-name">Carlos Ventura</div><div class="testimonio-biz">Terra Orgánica · Valencia</div></div>
+        </div>
+      </article>
+      <article class="testimonio-card reveal">
+        <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
+        <blockquote>Rápidos, profesionales y muy creativos. Entregaron antes de plazo y con una calidad que no esperaba a ese precio. Sin duda volveré para el siguiente proyecto.</blockquote>
+        <div class="testimonio-meta">
+          <div class="testimonio-avatar">A</div>
+          <div><div class="testimonio-name">Ana Fuentes</div><div class="testimonio-biz">Alma Spa & Yoga · Sevilla</div></div>
         </div>
       </article>
     </div>
@@ -600,16 +560,26 @@
 <!-- ========================= BANNER CTA ========================== -->
 <section class="cta-banner" aria-label="Empieza tu proyecto">
   <div class="cta-banner-bg" aria-hidden="true"></div>
-  <div class="wrap cta-banner-content reveal">
-    <p class="eyebrow">Trabajemos juntos</p>
-    <h2 class="display">Diseño, marketing y SEO.<br>Todo lo que necesitas, <em>en un equipo.</em></h2>
-    <p>La sesión de diagnóstico es gratuita, dura 30 minutos y te irás con un plan claro: qué mejorar, por dónde empezar y cuánto cuesta. Sin compromiso.</p>
-    <div class="cta-banner-actions">
-      <a class="btn btn-gold btn-lg" href="#sesion">Reservar sesión gratuita</a>
-      <a class="btn btn-outline-white btn-lg" href="#contacto">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Enviar un mensaje
-      </a>
+  <div class="wrap cta-banner-inner">
+    <div class="cta-banner-content reveal">
+      <p class="eyebrow">¿Listo para el siguiente paso?</p>
+      <h2 class="display">Tu presencia digital,<br><em>transformada en 30 días.</em></h2>
+      <p>La sesión de diagnóstico es gratuita, dura 30 minutos y te irás con un plan claro: qué mejorar, por dónde empezar y cuánto cuesta. Sin compromiso.</p>
+      <div class="cta-banner-actions">
+        <a class="btn btn-gold btn-lg" href="#sesion">Reservar sesión gratuita</a>
+        <a class="btn btn-outline-white btn-lg" href="#contacto">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Enviar un mensaje
+        </a>
+      </div>
+    </div>
+    <div class="cta-banner-visual reveal" aria-hidden="true">
+      <div class="cta-orb"></div>
+      <div class="cta-stats">
+        <div class="cta-stat"><b>30 min</b><span>sesión gratuita</span></div>
+        <div class="cta-stat"><b>100%</b><span>sin compromiso</span></div>
+        <div class="cta-stat"><b>24h</b><span>respuesta garantizada</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -620,25 +590,18 @@
     <div class="contact-info reveal">
       <p class="eyebrow">Cuéntanos</p>
       <h2 class="display">¿Tienes un proyecto<br>en mente? <em>Escríbenos.</em></h2>
-      <p>Pregúntanos antes de comprometerte con nada. Diseño, precio, plazos, dudas técnicas… te respondemos sin compromiso y normalmente el mismo día.</p>
-
+      <p>Pregúntanos antes de comprometerte con nada. Diseño, precio, plazos, dudas técnicas — te respondemos sin compromiso y normalmente el mismo día.</p>
       <ul class="info-list">
         <li>
-          <div class="info-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div><b>Email</b><span><a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></span></div>
         </li>
         <li>
-          <div class="info-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </div>
+          <div class="info-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
           <div><b>Instagram</b><span><a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener">@maisonaura.studio</a></span></div>
         </li>
         <li>
-          <div class="info-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          </div>
+          <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <div>
             <b>Horario de atención</b>
             <div style="margin-top:8px">
@@ -649,38 +612,19 @@
           </div>
         </li>
       </ul>
-
       <div class="social-row" style="margin-top:32px">
-        <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="mailto:hola@maisonaura.es" aria-label="Email">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
+        <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="mailto:hola@maisonaura.es" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
       </div>
     </div>
-
     <div class="contact-body reveal">
       <div class="form-card">
         <form id="contactForm" novalidate>
-          <div class="field">
-            <label for="ct-name">Tu nombre</label>
-            <input id="ct-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required />
-          </div>
-          <div class="field">
-            <label for="ct-contact">Email o teléfono</label>
-            <input id="ct-contact" name="contact" type="text" autocomplete="email" placeholder="Para responderte" required />
-          </div>
-          <div class="field">
-            <label for="ct-message">Tu mensaje</label>
-            <textarea id="ct-message" name="message" placeholder="Cuéntanos sobre tu proyecto, tu negocio o la duda que tengas…" required></textarea>
-          </div>
-          <div class="honeypot" aria-hidden="true">
-            <label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-          </div>
+          <div class="field"><label for="ct-name">Tu nombre</label><input id="ct-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required /></div>
+          <div class="field"><label for="ct-contact">Email o teléfono</label><input id="ct-contact" name="contact" type="text" autocomplete="email" placeholder="Para responderte" required /></div>
+          <div class="field"><label for="ct-message">Tu mensaje</label><textarea id="ct-message" name="message" placeholder="Cuéntanos sobre tu proyecto, tu negocio o la duda que tengas…" required></textarea></div>
+          <div class="honeypot" aria-hidden="true"><label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
           <button class="btn btn-primary form-submit" type="submit" id="ctSubmit">Enviar mensaje</button>
           <p class="form-alt">Respondemos en menos de 24h, normalmente el mismo día.</p>
           <div class="form-msg" id="ctMsg" role="status" aria-live="polite"></div>
@@ -698,36 +642,17 @@
       <h2 class="display">Elige día y hora.<br>Hablamos <em>sin compromiso.</em></h2>
       <p>Una videollamada de media hora para entender tu proyecto, resolver tus dudas y ver si somos el equipo que necesitas. Gratis, siempre.</p>
       <ul class="sesion-perks">
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Análisis rápido de tu situación digital actual
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Orientación sobre qué servicio te conviene más
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Estimación de presupuesto y plazos sin letra pequeña
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Sin compromiso de contratación — solo claridad
-        </li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Análisis rápido de tu situación digital actual</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Orientación sobre qué servicio te conviene más</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Estimación de presupuesto y plazos sin letra pequeña</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Sin compromiso de contratación — solo claridad</li>
       </ul>
     </div>
-
     <div class="sesion-form reveal">
       <div class="form-card">
         <form id="sesionForm" novalidate>
-          <div class="field">
-            <label for="sk-name">Tu nombre</label>
-            <input id="sk-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required />
-          </div>
-          <div class="field">
-            <label for="sk-email">Email</label>
-            <input id="sk-email" name="email" type="email" autocomplete="email" placeholder="hola@tuempresa.com" required />
-          </div>
+          <div class="field"><label for="sk-name">Tu nombre</label><input id="sk-name" name="name" type="text" autocomplete="name" placeholder="Nombre y apellido" required /></div>
+          <div class="field"><label for="sk-email">Email</label><input id="sk-email" name="email" type="email" autocomplete="email" placeholder="hola@tuempresa.com" required /></div>
           <div class="field">
             <label for="sk-service">¿En qué puedo ayudarte?</label>
             <select id="sk-service" name="service" required>
@@ -741,31 +666,18 @@
             </select>
           </div>
           <div class="field-row">
-            <div class="field">
-              <label for="sk-date">Día</label>
-              <input id="sk-date" name="date" type="date" required />
-            </div>
-            <div class="field">
-              <label for="sk-time">Hora</label>
-              <select id="sk-time" name="time" required>
-                <option value="" disabled selected>Elige el día primero</option>
-              </select>
-            </div>
+            <div class="field"><label for="sk-date">Día</label><input id="sk-date" name="date" type="date" required /></div>
+            <div class="field"><label for="sk-time">Hora</label><select id="sk-time" name="time" required><option value="" disabled selected>Elige el día primero</option></select></div>
           </div>
-          <div class="field">
-            <label for="sk-notes">Cuéntanos algo sobre tu proyecto (opcional)</label>
-            <textarea id="sk-notes" name="notes" placeholder="Tipo de negocio, qué necesitas, si ya tienes web…"></textarea>
-          </div>
-          <div class="honeypot" aria-hidden="true">
-            <label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-          </div>
+          <div class="field"><label for="sk-notes">Cuéntanos algo sobre tu proyecto (opcional)</label><textarea id="sk-notes" name="notes" placeholder="Tipo de negocio, qué necesitas, si ya tienes web…"></textarea></div>
+          <div class="honeypot" aria-hidden="true"><label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
           <button class="btn btn-primary form-submit btn-lg" type="submit" id="skSubmit">Reservar sesión gratuita</button>
           <p class="form-alt">O escríbenos a <a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></p>
           <div class="form-msg" id="sesionMsg" role="status" aria-live="polite"></div>
         </form>
         <div class="form-confirm" id="sesionConfirm">
           <h3>¡Sesión reservada! ✦</h3>
-          <p id="confirmText">Te enviamos la confirmación por email. Puedes escribirnos si necesitas cambiar algo:</p>
+          <p id="confirmText">Te enviamos la confirmación por email. Puedes escribirnos si necesitas cambiar algo.</p>
           <a class="btn btn-primary btn-lg" href="mailto:hola@maisonaura.es">Confirmar por email</a>
         </div>
       </div>
@@ -779,17 +691,11 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Maison Aura Studio</div>
-        <p>Diseño web, marketing digital y SEO para marcas que quieren crecer en internet. Trabajo remoto en toda España.</p>
+        <p>Diseño web, marketing digital y SEO para marcas que quieren crecer en internet. Trabajo remoto en toda España y Europa.</p>
         <div class="footer-social">
-          <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="mailto:hola@maisonaura.es" aria-label="Email">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+          <a href="https://instagram.com/maisonaura.studio" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com/company/maisonaura" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="mailto:hola@maisonaura.es" aria-label="Email"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
       <div>
@@ -800,27 +706,40 @@
           <li><a href="#servicios">Branding & identidad</a></li>
           <li><a href="#servicios">Marketing digital</a></li>
           <li><a href="#servicios">SEO & posicionamiento</a></li>
+          <li><a href="#servicios">Mantenimiento & soporte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul class="footer-links">
+          <li><a href="#nosotros">Por qué nosotros</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#sesion">Sesión gratuita</a></li>
         </ul>
       </div>
       <div>
         <h4>Contacto</h4>
         <ul class="footer-links">
           <li><a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></li>
-          <li>Trabajo remoto · España</li>
-          <li><a href="#sesion">Sesión de diagnóstico gratuita</a></li>
-          <li><a href="#portfolio">Ver portfolio</a></li>
+          <li>Remoto · España & Nederland</li>
         </ul>
+        <div style="margin-top:20px;padding:16px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px">
+          <p style="margin:0 0 10px;font-size:.85rem;color:var(--light-soft)">¿Tienes un proyecto?</p>
+          <a class="btn btn-primary" href="#sesion" style="font-size:.82rem;padding:10px 18px">Sesión gratuita →</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span><a href="/admin" style="color:inherit;opacity:.3;font-size:.78rem;text-decoration:none;margin-right:10px" title="Acceso panel">⚙</a>© <span id="year"></span> Maison Aura Studio · Estd. 2026 · Located in Nederland · Born in Spain</span>
+      <span><a href="/admin" style="color:inherit;opacity:.25;font-size:.78rem;text-decoration:none;margin-right:10px" title="Panel">⚙</a>© <span id="year"></span> Maison Aura Studio · Estd. 2026 · Located in Nederland · Born in Spain</span>
       <span>Hecho con intención, entregado con cuidado.</span>
     </div>
   </div>
 </footer>
 
 <div class="cookie-bar" id="cookieBar" role="alertdialog" aria-label="Aviso de privacidad" hidden>
-  <p>Esta web carga Google Fonts, que puede registrar tu visita según su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>. Al continuar navegando aceptas su uso.</p>
+  <p>Esta web usa Google Fonts. Al continuar navegando aceptas su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
   <button class="btn btn-gold" id="cookieAccept">Entendido</button>
 </div>
 
