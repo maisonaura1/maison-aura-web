@@ -53,26 +53,49 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a class="logo" href="#top" aria-label="Maison Aura Studio — volver al inicio">
-      <svg class="logo-svg" viewBox="0 0 210 82" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+      <!--
+        Logo fiel al original:
+        Maison = Poppins 300 (light)
+        Aura   = Poppins 900 (black/heavy, protagonista)
+        Studio = Poppins 700 (bold)
+        Badge  = rectángulo sólido con gradiente de marca
+      -->
+      <svg class="logo-svg" viewBox="0 0 180 86" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
         <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="210" y2="82" gradientUnits="userSpaceOnUse">
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="180" y2="86" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stop-color="#8B5CF6"/>
             <stop offset="50%"  stop-color="#EC4899"/>
             <stop offset="100%" stop-color="#F97316"/>
           </linearGradient>
           <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stop-color="#9B6BF7"/>
+            <stop offset="0%"   stop-color="#8B5CF6"/>
             <stop offset="100%" stop-color="#F97316"/>
           </linearGradient>
         </defs>
-        <text x="1" y="19" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="18" font-weight="300" fill="url(#logoGrad)" letter-spacing="0.5">Maison</text>
-        <text x="1" y="50" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="32" font-weight="800" fill="url(#logoGrad)" letter-spacing="-0.5">Aura</text>
-        <text x="1" y="69" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="18" font-weight="300" fill="url(#logoGrad)" letter-spacing="0.5">Studio</text>
-        <rect x="1" y="73" width="68" height="9" rx="1.5" fill="url(#badgeGrad)"/>
-        <text x="4" y="79.5" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="4" font-weight="600" fill="#ffffff" letter-spacing="0.3">SEO · WEB DESIGN · DIGIT.</text>
-        <rect x="70" y="73" width="68" height="9" rx="1.5" fill="none" stroke="rgba(139,92,246,.5)" stroke-width="0.6"/>
-        <text x="73" y="78" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="3.5" font-weight="700" fill="#8B5CF6" letter-spacing="0.2">ESTD. 2026</text>
-        <text x="73" y="81.5" font-family="'Poppins','DM Sans',system-ui,sans-serif" font-size="3" font-weight="400" fill="rgba(139,92,246,.7)" letter-spacing="0.1">NEDERLAND · BORN IN SPAIN</text>
+
+        <!-- Maison — light -->
+        <text x="1" y="18"
+          font-family="'Poppins','DM Sans',system-ui,sans-serif"
+          font-size="17" font-weight="300"
+          fill="url(#logoGrad)" letter-spacing="0.2">Maison</text>
+
+        <!-- Aura — black/heavy, protagonista -->
+        <text x="0" y="52"
+          font-family="'Poppins','DM Sans',system-ui,sans-serif"
+          font-size="38" font-weight="900"
+          fill="url(#logoGrad)" letter-spacing="-1">Aura</text>
+
+        <!-- Studio — bold -->
+        <text x="1" y="72"
+          font-family="'Poppins','DM Sans',system-ui,sans-serif"
+          font-size="20" font-weight="700"
+          fill="url(#logoGrad)" letter-spacing="0">Studio</text>
+
+        <!-- Badge — rectángulo sólido como en el original -->
+        <rect x="1" y="76" width="112" height="10" rx="0" fill="url(#badgeGrad)"/>
+        <text x="5" y="83.5"
+          font-family="'Poppins','DM Sans',system-ui,sans-serif"
+          font-size="4.2" font-weight="600" fill="#ffffff" letter-spacing="0.8">SEO · WEB DESIGN · DIGITALISATION</text>
       </svg>
     </a>
     <nav class="nav" id="nav">
