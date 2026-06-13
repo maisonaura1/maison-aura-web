@@ -9,7 +9,7 @@
 <meta property="og:description" content="Tu web. Tu marca. Tus clientes. Sin plantillas, sin atajos, con resultados." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://maison-aura-web.onrender.com" />
-<meta name="theme-color" content="#8B5CF6" />
+<meta name="theme-color" content="#F5F1EB" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;700;800&family=Sacramento&display=swap" rel="stylesheet" />
@@ -60,42 +60,36 @@
         Studio = Poppins 700 (bold)
         Badge  = rectángulo sólido con gradiente de marca
       -->
-      <svg class="logo-svg" viewBox="0 0 180 86" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-        <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="180" y2="86" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#8B5CF6"/>
-            <stop offset="50%"  stop-color="#EC4899"/>
-            <stop offset="100%" stop-color="#F97316"/>
-          </linearGradient>
-          <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stop-color="#8B5CF6"/>
-            <stop offset="100%" stop-color="#F97316"/>
-          </linearGradient>
-        </defs>
-
-        <!-- Maison — light -->
-        <text x="1" y="18"
+      <svg class="logo-svg" viewBox="0 0 200 96" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <!-- Maison — Poppins 300 light -->
+        <text x="1" y="20"
           font-family="'Poppins','DM Sans',system-ui,sans-serif"
           font-size="17" font-weight="300"
-          fill="url(#logoGrad)" letter-spacing="0.2">Maison</text>
+          fill="#0D0B09" letter-spacing="0.4">Maison</text>
 
-        <!-- Aura — black/heavy, protagonista -->
-        <text x="0" y="52"
+        <!-- Aura — Poppins 900 black, protagonista -->
+        <text x="0" y="58"
           font-family="'Poppins','DM Sans',system-ui,sans-serif"
-          font-size="38" font-weight="900"
-          fill="url(#logoGrad)" letter-spacing="-1">Aura</text>
+          font-size="42" font-weight="900"
+          fill="#0D0B09" letter-spacing="-1.5">Aura</text>
 
-        <!-- Studio — bold -->
-        <text x="1" y="72"
+        <!-- Studio — Poppins 700 bold -->
+        <text x="1" y="78"
           font-family="'Poppins','DM Sans',system-ui,sans-serif"
-          font-size="20" font-weight="700"
-          fill="url(#logoGrad)" letter-spacing="0">Studio</text>
+          font-size="21" font-weight="700"
+          fill="#0D0B09" letter-spacing="0.1">Studio</text>
 
-        <!-- Badge — rectángulo sólido como en el original -->
-        <rect x="1" y="76" width="112" height="10" rx="0" fill="url(#badgeGrad)"/>
-        <text x="5" y="83.5"
+        <!-- Badge izquierdo: sólido negro -->
+        <rect x="1" y="82" width="118" height="11" rx="1" fill="#0D0B09"/>
+        <text x="5" y="90"
           font-family="'Poppins','DM Sans',system-ui,sans-serif"
-          font-size="4.2" font-weight="600" fill="#ffffff" letter-spacing="0.8">SEO · WEB DESIGN · DIGITALISATION</text>
+          font-size="4.5" font-weight="700" fill="#F5F1EB" letter-spacing="0.9">SEO · WEB DESIGN · DIGITALISATION</text>
+
+        <!-- Badge derecho: contorno -->
+        <rect x="121" y="82" width="76" height="11" rx="1" fill="none" stroke="#0D0B09" stroke-width="1"/>
+        <text x="125" y="90"
+          font-family="'Poppins','DM Sans',system-ui,sans-serif"
+          font-size="3.8" font-weight="600" fill="#0D0B09" letter-spacing="0.5">ESTD. 2026 · NEDERLAND</text>
       </svg>
     </a>
     <nav class="nav" id="nav">
@@ -748,9 +742,9 @@
           <li><a href="mailto:hola@maisonaura.es">hola@maisonaura.es</a></li>
           <li>Remoto · España & Nederland</li>
         </ul>
-        <div style="margin-top:20px;padding:16px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px">
-          <p style="margin:0 0 10px;font-size:.85rem;color:var(--light-soft)">¿Tienes un proyecto?</p>
-          <a class="btn btn-primary" href="#sesion" style="font-size:.82rem;padding:10px 18px">Sesión gratuita →</a>
+        <div style="margin-top:20px;padding:16px;background:rgba(245,241,235,.06);border:1px solid rgba(245,241,235,.12);border-radius:10px">
+          <p style="margin:0 0 10px;font-size:.85rem;color:rgba(245,241,235,.45)">¿Tienes un proyecto?</p>
+          <a class="btn btn-primary" href="#sesion" style="font-size:.82rem;padding:10px 18px;background:var(--cream);color:var(--ink)">Sesión gratuita →</a>
         </div>
       </div>
     </div>
