@@ -364,18 +364,22 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .trust-item {
-  padding: 36px 24px 32px; text-align: center;
-  border-right: 1px solid var(--line); overflow: hidden;
+  padding: 36px 20px 32px; text-align: center;
+  border-right: 1px solid var(--line);
 }
-.trust-item:first-child { padding-left: 32px; }
-.trust-item:last-child { border-right: 0; padding-right: 32px; }
+.trust-item:last-child { border-right: 0; }
 .trust-item b {
   display: block; font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.4rem, 3.5vw, 3.4rem); font-weight: 500; line-height: 1; margin-bottom: 10px;
+  font-size: clamp(2rem, 2.8vw, 2.8rem); font-weight: 500;
+  line-height: 1.1; margin-bottom: 10px;
+  white-space: nowrap;
   background: var(--brand-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.trust-item span { font-size: .88rem; color: var(--ink-soft); font-weight: 500; line-height: 1.4; display: block; }
+.trust-item span {
+  font-size: .86rem; color: var(--ink-soft); font-weight: 500;
+  line-height: 1.4; display: block;
+}
 
 /* ========================== secciones generales =================== */
 .section { padding: clamp(68px, 9vw, 116px) 0; background: var(--cream); }
