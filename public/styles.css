@@ -183,7 +183,7 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
 
 .logo { display: flex; align-items: center; }
-.logo-svg { height: 72px; width: auto; display: block; min-width: 170px; max-width: 250px; }
+.logo-svg { height: 68px; width: auto; display: block; min-width: 120px; max-width: 180px; }
 
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a { font-size: .88rem; color: var(--ink-soft); font-weight: 500; letter-spacing: .02em; transition: color .2s; }
@@ -364,17 +364,18 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .trust-item {
-  padding: 32px 28px; text-align: center;
-  border-right: 1px solid var(--line);
+  padding: 36px 24px 32px; text-align: center;
+  border-right: 1px solid var(--line); overflow: hidden;
 }
-.trust-item:last-child { border-right: 0; }
+.trust-item:first-child { padding-left: 32px; }
+.trust-item:last-child { border-right: 0; padding-right: 32px; }
 .trust-item b {
   display: block; font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 500; line-height: 1; margin-bottom: 8px;
+  font-size: clamp(2.4rem, 3.5vw, 3.4rem); font-weight: 500; line-height: 1; margin-bottom: 10px;
   background: var(--brand-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.trust-item span { font-size: .9rem; color: var(--ink-soft); font-weight: 500; }
+.trust-item span { font-size: .88rem; color: var(--ink-soft); font-weight: 500; line-height: 1.4; display: block; }
 
 /* ========================== secciones generales =================== */
 .section { padding: clamp(68px, 9vw, 116px) 0; background: var(--cream); }
