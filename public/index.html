@@ -294,6 +294,40 @@
   </div>
 </section>
 
+
+<!-- ====================== CÓMO FUNCIONA ========================= -->
+<section class="section como-funciona" id="como-funciona">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2 class="display">De la idea al lanzamiento,<br><em>sin complicaciones.</em></h2>
+      <p>Cuatro pasos claros para que en pocas semanas tengas una web o estrategia que realmente funcione.</p>
+    </div>
+    <div class="how-grid reveal">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h3>Sesión gratuita</h3>
+        <p>30 minutos para entenderte. Analizamos tu negocio, tus objetivos y trazamos el camino más directo al resultado.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h3>Propuesta a medida</h3>
+        <p>En 48h recibes un presupuesto detallado, cronograma real y todo lo que necesitas para decidir sin presión.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h3>Diseño y desarrollo</h3>
+        <p>Trabajamos con tu feedback en cada etapa. Revisiones ilimitadas hasta que sientas que es exactamente lo que necesitas.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">04</div>
+        <h3>Lanzamiento y soporte</h3>
+        <p>Publicamos, medimos y seguimos a tu lado. El lanzamiento es el principio, no el final de nuestra relación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ PROCESO ========================== -->
 <section class="section proceso" id="proceso">
   <div class="wrap">
@@ -529,7 +563,14 @@
 
 <!-- ========================= BANNER CTA ========================== -->
 <section class="cta-banner" aria-label="Empieza tu proyecto">
-  <div class="cta-banner-bg" aria-hidden="true"></div>
+  <!-- Textura de ruido sutil -->
+  <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.03;pointer-events:none;z-index:0">
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+  </svg>
+  <!-- Destellos de gradiente de marca -->
+  <div aria-hidden="true" style="position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.12) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-60px;left:-40px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.07) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
   <div class="wrap cta-banner-inner">
     <div class="cta-banner-content reveal">
       <p class="eyebrow">¿Listo para el siguiente paso?</p>
@@ -721,6 +762,16 @@
   <p>Esta web usa Google Fonts. Al continuar navegando aceptas su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
   <button class="btn btn-gold" id="cookieAccept">Entendido</button>
 </div>
+
+
+<!-- ====================== WHATSAPP FLOTANTE ==================== -->
+<a class="wa-fab" href="https://wa.me/31000000000?text=Hola%2C%20me%20interesa%20conocer%20vuestros%20servicios%20de%20diseño%20web%20y%20marketing." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.672 5.098 1.848 7.256L1 31l8.004-1.82A14.938 14.938 0 0 0 16 31c8.284 0 15-6.716 15-15S24.284 1 16 1z" fill="#fff"/>
+    <path d="M23.472 19.608c-.36-.18-2.124-1.044-2.454-1.164-.33-.12-.57-.18-.81.18-.24.36-.93 1.164-1.14 1.404-.21.24-.42.27-.78.09-.36-.18-1.524-.558-2.904-1.782-1.074-.954-1.8-2.13-2.01-2.49-.21-.36-.024-.552.156-.732.162-.162.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.944-1.11-2.664-.294-.702-.594-.606-.81-.618-.21-.012-.45-.015-.69-.015-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.538 3.876 6.15 5.436.858.372 1.53.594 2.052.762.864.276 1.65.237 2.272.144.693-.102 2.124-.867 2.424-1.704.3-.837.3-1.554.21-1.704-.09-.15-.33-.24-.69-.42z" fill="#25D366"/>
+  </svg>
+  <span class="wa-pulse"></span>
+</a>
 
 <script src="app.js"></script>
 </body>

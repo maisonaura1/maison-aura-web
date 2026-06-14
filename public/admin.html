@@ -969,7 +969,7 @@ function renderSessions() {
   }
   el.innerHTML = `<table>
     <thead><tr>
-      <th>Nombre</th><th>Email</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th><th>Notas</th>
+      <th>Nombre</th><th>Email</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th><th>Acción</th>
     </tr></thead>
     <tbody>
     ${filtered.map(s => `<tr>
@@ -984,7 +984,21 @@ function renderSessions() {
             `<option value="${st}"${s.status===st?' selected':''}>${st}</option>`).join('')}
         </select>
       </td>
-      <td style="max-width:200px;white-space:normal;font-size:.82rem;color:var(--ink-soft)">${esc(s.notes||'—')}</td>
+      <td>
+        <div style="display:flex;gap:6px">
+          <button class="wa-confirm-btn" data-id="${esc(s.id)}" data-name="${esc(s.name)}" data-service="${esc(svcLabel(s.service))}" data-date="${esc(s.date)}" data-time="${esc(s.time)}" data-action="confirm"
+            title="Confirmar por WhatsApp"
+            style="background:#25D366;border:none;border-radius:8px;padding:7px 10px;cursor:pointer;display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:#fff;font-family:inherit">
+            <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.672 5.098 1.848 7.256L1 31l8.004-1.82A14.938 14.938 0 0 0 16 31c8.284 0 15-6.716 15-15S24.284 1 16 1z" fill="#fff"/><path d="M23.472 19.608c-.36-.18-2.124-1.044-2.454-1.164-.33-.12-.57-.18-.81.18-.24.36-.93 1.164-1.14 1.404-.21.24-.42.27-.78.09-.36-.18-1.524-.558-2.904-1.782-1.074-.954-1.8-2.13-2.01-2.49-.21-.36-.024-.552.156-.732.162-.162.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.944-1.11-2.664-.294-.702-.594-.606-.81-.618-.21-.012-.45-.015-.69-.015-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.538 3.876 6.15 5.436.858.372 1.53.594 2.052.762.864.276 1.65.237 2.272.144.693-.102 2.124-.867 2.424-1.704.3-.837.3-1.554.21-1.704-.09-.15-.33-.24-.69-.42z" fill="#25D366"/></svg>
+            Confirmar
+          </button>
+          <button class="wa-confirm-btn" data-id="${esc(s.id)}" data-name="${esc(s.name)}" data-service="${esc(svcLabel(s.service))}" data-date="${esc(s.date)}" data-time="${esc(s.time)}" data-action="cancel"
+            title="Cancelar por WhatsApp"
+            style="background:var(--err-bg);border:none;border-radius:8px;padding:7px 10px;cursor:pointer;font-size:.78rem;font-weight:600;color:var(--err);font-family:inherit">
+            Cancelar
+          </button>
+        </div>
+      </td>
     </tr>`).join('')}
     </tbody></table>`;
 }
@@ -1117,6 +1131,54 @@ async function uploadPhoto(file) {
   };
   reader.readAsDataURL(file);
 }
+
+/* ═══════════════ WhatsApp Confirmación ═══════════════ */
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.wa-confirm-btn');
+  if (!btn) return;
+
+  const { id, name, service, date, time, action } = btn.dataset;
+  const dateStr = fmtDate(date);
+  const PHONE = '31000000000'; // ← cambia por el número real con código de país
+
+  let msg, newStatus;
+  if (action === 'confirm') {
+    newStatus = 'confirmada';
+    msg = `¡Hola ${name}! ✅ Tu sesión de diagnóstico con *Maison Aura Studio* queda *confirmada*.
+
+📌 *Servicio:* ${service}
+📅 *Fecha:* ${dateStr}
+🕐 *Hora:* ${time}
+
+¡Nos vemos pronto! Si necesitas hacer algún cambio, escríbenos sin problema. 😊
+
+— Equipo Maison Aura`;
+  } else {
+    newStatus = 'cancelada';
+    msg = `Hola ${name}, lamentamos informarte que necesitamos cancelar vuestra sesión del ${dateStr} a las ${time}. 😔
+
+Estamos muy arrepentidos por los inconvenientes. Por favor escríbenos para encontrar un nuevo hueco que te venga bien.
+
+— Equipo Maison Aura`;
+  }
+
+  // Actualizar estado en servidor
+  try {
+    await fetch(\`/api/admin/sessions/\${id}\`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
+      body: JSON.stringify({ status: newStatus })
+    });
+    const s = allSessions.find(x => x.id === id);
+    if (s) s.status = newStatus;
+    updateSessionStats();
+    renderSessions();
+    toast(\`Estado → \${newStatus} ✓\`, true);
+  } catch {}
+
+  // Abrir WhatsApp
+  window.open(\`https://wa.me/\${PHONE}?text=\${encodeURIComponent(msg)}\`, '_blank');
+});
 </script>
 </body>
 </html>
