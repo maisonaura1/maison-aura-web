@@ -84,10 +84,13 @@
 
 <!-- ============================= HERO ============================= -->
 <section class="hero">
-  <!-- Orbes animados de fondo -->
-  <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
+  <!-- Malla de gradiente animada — firma visual tipo Stripe -->
+  <div class="mesh" aria-hidden="true">
+    <span class="mesh-blob mesh-blob--violet"></span>
+    <span class="mesh-blob mesh-blob--red"></span>
+    <span class="mesh-blob mesh-blob--cyan"></span>
+    <span class="mesh-blob mesh-blob--amber"></span>
+  </div>
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -110,12 +113,12 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Sesión gratuita
         </a>
-        <a class="btn btn-ghost btn-lg" href="#portfolio">Ver proyectos →</a>
+        <a class="btn btn-ghost btn-lg" href="#portfolio">Ver proyectos <span class="arrow">→</span></a>
       </div>
     </div>
 
-    <div class="hero-figure reveal">
-      <div class="hero-canvas shimmer">
+    <div class="hero-figure reveal tilt" data-tilt>
+      <div class="hero-canvas shimmer tilt-inner">
         <div class="hero-mockup" aria-hidden="true">
           <div class="mockup-browser">
             <div class="mockup-bar">
@@ -137,8 +140,8 @@
               </div>
               <div class="mockup-cards">
                 <div class="mockup-card"><div class="mockup-card-img"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
-                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(236,72,153,.2)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
-                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(249,115,22,.15)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
+                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(255,51,61,.2)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
+                <div class="mockup-card"><div class="mockup-card-img" style="background:rgba(255,203,87,.15)"></div><div class="mockup-card-t"></div><div class="mockup-card-s"></div></div>
               </div>
             </div>
           </div>
@@ -161,7 +164,7 @@
 <!-- ========================= TRUST STRIP ========================== -->
 <section class="trust">
   <div class="wrap">
-    <div class="trust-grid">
+    <div class="trust-grid stagger">
       <div class="trust-item">
         <b><span class="counter" data-target="47">0</span>+</b>
         <span>proyectos completados</span>
@@ -189,43 +192,43 @@
       <p class="eyebrow">Por qué elegirnos</p>
       <h2 class="display">No somos una agencia más.<br><em>Somos tu equipo digital.</em></h2>
     </div>
-    <div class="porq-grid reveal">
-      <div class="porq-card">
+    <div class="porq-grid stagger">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3>Todo bajo un mismo techo</h3>
         <p>Web, SEO y marketing coordinados desde el primer día. Sin intermediarios, sin pérdida de coherencia entre canales.</p>
       </div>
-      <div class="porq-card">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
         <h3>Resultados en semanas, no en años</h3>
         <p>Procesos ágiles y entregas parciales para que veas avances reales desde la primera semana. Sin esperas infinitas.</p>
       </div>
-      <div class="porq-card">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <h3>Perspectiva europea, raíces españolas</h3>
         <p>Trabajamos desde Nederland con clientes en toda España y Europa. Visión internacional, sensibilidad local.</p>
       </div>
-      <div class="porq-card">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Precio cerrado, sin sorpresas</h3>
         <p>Presupuesto detallado antes de empezar. Sin costes ocultos, sin extras de última hora. Lo que acordamos, lo que pagas.</p>
       </div>
-      <div class="porq-card">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3>Diseño orientado a conversión</h3>
         <p>Cada elemento tiene un propósito: que el visitante se convierta en cliente. Bonito y funcional no son opuestos.</p>
       </div>
-      <div class="porq-card">
+      <div class="porq-card spot">
         <div class="porq-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
@@ -244,8 +247,8 @@
       <h2 class="display">Todo lo que tu negocio necesita<br>para <em>crecer en internet.</em></h2>
       <p>Una sola agencia para diseño, marketing y SEO. Todo coordinado, todo coherente, todo orientado a que tus clientes te encuentren y te elijan.</p>
     </div>
-    <div class="services-grid" id="servicesGrid">
-      <article class="service-card reveal">
+    <div class="services-grid stagger" id="servicesGrid">
+      <article class="service-card spot">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
@@ -253,7 +256,7 @@
         <p>Tu web diseñada desde cero con identidad propia. Sin plantillas, sin atajos. Rápida, accesible y pensada para convertir visitantes en clientes.</p>
         <div class="service-price">desde 1.200€</div>
       </article>
-      <article class="service-card reveal">
+      <article class="service-card spot">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         </div>
@@ -261,7 +264,7 @@
         <p>Vende en internet con una tienda rápida, atractiva y fácil de gestionar. Integración con pasarelas de pago, envíos y gestión de inventario.</p>
         <div class="service-price">desde 1.800€</div>
       </article>
-      <article class="service-card reveal">
+      <article class="service-card spot">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
@@ -270,7 +273,7 @@
         <div class="service-price">desde 650€</div>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card spot">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
@@ -278,7 +281,7 @@
         <p>Que te encuentren en Google antes que a tu competencia. Auditoría técnica, optimización on-page, link building y contenidos posicionados.</p>
         <div class="service-price">desde 350€/mes</div>
       </article>
-      <article class="service-card reveal">
+      <article class="service-card spot">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
@@ -289,7 +292,7 @@
     </div>
     <div class="services-cta reveal">
       <p>¿No sabes por dónde empezar? La sesión de diagnóstico gratuita es exactamente para eso.</p>
-      <a class="btn btn-primary" href="#sesion">Reserva tu sesión gratuita →</a>
+      <a class="btn btn-primary" href="#sesion">Reserva tu sesión gratuita <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -303,23 +306,23 @@
       <h2 class="display">De la idea al lanzamiento,<br><em>sin complicaciones.</em></h2>
       <p>Cuatro pasos claros para que en pocas semanas tengas una web o estrategia que realmente funcione.</p>
     </div>
-    <div class="how-grid reveal">
-      <div class="how-card">
+    <div class="how-grid stagger">
+      <div class="how-card spot">
         <div class="how-num">01</div>
         <h3>Sesión gratuita</h3>
         <p>30 minutos para entenderte. Analizamos tu negocio, tus objetivos y trazamos el camino más directo al resultado.</p>
       </div>
-      <div class="how-card">
+      <div class="how-card spot">
         <div class="how-num">02</div>
         <h3>Propuesta a medida</h3>
         <p>En 48h recibes un presupuesto detallado, cronograma real y todo lo que necesitas para decidir sin presión.</p>
       </div>
-      <div class="how-card">
+      <div class="how-card spot">
         <div class="how-num">03</div>
         <h3>Diseño y desarrollo</h3>
         <p>Trabajamos con tu feedback en cada etapa. Revisiones ilimitadas hasta que sientas que es exactamente lo que necesitas.</p>
       </div>
-      <div class="how-card">
+      <div class="how-card spot">
         <div class="how-num">04</div>
         <h3>Lanzamiento y soporte</h3>
         <p>Publicamos, medimos y seguimos a tu lado. El lanzamiento es el principio, no el final de nuestra relación.</p>
@@ -330,14 +333,20 @@
 
 <!-- ============================ PROCESO ========================== -->
 <section class="section proceso" id="proceso">
+  <div class="mesh mesh--dark" aria-hidden="true">
+    <span class="mesh-blob mesh-blob--violet"></span>
+    <span class="mesh-blob mesh-blob--red"></span>
+    <span class="mesh-blob mesh-blob--cyan"></span>
+    <span class="mesh-blob mesh-blob--amber"></span>
+  </div>
   <div class="wrap">
     <div class="section-head center reveal">
       <p class="eyebrow">Cómo trabajamos</p>
       <h2 class="display">Un proceso claro, de la idea<br>al <em>resultado.</em></h2>
       <p>No empezamos a diseñar el día uno. Primero escuchamos, analizamos y trazamos la estrategia. Después ejecutamos con precisión.</p>
     </div>
-    <div class="proceso-timeline reveal">
-      <div class="proceso-step-h">
+    <div class="proceso-timeline stagger">
+      <div class="proceso-step-h spot">
         <div class="psh-num">01</div>
         <div class="psh-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -346,7 +355,7 @@
         <p>Sesión de diagnóstico gratuita. Entendemos tu negocio, tus clientes y tus objetivos reales.</p>
       </div>
       <div class="psh-connector" aria-hidden="true"></div>
-      <div class="proceso-step-h">
+      <div class="proceso-step-h spot">
         <div class="psh-num">02</div>
         <div class="psh-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
@@ -355,7 +364,7 @@
         <p>Propuesta detallada: estructura, funcionalidades, cronograma y presupuesto cerrado sin letra pequeña.</p>
       </div>
       <div class="psh-connector" aria-hidden="true"></div>
-      <div class="proceso-step-h">
+      <div class="proceso-step-h spot">
         <div class="psh-num">03</div>
         <div class="psh-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
@@ -364,7 +373,7 @@
         <p>Diseñamos con tu feedback en cada ronda. Revisiones ilimitadas hasta que sientas que es tuyo.</p>
       </div>
       <div class="psh-connector" aria-hidden="true"></div>
-      <div class="proceso-step-h">
+      <div class="proceso-step-h spot">
         <div class="psh-num">04</div>
         <div class="psh-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -373,7 +382,7 @@
         <p>Codificamos, optimizamos y probamos en todos los dispositivos. Velocidad, accesibilidad y SEO desde el código.</p>
       </div>
       <div class="psh-connector" aria-hidden="true"></div>
-      <div class="proceso-step-h">
+      <div class="proceso-step-h spot">
         <div class="psh-num">05</div>
         <div class="psh-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -406,19 +415,19 @@
       <button class="pf-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
     </div>
 
-    <div class="portfolio-grid reveal" id="portfolioGrid">
+    <div class="portfolio-grid stagger" id="portfolioGrid">
 
       <a class="portfolio-item" href="https://www.dutchtaxhelper.com/dashboard" target="_blank" rel="noopener" data-cat="software" aria-label="Ver Sworfare Plus Dashboard">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#0D0D1A,#1A0D2E,#0D0A1E)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 70% 20%,rgba(139,92,246,.35) 0%,transparent 65%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 70% 20%,rgba(169,96,238,.35) 0%,transparent 65%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
               <div class="pm-hero" style="background:linear-gradient(135deg,#1A0D2E,#2D1B69,#4C1D95);padding:8px;display:flex;flex-direction:column;gap:5px">
-                <div style="display:flex;justify-content:space-between;align-items:center"><div style="height:5px;width:36px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:3px"></div><div style="display:flex;gap:3px"><div style="width:13px;height:13px;background:rgba(139,92,246,.3);border:1px solid rgba(139,92,246,.5);border-radius:3px"></div><div style="width:13px;height:13px;background:rgba(236,72,153,.3);border:1px solid rgba(236,72,153,.5);border-radius:3px"></div></div></div>
-                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px"><div style="background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#8B5CF6,#EC4899);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#EC4899,#F97316);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#F97316,#FBBF24);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div></div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><div style="height:5px;width:36px;background:linear-gradient(90deg,#A960EE,#FF333D);border-radius:3px"></div><div style="display:flex;gap:3px"><div style="width:13px;height:13px;background:rgba(169,96,238,.3);border:1px solid rgba(169,96,238,.5);border-radius:3px"></div><div style="width:13px;height:13px;background:rgba(255,51,61,.3);border:1px solid rgba(255,51,61,.5);border-radius:3px"></div></div></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px"><div style="background:rgba(169,96,238,.18);border:1px solid rgba(169,96,238,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#A960EE,#FF333D);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(255,51,61,.18);border:1px solid rgba(255,51,61,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#FF333D,#FFCB57);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div><div style="background:rgba(255,203,87,.18);border:1px solid rgba(255,203,87,.4);border-radius:4px;padding:5px"><div style="height:3px;background:linear-gradient(90deg,#FFCB57,#FBBF24);border-radius:2px;margin-bottom:3px"></div><div style="height:8px;background:rgba(255,255,255,.75);border-radius:2px"></div></div></div>
               </div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.12)"></div><div class="pm-col" style="background:rgba(236,72,153,.08)"></div></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(169,96,238,.12)"></div><div class="pm-col" style="background:rgba(255,51,61,.08)"></div></div>
             </div>
           </div>
         </div>
@@ -430,12 +439,12 @@
 
       <a class="portfolio-item" href="https://manicuratebadajoz.es" target="_blank" rel="noopener" data-cat="web" aria-label="Ver Manicúrate Badajoz">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#1A0D22,#2D1040,#180D2A)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 30% 80%,rgba(236,72,153,.4) 0%,transparent 60%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 30% 80%,rgba(255,51,61,.4) 0%,transparent 60%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
-              <div class="pm-hero" style="background:linear-gradient(135deg,#6D28D9,#BE185D,#9D174D)"></div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(236,72,153,.15)"></div><div class="pm-col" style="background:rgba(139,92,246,.12)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
+              <div class="pm-hero" style="background:linear-gradient(135deg,#7C3AED,#BE185D,#9D174D)"></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(255,51,61,.15)"></div><div class="pm-col" style="background:rgba(169,96,238,.12)"></div><div class="pm-col" style="background:rgba(255,51,61,.1)"></div></div>
             </div>
           </div>
         </div>
@@ -447,12 +456,12 @@
 
       <div class="portfolio-item" data-cat="web">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#0A0A18,#14102A,#0A0A18)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 10%,rgba(139,92,246,.45) 0%,transparent 55%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 10%,rgba(169,96,238,.45) 0%,transparent 55%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
-              <div class="pm-hero" style="background:linear-gradient(135deg,#4C1D95,#6D28D9,#8B5CF6)"></div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.2)"></div><div class="pm-col" style="background:rgba(109,40,217,.15)"></div><div class="pm-col" style="background:rgba(139,92,246,.1)"></div></div>
+              <div class="pm-hero" style="background:linear-gradient(135deg,#4C1D95,#7C3AED,#A960EE)"></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(169,96,238,.2)"></div><div class="pm-col" style="background:rgba(109,40,217,.15)"></div><div class="pm-col" style="background:rgba(169,96,238,.1)"></div></div>
             </div>
           </div>
         </div>
@@ -461,12 +470,12 @@
 
       <div class="portfolio-item" data-cat="ecommerce">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#0E0A1E,#1C0D30,#0E0A1E)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 20% 60%,rgba(139,92,246,.3) 0%,rgba(249,115,22,.15) 50%,transparent 70%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 20% 60%,rgba(169,96,238,.3) 0%,rgba(255,203,87,.15) 50%,transparent 70%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
-              <div class="pm-hero" style="background:linear-gradient(135deg,#7C2D8C,#EC4899,#F97316)"></div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(249,115,22,.15)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
+              <div class="pm-hero" style="background:linear-gradient(135deg,#7C2D8C,#FF333D,#FFCB57)"></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(255,203,87,.15)"></div><div class="pm-col" style="background:rgba(255,51,61,.1)"></div></div>
             </div>
           </div>
         </div>
@@ -475,12 +484,12 @@
 
       <div class="portfolio-item" data-cat="branding">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#10061E,#1E0A35,#100618)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 60% 70%,rgba(236,72,153,.38) 0%,transparent 60%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 60% 70%,rgba(255,51,61,.38) 0%,transparent 60%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
-              <div class="pm-hero" style="background:linear-gradient(135deg,#1E0A35,#6D28D9,#EC4899)"></div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(236,72,153,.18)"></div><div class="pm-col" style="background:rgba(139,92,246,.15)"></div><div class="pm-col" style="background:rgba(236,72,153,.1)"></div></div>
+              <div class="pm-hero" style="background:linear-gradient(135deg,#1E0A35,#7C3AED,#FF333D)"></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(255,51,61,.18)"></div><div class="pm-col" style="background:rgba(169,96,238,.15)"></div><div class="pm-col" style="background:rgba(255,51,61,.1)"></div></div>
             </div>
           </div>
         </div>
@@ -489,12 +498,12 @@
 
       <div class="portfolio-item" data-cat="software">
         <div class="portfolio-mock" style="background:linear-gradient(145deg,#080816,#10082A,#080816)">
-          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 50%,rgba(139,92,246,.25) 0%,rgba(249,115,22,.15) 60%,transparent 80%)"></div>
+          <div class="pm-3d-glow" style="background:radial-gradient(ellipse at 50% 50%,rgba(169,96,238,.25) 0%,rgba(255,203,87,.15) 60%,transparent 80%)"></div>
           <div class="pm-browser">
             <div class="pm-bar"><div class="pm-dot" style="background:#FF6059"></div><div class="pm-dot" style="background:#FEBC2E"></div><div class="pm-dot" style="background:#28C840"></div></div>
             <div class="pm-body">
-              <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#8B5CF6,#F97316)"></div>
-              <div class="pm-row"><div class="pm-col" style="background:rgba(139,92,246,.18)"></div><div class="pm-col" style="background:rgba(249,115,22,.12)"></div></div>
+              <div class="pm-hero" style="background:linear-gradient(135deg,#2D1B69,#A960EE,#FFCB57)"></div>
+              <div class="pm-row"><div class="pm-col" style="background:rgba(169,96,238,.18)"></div><div class="pm-col" style="background:rgba(255,203,87,.12)"></div></div>
             </div>
           </div>
         </div>
@@ -504,7 +513,7 @@
     </div>
     <div class="portfolio-footer reveal">
       <p>¿Quieres un proyecto así?</p>
-      <a class="btn btn-primary" href="#sesion">Cuéntanos tu idea →</a>
+      <a class="btn btn-primary" href="#sesion">Cuéntanos tu idea <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -532,8 +541,8 @@
     </div>
 
     <!-- Grid de testimonios secundarios -->
-    <div class="testimonios-grid">
-      <article class="testimonio-card reveal">
+    <div class="testimonios-grid stagger">
+      <article class="testimonio-card spot">
         <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
         <blockquote>El proceso fue súper claro de principio a fin. Me explicaron cada decisión de diseño y el resultado es exactamente lo que tenía en mente, pero mejor.</blockquote>
         <div class="testimonio-meta">
@@ -541,7 +550,7 @@
           <div><div class="testimonio-name">Marta Íñiguez</div><div class="testimonio-biz">Studio Nórdico · Barcelona</div></div>
         </div>
       </article>
-      <article class="testimonio-card reveal">
+      <article class="testimonio-card spot">
         <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
         <blockquote>Llevo años intentando posicionarme en Google. En cuatro meses con Maison Aura estoy en primera página para mis palabras clave principales. La inversión se pagó sola.</blockquote>
         <div class="testimonio-meta">
@@ -549,7 +558,7 @@
           <div><div class="testimonio-name">Carlos Ventura</div><div class="testimonio-biz">Terra Orgánica · Valencia</div></div>
         </div>
       </article>
-      <article class="testimonio-card reveal">
+      <article class="testimonio-card spot">
         <div class="testimonio-stars" aria-hidden="true">★★★★★</div>
         <blockquote>Rápidos, profesionales y muy creativos. Entregaron antes de plazo y con una calidad que no esperaba a ese precio. Sin duda volveré para el siguiente proyecto.</blockquote>
         <div class="testimonio-meta">
@@ -563,14 +572,20 @@
 
 <!-- ========================= BANNER CTA ========================== -->
 <section class="cta-banner" aria-label="Empieza tu proyecto">
+  <div class="mesh mesh--dark" aria-hidden="true">
+    <span class="mesh-blob mesh-blob--violet"></span>
+    <span class="mesh-blob mesh-blob--red"></span>
+    <span class="mesh-blob mesh-blob--cyan"></span>
+    <span class="mesh-blob mesh-blob--amber"></span>
+  </div>
   <!-- Textura de ruido sutil -->
   <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.03;pointer-events:none;z-index:0">
     <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
     <rect width="100%" height="100%" filter="url(#noise)"/>
   </svg>
   <!-- Destellos de gradiente de marca -->
-  <div aria-hidden="true" style="position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.12) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
-  <div aria-hidden="true" style="position:absolute;bottom:-60px;left:-40px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.07) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+  <div aria-hidden="true" style="position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(169,96,238,.12) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-60px;left:-40px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,203,87,.07) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
   <div class="wrap cta-banner-inner">
     <div class="cta-banner-content reveal">
       <p class="eyebrow">¿Listo para el siguiente paso?</p>
@@ -586,16 +601,16 @@
     </div>
     <div class="cta-banner-visual reveal" aria-hidden="true">
       <div class="cta-orb"></div>
-      <div class="cta-stats">
-        <div class="cta-stat">
+      <div class="cta-stats stagger">
+        <div class="cta-stat spot">
           <div class="cta-stat-icon">🗓</div>
           <div class="cta-stat-body"><b>30 min</b><span>sesión de diagnóstico gratuita</span></div>
         </div>
-        <div class="cta-stat">
+        <div class="cta-stat spot">
           <div class="cta-stat-icon">✦</div>
           <div class="cta-stat-body"><b>100%</b><span>sin compromiso de contratación</span></div>
         </div>
-        <div class="cta-stat">
+        <div class="cta-stat spot">
           <div class="cta-stat-icon">⚡</div>
           <div class="cta-stat-body"><b>24 h</b><span>respuesta garantizada</span></div>
         </div>
@@ -747,7 +762,7 @@
         </ul>
         <div style="margin-top:20px;padding:16px;background:rgba(245,241,235,.06);border:1px solid rgba(245,241,235,.12);border-radius:10px">
           <p style="margin:0 0 10px;font-size:.85rem;color:rgba(245,241,235,.45)">¿Tienes un proyecto?</p>
-          <a class="btn btn-primary" href="#sesion" style="font-size:.82rem;padding:10px 18px;background:var(--cream);color:var(--ink)">Sesión gratuita →</a>
+          <a class="btn btn-primary" href="#sesion" style="font-size:.82rem;padding:10px 18px;background:var(--cream);color:var(--ink)">Sesión gratuita <span class="arrow">→</span></a>
         </div>
       </div>
     </div>

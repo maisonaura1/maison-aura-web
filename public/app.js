@@ -1,9 +1,32 @@
 'use strict';
 
-/* ── Header scroll ───────────────────────────────────────────────── */
+/* ── Preferencia de movimiento reducido ──────────────────────────── */
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CAN_HOVER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/* ── Header scroll + parallax de la malla (un solo rAF) ──────────── */
 const header = document.querySelector('.site-header');
+const heroEl = document.querySelector('.hero');
+let scrollTicking = false;
+
+function onScrollFrame() {
+  const y = window.scrollY;
+  header.classList.toggle('is-stuck', y > 10);
+  // La malla del hero se mueve a menos velocidad que el contenido
+  if (heroEl && !REDUCED) {
+    const h = heroEl.offsetHeight;
+    heroEl.style.setProperty('--scroll-y', (y < h ? y : h) + 'px');
+  }
+  // Lo que ya ha quedado por encima del viewport se revela sin animar
+  if (pendingReveal.size) {
+    pendingReveal.forEach((el) => {
+      if (el.getBoundingClientRect().bottom < 0) reveal(el);
+    });
+  }
+  scrollTicking = false;
+}
 window.addEventListener('scroll', () => {
-  header.classList.toggle('is-stuck', window.scrollY > 10);
+  if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
 }, { passive: true });
 
 /* ── Menú móvil ──────────────────────────────────────────────────── */
@@ -21,11 +44,34 @@ nav?.querySelectorAll('a').forEach((a) => {
   });
 });
 
-/* ── Reveal on scroll ────────────────────────────────────────────── */
+/* ── Reveal on scroll + entrada escalonada ───────────────────────── */
+// Elementos aún sin revelar: sirve de red de seguridad si un salto de
+// ancla los deja por encima del viewport sin llegar a cruzarlo.
+const pendingReveal = new Set();
+
+function reveal(el) {
+  el.classList.add('in');
+  pendingReveal.delete(el);
+  io.unobserve(el);
+}
+
 const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: .12 });
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  entries.forEach((e) => { if (e.isIntersecting) reveal(e.target); });
+}, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+
+// Reparte el retardo entre los hijos de un grupo .stagger (máx. 420ms)
+function staggerChildren(group) {
+  Array.from(group.children).forEach((child, i) => {
+    child.style.setProperty('--d', Math.min(i * 70, 420) + 'ms');
+  });
+}
+
+function observeReveal(root = document) {
+  root.querySelectorAll('.stagger').forEach((el) => { staggerChildren(el); io.observe(el); pendingReveal.add(el); });
+  root.querySelectorAll('.reveal').forEach((el) => { io.observe(el); pendingReveal.add(el); });
+}
+observeReveal();
+onScrollFrame();   // estado inicial (recarga con la página ya desplazada)
 
 /* ── Año en footer ───────────────────────────────────────────────── */
 const yearEl = document.getElementById('year');
@@ -102,13 +148,14 @@ async function loadSiteData() {
     if (grid && services?.length) {
       const icons = ['✦', '◈', '◇', '↗', '⟳', '◎'];
       grid.innerHTML = services.map((s, i) => `
-        <article class="service-card reveal">
+        <article class="service-card spot">
           <div class="service-icon">${icons[i % icons.length]}</div>
           <h3>${esc(s.name)}</h3>
           <p>${esc(s.desc)}</p>
           <div class="service-price">${esc(s.price)}</div>
         </article>`).join('');
-      grid.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      staggerChildren(grid);
+      if (!grid.classList.contains('in')) io.observe(grid);
     }
 
     // Select de servicios en el formulario de sesión
@@ -282,4 +329,64 @@ function showMsg(el, text, type) {
   if (!el) return;
   el.textContent = text;
   el.className = 'form-msg' + (type ? ' show ' + type : '');
+}
+
+/* =====================================================================
+   STRIPE MOTION — tilt 3D del hero y foco de luz que sigue al cursor
+   Sólo con puntero fino y si el usuario no ha pedido menos movimiento.
+   Todas las escrituras van dentro de un requestAnimationFrame.
+   ===================================================================== */
+
+/* ── Tilt 3D del mockup del hero ─────────────────────────────────── */
+function initTilt() {
+  document.querySelectorAll('[data-tilt]').forEach((el) => {
+    const inner = el.querySelector('.tilt-inner');
+    if (!inner) return;
+    let frame = null;
+    let leaveTimer = null;
+
+    el.addEventListener('pointermove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width  - .5;   // −0.5 … 0.5
+      const py = (e.clientY - rect.top)  / rect.height - .5;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        el.classList.add('is-tilting');
+        el.style.setProperty('--rx', (-py * 6).toFixed(2) + 'deg');
+        el.style.setProperty('--ry', ( px * 8).toFixed(2) + 'deg');
+        el.style.setProperty('--px', px.toFixed(3));
+        el.style.setProperty('--py', py.toFixed(3));
+        frame = null;
+      });
+      clearTimeout(leaveTimer);
+    });
+
+    el.addEventListener('pointerleave', () => {
+      el.classList.remove('is-tilting');
+      el.style.setProperty('--rx', '0deg');
+      el.style.setProperty('--ry', '0deg');
+      el.style.setProperty('--px', '0');
+      el.style.setProperty('--py', '0');
+    });
+  });
+}
+
+/* ── Foco de luz en tarjetas (.spot), por delegación ─────────────── */
+function initSpotlight() {
+  let frame = null;
+  document.addEventListener('pointermove', (e) => {
+    const card = e.target.closest?.('.spot');
+    if (!card || frame) return;
+    frame = requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width  * 100).toFixed(1) + '%');
+      card.style.setProperty('--my', ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%');
+      frame = null;
+    });
+  }, { passive: true });
+}
+
+if (!REDUCED && CAN_HOVER) {
+  initTilt();
+  initSpotlight();
 }

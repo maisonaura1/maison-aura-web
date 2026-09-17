@@ -52,12 +52,45 @@ npm start               # http://localhost:3000  ·  panel en /admin
 
 ## Identidad visual
 
-- **Fondo:** marfil cálido (`--ivory: #FAF7F2`, `--ivory-2: #F0EAE0`)
-- **Tintas:** carbón cálido (`--charcoal: #1C1917`, `--charcoal-soft: #6B5E54`)
-- **Acento:** oro champán (`--gold: #C9A96E`, `--gold-deep: #8A6D3B`)
-- **Firma:** brillo shimmer dorado (`.shimmer`) — análogo al glazed de Manicurate.
-- **Tipografías:** Cormorant Garamond (display/títulos), DM Sans (cuerpo), Sacramento (logo).
-- La `em` en títulos siempre va en `--gold-deep`. No cambies esto.
+Base crema & negro del logo, con el cuarteto de color de Stripe como acento.
+
+- **Fondo:** crema cálida (`--cream: #F5F1EB`, `--cream-2: #EDE8DE`, `--white: #FDFCFA`)
+- **Tintas:** negro del logo (`--ink: #0D0B09`, `--ink-soft: #5C5650`, `--ink-mute: #9A948E`)
+- **Acento — cuarteto Stripe:** `--s-violet: #A960EE`, `--s-red: #FF333D`,
+  `--s-cyan: #90E0FF`, `--s-amber: #FFCB57`. Más `--blurple: #635BFF` (foco) y
+  `--navy: #0A2540`.
+- **Gradiente de firma:** `--brand-gradient` (los cuatro colores) para rellenos,
+  mallas y filos de tarjeta. En **texto sobre crema** se usa
+  `--brand-gradient-text` (sólo el tramo violeta→rojo): el cian y el ámbar
+  pierden contraste sobre fondo claro. Sobre tinta sí va el cuarteto completo.
+- Al sobrescribir un gradiente recortado en texto usa `background-image`,
+  nunca el atajo `background`: el atajo reinicia `background-clip` y el texto
+  se convierte en un bloque de color.
+- **Tipografías:** Cormorant Garamond (display/títulos), DM Sans (cuerpo), Poppins (logo).
+- La `em` de los títulos siempre va en gradiente de marca. No lo cambies.
+
+## Sistema de movimiento (inspirado en Stripe)
+
+Vive al final de `public/styles.css` bajo `STRIPE MOTION SYSTEM`, con su parte
+de JS al final de `public/app.js`. Cinco piezas:
+
+1. **Malla de gradiente animada** (`.mesh` + `.mesh-blob`): cuatro manchas muy
+   desenfocadas en `multiply` sobre crema y en `screen` sobre tinta
+   (`.mesh--dark`), con periodos distintos para que el bucle no se note.
+   Parallax suave en el hero vía `--scroll-y`.
+2. **Cortes diagonales** entre secciones: `.proceso` y `.cta-banner` usan
+   `clip-path` + márgenes negativos (`--cut`).
+3. **Reveal escalonado**: `.reveal` (elemento suelto) y `.stagger` (grupo, el JS
+   reparte `--d` entre los hijos). Curva `--ease-quart`, la de Stripe.
+4. **Micro-interacciones**: elevación y barrido de brillo en botones, subrayado
+   de gradiente en el nav, filo superior que crece en las tarjetas, foco de luz
+   que sigue al cursor (`.spot` + `--mx/--my`) y tilt 3D del mockup del hero
+   (`[data-tilt]` + `.tilt-inner` + `--rx/--ry`).
+5. **Accesibilidad**: foco visible en `--blurple` y un bloque
+   `prefers-reduced-motion` que apaga todo el movimiento.
+
+Toda animación nueva debe apagarse en `prefers-reduced-motion` y escribirse
+dentro de un `requestAnimationFrame`.
 
 ## Convenciones
 

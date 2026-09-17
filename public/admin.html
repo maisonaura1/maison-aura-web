@@ -27,8 +27,8 @@
   --ink-mute:  #9A948E;
 
   /* Gradiente firma */
-  --brand:     linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F97316 100%);
-  --violet:    #8B5CF6;
+  --brand:     linear-gradient(135deg, #A960EE 0%, #FF333D 50%, #FFCB57 100%);
+  --violet:    #A960EE;
 
   /* Separadores y sombras */
   --line:      #D4CEC6;
@@ -61,8 +61,8 @@ a { color: inherit; text-decoration: none; }
 /* patrón sutil de fondo */
 #loginScreen::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 40%, rgba(139,92,246,.07) 0%, transparent 55%),
-              radial-gradient(ellipse at 70% 70%, rgba(249,115,22,.05) 0%, transparent 55%);
+  background: radial-gradient(ellipse at 30% 40%, rgba(169,96,238,.07) 0%, transparent 55%),
+              radial-gradient(ellipse at 70% 70%, rgba(255,203,87,.05) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -172,11 +172,11 @@ a { color: inherit; text-decoration: none; }
 .sidebar-back:hover { color: var(--cream); }
 .sidebar-logout {
   display: flex; align-items: center; gap: 8px;
-  font-size: .82rem; color: rgba(249,115,22,.55); transition: color .2s;
+  font-size: .82rem; color: rgba(255,203,87,.55); transition: color .2s;
   cursor: pointer; background: none; border: none; font-family: inherit; padding: 0;
   width: 100%; text-align: left; margin-top: 2px;
 }
-.sidebar-logout:hover { color: #F97316; }
+.sidebar-logout:hover { color: #FFCB57; }
 .sidebar-version { font-size: .68rem; color: rgba(245,241,235,.18); letter-spacing: .06em; margin-top: 10px; }
 
 /* ── Main ── */
@@ -354,10 +354,10 @@ tr:hover td { background: var(--cream); }
 .pipeline-col-head::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
 }
-.col-01 .pipeline-col-head::before { background: #8B5CF6; }
-.col-02 .pipeline-col-head::before { background: #A855F7; }
-.col-03 .pipeline-col-head::before { background: #EC4899; }
-.col-04 .pipeline-col-head::before { background: #F97316; }
+.col-01 .pipeline-col-head::before { background: #A960EE; }
+.col-02 .pipeline-col-head::before { background: #C77DFF; }
+.col-03 .pipeline-col-head::before { background: #FF333D; }
+.col-04 .pipeline-col-head::before { background: #FFCB57; }
 .col-05 .pipeline-col-head::before { background: #16a34a; }
 
 .pipeline-col-num {
@@ -806,7 +806,7 @@ function svcLabel(id) {
 }
 const PHASE_ORDER = ['escuchar','estrategia','disenar','desarrollar','lanzar'];
 const PHASE_LABEL = { escuchar:'Escuchar', estrategia:'Estrategia', disenar:'Diseñar', desarrollar:'Desarrollar', lanzar:'Lanzar & Crecer' };
-const PHASE_COLOR = { escuchar:'#8B5CF6', estrategia:'#A855F7', disenar:'#EC4899', desarrollar:'#F97316', lanzar:'#16a34a' };
+const PHASE_COLOR = { escuchar:'#A960EE', estrategia:'#C77DFF', disenar:'#FF333D', desarrollar:'#FFCB57', lanzar:'#16a34a' };
 
 /* ═══════════════════ PIPELINE / ESTRATEGIA ═══════════════════ */
 // Proyectos del pipeline se almacenan en localStorage para persistencia local
@@ -1164,7 +1164,7 @@ Estamos muy arrepentidos por los inconvenientes. Por favor escríbenos para enco
 
   // Actualizar estado en servidor
   try {
-    await fetch(\`/api/admin/sessions/\${id}\`, {
+    await fetch(`/api/admin/sessions/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
       body: JSON.stringify({ status: newStatus })
@@ -1173,11 +1173,11 @@ Estamos muy arrepentidos por los inconvenientes. Por favor escríbenos para enco
     if (s) s.status = newStatus;
     updateSessionStats();
     renderSessions();
-    toast(\`Estado → \${newStatus} ✓\`, true);
+    toast(`Estado → ${newStatus} ✓`, true);
   } catch {}
 
   // Abrir WhatsApp
-  window.open(\`https://wa.me/\${PHONE}?text=\${encodeURIComponent(msg)}\`, '_blank');
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
 });
 </script>
 </body>
