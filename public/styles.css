@@ -734,6 +734,10 @@ section:nth-of-type(even):not(.cta-banner):not(.proceso):not(.trust) { backgroun
 /* ========================== sesión / formulario ================== */
 .sesion { background: var(--white) !important; border-top: 1px solid var(--line); }
 .sesion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+/* min-width:auto es el valor por defecto de un elemento de grid: sin esto el
+   botón de enviar (white-space:nowrap) ensancha su columna y con ella la
+   página entera en pantallas estrechas. */
+.sesion-grid > *, .contact-grid > * { min-width: 0; }
 .sesion-aside h2 { margin-bottom: 18px; }
 .sesion-aside p { color: var(--ink-soft); }
 .sesion-perks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
@@ -870,7 +874,13 @@ section:nth-of-type(even):not(.cta-banner):not(.proceso):not(.trust) { backgroun
   /* 7 — Responsive móvil completo */
   .site-header { height: 64px; }
   .header-inner { height: 64px; }
-  .logo-svg { height: 52px; min-width: 120px; }
+  /* min-width fijo + botón sin encoger = la cabecera no cabía y la página
+     se desplazaba en horizontal. El logo escala por su relación de aspecto. */
+  .logo-svg { height: 48px; min-width: 0; }
+  .nav.open { top: 64px; }          /* alineado con la cabecera móvil */
+  .header-cta { gap: 10px; }
+  .header-cta .btn { padding: 10px 16px; font-size: .82rem; }
+  .nav-toggle { padding: 6px; }
   .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
   .hero-grid { flex-direction: column-reverse; }
   .hero-figure { order: 1; }
@@ -887,6 +897,15 @@ section:nth-of-type(even):not(.cta-banner):not(.proceso):not(.trust) { backgroun
   /* WhatsApp FAB más pequeño */
   .wa-fab { width: 52px; height: 52px; right: 14px; bottom: 18px; }
   .wa-fab svg { width: 24px; height: 24px; }
+}
+
+/* Etiqueta corta del CTA de cabecera en pantallas muy estrechas */
+.cta-corto { display: none; }
+@media (max-width: 420px) {
+  .cta-largo { display: none; }
+  .cta-corto { display: inline; }
+  /* que una etiqueta larga parta de línea antes que desbordar la página */
+  .btn { white-space: normal; text-align: center; }
 }
 
 /* ═══════════════ 1 — SECCIÓN CÓMO FUNCIONA ═══════════════════════ */
