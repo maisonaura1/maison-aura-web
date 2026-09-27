@@ -100,7 +100,8 @@ npm start               # http://localhost:3000  ·  panel en /admin
 - **Precios y paquetes**: los de `lib/config.js` son una PROPUESTA de reposicionamiento
   (Esencial 2.400 €, Crecimiento 4.200 €, A medida 3.900 €, SEO+IA 490 €/mes…).
 - Teléfono/WhatsApp reales (los de config son de ejemplo y no se muestran).
-- Email: la web es maisonaura.nl pero el correo es hola@maisonaura.es.
+- Dominio confirmado: **maisonaura.nl** (DNS en Cloudflare, email `info@maisonaura.nl` en Hostinger).
+  Falta apuntar la web al dominio.
 - Instagram y LinkedIn reales.
 - Testimonios reales (con permiso) y métricas de los proyectos publicados.
 - Otros proyectos reales a añadir (p. ej. Miss Beauty Delft, RoxanneAlexia) si el cliente lo autoriza.

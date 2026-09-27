@@ -275,7 +275,7 @@ sesionForm?.addEventListener('submit', async (e) => {
     // Sin backend: mejora progresiva, se abre el correo con los datos.
     const subject = encodeURIComponent('Diagnóstico gratuito — ' + body.name);
     const text = encodeURIComponent(`Nombre: ${body.name}\nEmail: ${body.email}\nServicio: ${body.service}\nDía: ${body.date} ${body.time}\n\n${body.notes}`);
-    window.location.href = `mailto:hola@maisonaura.es?subject=${subject}&body=${text}`;
+    window.location.href = `mailto:info@maisonaura.nl?subject=${subject}&body=${text}`;
     showMsg(sesionMsg, 'No hemos podido conectar. Te abrimos el correo para que nos lo envíes directamente.', 'err');
     skSubmit.disabled = false;
     skSubmit.textContent = SK_LABEL;
@@ -313,7 +313,7 @@ contactForm?.addEventListener('submit', async (e) => {
       showMsg(ctMsg, data.error || 'Algo salió mal. Inténtalo de nuevo.', 'err');
     }
   } catch {
-    showMsg(ctMsg, 'Error de conexión. Escríbenos a hola@maisonaura.es', 'err');
+    showMsg(ctMsg, 'Error de conexión. Escríbenos a info@maisonaura.nl', 'err');
   } finally {
     ctSubmit.disabled = false;
     ctSubmit.textContent = 'Enviar mensaje';
