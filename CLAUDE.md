@@ -80,6 +80,7 @@ npm start               # http://localhost:3000  ·  panel en /admin
 ## Pendiente de confirmar
 
 - Teléfono de contacto real.
-- Dominio definitivo (maisonaura.es o similar).
+- Dominio confirmado: **maisonaura.nl** (DNS en Cloudflare, email `info@maisonaura.nl` en Hostinger).
+  Falta apuntar la web al dominio y actualizar `og:url` / JSON-LD `url` en `public/index.html`.
 - Instagram y LinkedIn reales.
 - Precios definitivos de los servicios.

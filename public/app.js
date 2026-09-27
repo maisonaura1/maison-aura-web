@@ -271,7 +271,7 @@ contactForm?.addEventListener('submit', async (e) => {
       showMsg(ctMsg, data.error || 'Algo salió mal. Inténtalo de nuevo.', 'err');
     }
   } catch {
-    showMsg(ctMsg, 'Error de conexión. Escríbenos a hola@maisonaura.es', 'err');
+    showMsg(ctMsg, 'Error de conexión. Escríbenos a info@maisonaura.nl', 'err');
   } finally {
     ctSubmit.disabled = false;
     ctSubmit.textContent = 'Enviar mensaje';
