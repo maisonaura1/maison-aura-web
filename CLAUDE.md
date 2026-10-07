@@ -4,9 +4,24 @@ Contexto del proyecto para Claude Code. Léelo antes de tocar nada.
 
 ## Qué es
 
-Sitio web de alta conversión + backend propio para **Maison Aura**, agencia de diseño
-web y desarrollo digital. Objetivo: que un potencial cliente solicite una sesión de
-diagnóstico gratuita (30 min) o envíe un mensaje de contacto. Todo el texto va en **español**.
+Sitio web de alta conversión + backend propio para **Maison Aura Studio** (maisonaura.nl),
+estudio/agencia de webs a medida, SEO y visibilidad en IA (ChatGPT, Gemini, Perplexity).
+Objetivo: que un potencial cliente reserve un **diagnóstico gratuito** (30 min) o envíe un
+mensaje de contacto. Todo el texto va en **español**.
+
+Posicionamiento (oct 2026): agencia premium frente a competidores como overflow.agency
+(Delft). Se vende resultado de negocio (convertir visitas en clientes y ser visible en
+Google + IA), con paquetes cerrados, precio "desde" público y proceso explicado.
+
+Orden de la landing: anuncio → hero → compromisos → el problema → servicios →
+visibilidad en IA → planes → proyectos → proceso → por qué → FAQ → CTA →
+diagnóstico (formulario de reserva) → contacto → footer.
+
+## Regla de veracidad (no negociable)
+
+Solo se publican cifras, proyectos, logos y testimonios **reales y verificables**.
+Nada de "47 proyectos", "4,9★", "+340 %" ni reseñas de ejemplo. Si falta prueba
+social, se usan compromisos (precio cerrado, 48 h, < 24 h) en vez de inventarla.
 
 ## Stack y filosofía
 
@@ -52,18 +67,21 @@ npm start               # http://localhost:3000  ·  panel en /admin
 
 ## Identidad visual
 
-- **Fondo:** marfil cálido (`--ivory: #FAF7F2`, `--ivory-2: #F0EAE0`)
-- **Tintas:** carbón cálido (`--charcoal: #1C1917`, `--charcoal-soft: #6B5E54`)
-- **Acento:** oro champán (`--gold: #C9A96E`, `--gold-deep: #8A6D3B`)
-- **Firma:** brillo shimmer dorado (`.shimmer`) — análogo al glazed de Manicurate.
-- **Tipografías:** Cormorant Garamond (display/títulos), DM Sans (cuerpo), Sacramento (logo).
-- La `em` en títulos siempre va en `--gold-deep`. No cambies esto.
+- **Fondo:** crema (`--cream: #F5F1EB`, `--cream-2`, `--white: #FDFCFA`)
+- **Tinta:** `--ink: #0D0B09` (también fondo de las secciones oscuras: IA, proceso, CTA, footer)
+- **Acento:** degradado violeta→pink→coral (`--brand-gradient`), solo en elementos clave.
+- **Tipografías:** Cormorant Garamond (display/títulos), DM Sans (cuerpo), Poppins 300/700/900 (logo).
+- La `em` de los títulos va siempre con el degradado de marca. No cambies esto.
+- Cada sección declara su fondo explícitamente (no hay alternancia automática).
+- Movimiento: reveal escalonado, titular por líneas, spotlight en tarjetas, inclinación
+  del visual del hero y botones magnéticos. Todo se desactiva con `prefers-reduced-motion`.
 
 ## Convenciones
 
 - Copy en español, tono profesional pero cercano (no corporativo frío).
-- Si cambias servicios, precios o datos de contacto: SOLO en `lib/config.js`.
-  El HTML tiene un respaldo estático que conviene mantener sincronizado.
+- Si cambias servicios, planes, precios o datos de contacto: SOLO en `lib/config.js`
+  (`services` y `plans`). El HTML tiene un respaldo estático que conviene mantener
+  sincronizado, igual que el JSON-LD (FAQPage y precios) del `<head>`.
 - Las imágenes de portfolio van a `public/images/` en `.webp`.
 - Accesibilidad: foco visible, `prefers-reduced-motion`, alt en imágenes.
 
@@ -79,7 +97,11 @@ npm start               # http://localhost:3000  ·  panel en /admin
 
 ## Pendiente de confirmar
 
-- Teléfono de contacto real.
-- Dominio definitivo (maisonaura.es o similar).
+- **Precios y paquetes**: los de `lib/config.js` son una PROPUESTA de reposicionamiento
+  (Esencial 2.400 €, Crecimiento 4.200 €, A medida 3.900 €, SEO+IA 490 €/mes…).
+- Teléfono/WhatsApp reales (los de config son de ejemplo y no se muestran).
+- Email: la web es maisonaura.nl pero el correo es hola@maisonaura.es.
 - Instagram y LinkedIn reales.
-- Precios definitivos de los servicios.
+- Testimonios reales (con permiso) y métricas de los proyectos publicados.
+- Otros proyectos reales a añadir (p. ej. Miss Beauty Delft, RoxanneAlexia) si el cliente lo autoriza.
+- Versiones NL / EN para el mercado holandés.
