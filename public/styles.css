@@ -611,7 +611,8 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .contact-info > p { color: var(--ink-soft); margin: 20px 0 32px; font-size: 1.06rem; }
 .info-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
-.info-list li { display: flex; gap: 16px; align-items: flex-start; }
+.info-list li { display: flex; gap: 16px; align-items: flex-start; min-width: 0; }
+.info-list li > div:last-child { flex: 1; min-width: 0; }
 .info-icon {
   width: 42px; height: 42px; border-radius: 50%; flex: none;
   background: var(--cream-2); border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink);
@@ -620,7 +621,7 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 .info-list b { display: block; font-size: .95rem; margin-bottom: 2px; }
 .info-list span, .info-list a { font-size: .92rem; color: var(--ink-soft); }
 .info-list a:hover { color: var(--ink); }
-.hours { margin-top: 8px; min-width: 240px; }
+.hours { margin-top: 8px; min-width: min(240px, 100%); }
 .hours-row { display: flex; justify-content: space-between; gap: 16px; font-size: .9rem; padding: 7px 0; border-bottom: 1px dashed var(--line); color: var(--ink-soft); }
 .hours-row:last-child { border-bottom: 0; }
 .hours-row span:first-child { color: var(--ink); }
@@ -629,6 +630,8 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
 /* ========================== sesión / formularios ================= */
 .sesion { background: var(--white); }
 .sesion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+/* Los hijos de grid llevan min-width:auto; sin esto, un botón en nowrap ensancha la columna y la página desborda en móvil. */
+.contact-grid > *, .sesion-grid > *, .plans-grid > * { min-width: 0; }
 .sesion-aside > p { color: var(--ink-soft); margin: 20px 0 0; }
 .sesion-perks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
 .sesion-perks li { display: flex; gap: 12px; align-items: flex-start; font-size: .97rem; color: var(--ink-soft); }
@@ -771,4 +774,8 @@ h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color:
   .plans-retainer .btn { width: 100%; }
   .cookie-bar { flex-direction: column; align-items: flex-start; }
   input, select, textarea { font-size: 16px !important; }
+}
+
+@media (max-width: 420px) {
+  .btn { white-space: normal; text-align: center; }
 }
