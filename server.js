@@ -95,7 +95,7 @@ function requireAdmin(req, res, next) {
 /* ── API pública ─────────────────────────────────────────────────────── */
 
 app.get('/api/site', (_req, res) => {
-  res.json({ business: config.business, services: config.services, hours: config.hours });
+  res.json({ business: config.business, services: config.services, plans: config.plans, hours: config.hours });
 });
 
 app.get('/api/availability', async (req, res) => {
